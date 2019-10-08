@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.heuet.Mapper.BookMapper">
+<!--浏览查询-->
+    <select id="selectBookInfo" parameterType="edu.heuet.Pojo.BookInfo" resultType="edu.heuet.Pojo.BookInfo">
+        select * from
+            booksell.bookinfo
+    </select>
+<!--卖书-->
+    <insert id="insertBookInfo" keyProperty="edu.heuet.Pojo.BookInfo">
+        insert into
+            booksell.bookinfo(seller,typeid,price,bookname,BookText,path,bookstate)
+            values(#{Seller},#{TypeId},#{Price},#{BookName},#{BookText},#{Path},#{BookState})
+    </insert>
+
+
+    <!--分页-->
+    <resultMap id="BaseResultMap1" type="edu.heuet.Pojo.BookInfo">
+        <id column="BookId" property="BookId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+        <result column="TypeId" property="TypeId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+        <result column="Price" property="Price" jdbcType="DOUBLE" javaType="java.lang.Double" />
+        <result column="BookName" property="BookName" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <result column="BookText" property="BookText" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <result column="Path" property="Path" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="BookState" property="BookState" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+    </resultMap>
+
+    <select id="findByPage" parameterType="Map" resultMap="BaseResultMap1" >
+        select
+        BookId, Seller,TypeId, Price, BookName, BookText, frequency,Path,BookState
+        from
+        bookinfo
+        <if test="start!=null and size!=null">limit #{start},#{size}</if>
+    </select>
+    <select id="counts" resultType="int">
+        select count(*) from bookinfo
+    </select>
+
+    <select id="selectBookList" parameterType="edu.heuet.Pojo.BookInfo" resultMap="BaseResultMap1"   >
+        select
+        BookId, Seller,TypeId, Price, BookName, BookText, frequency,path,bookstate
+        from
+        bookinfo
+        <where>
+            <if test="BookName != null and !&quot;&quot;.equals(BookName.trim())">
+                and BookName=#{BookName}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectLike" parameterType="edu.heuet.Pojo.BookInfo" resultType="edu.heuet.Pojo.BookInfo">
+        select
+        *
+        from
+        bookinfo
+        <where>
+            <if test="BookText!=null and BookText!=''">
+                and booktext like '%${BookText}%'
+            </if>
+            <if test="BookName!=null and BookName!=''">
+                or bookname like '%${BookName}%'
+            </if>
+        </where>
+    </select>
+
+
+    <select id="selectById" resultType="edu.heuet.Pojo.BookInfo">
+        select *
+        from bookinfo
+        where bookid=#{BookId}
+    </select>
+</mapper>
