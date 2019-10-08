@@ -1,0 +1,41 @@
+
+html,body,div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dd,dt,input,textarea,th,td{margin:0;padding:0;box-sizing:border-box;}
+@media screen and (-webkit-min-device-pixel-ratio:0){ input{ line-height:50%; } }
+textarea{line-height: 1.2;}
+
+html{
+  /* font-size:16px; */
+  /* font-size:62.5%; */
+  /* font-size:10px; */
+  /* 都升级到V75，在chrome更新到27版本之后就不可以用了。 */
+  -webkit-text-size-adjust:none; /* 即可接触chrome对12px字体大小的限制。 */
+  /* 受chrome最低12px限制，只能选20，辛苦计算字体大小了 */
+  font-size:20px;
+}
+html,body{
+  height:100%;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:#fff; /* 外部页面背景的影响 */
+  overflow:hidden; /* iframe 中html不知为何，向上走了一点。body出现滚动条 */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root{
+  /* width:1134px; */
+  /* margin:0 auto; */
+  height:100%;
+}

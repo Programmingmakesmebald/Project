@@ -1,0 +1,51 @@
+/*左侧导航样式(sunny)*/
+.mdlnavi{ width:164px; float:left; background:#e2e2e2; padding:3px; padding-top:9px; border-right:1px solid #cccccc;}
+.left_xf{border:solid 1px #008000; border-bottom:solid 2px #009500; background-color:#FFF; margin-bottom:2px}
+.left_dd{border:solid 1px #008000; border-bottom:solid 1px #009500; background-color:#FFF; margin-bottom:2px}
+.left_dd .title{background-color:#f2fdf2; border-bottom: solid 1px #bdffbd; height:25px; padding-left:17px; line-height:25px; color:#007b00; font-weight:bold}
+
+.left_dd ul{list-style:none; margin:4px 15px;line-height:26px;}
+.left_dd ul li{list-style:none;border-bottom:solid 1px #d3d3d3;color:#666; }
+.left_dd ul .lilast{list-style:none;color:#666;border-bottom:solid 1px #fff; }
+.left_dd ul .linow{list-style:none;border-bottom:solid 1px #d3d3d3;color:#ff9900; background:3px 8px url(../images/point.gif) no-repeat;_height:19px; _line-height:22px; _padding-top:7px;}
+.left_dd ul .lilast_now{list-style:none;color:#ff9900; background:3px 8px url(../images/point.gif) no-repeat;border-bottom:solid 1px #fff;}
+.left_dd ul li a,.left_dd ul .lilast a{color:#666; text-decoration:none ;padding-left:15px}
+.left_dd ul li a:hover,.left_dd ul .lilast a:hover{color:#404040; text-decoration:underline; background:3px 2px url(../images/point.gif) no-repeat;padding-left:15px}
+.left_dd ul .linow a{color:#cc3300; text-decoration:none}
+.left_dd ul .linow a:hover{color:#cc3300; text-decoration:underline}
+.left_dd ul .lilast_now a{color:#cc3300; text-decoration:none}
+.left_dd ul .lilast_now a:hover{color:#cc3300; text-decoration:underline}
+.left_dd ul .li_up{ _height:19px; _line-height:22px; _padding-top:7px;}
+
+.left_xf .title{background-color:#f2fdf2; height:25px; line-height:25px;  font-weight:bold}
+.left_xf .title a{ padding-left:17px; text-decoration:none ;color:#007b00}
+.left_xf .title a:hover{ padding-left:17px; background:8px 3px url(../images/point.gif) no-repeat ;color:#007b00;text-decoration:underline}
+.left_xf2{border:solid 1px #008000; border-bottom:solid 1px #009500; background-color:#FFFFFF; margin-bottom:2px}
+.left_xf2 .title2{background-color:#ccf4cc;  height:25px; line-height:25px;  font-weight:bold}
+.left_xf2 .title2 a{ padding-left:17px; text-decoration:none ;color:#007b00;background:8px 3px url(../images/point.gif) no-repeat;}
+.left_xf2 .title2 a:hover{ padding-left:17px; background:8px 3px url(../images/point.gif) no-repeat ;color:#007b00;text-decoration:underline}
+
+.doc_left_gr{border:solid 1px #fff; background:#c7e9ad; padding-top:7px; padding-left:7px; line-height:18px; margin-bottom:3px; padding-bottom:7px}
+.doc_left_gr .left_gr_pic{ width:39px; height:39px; background:url(../images/wddd_pic_haed_bg.gif); float:left;}
+.doc_left_gr .left_gr_pic img{ margin-left:2px; margin-top:2px;}
+.doc_left_gr .left_gr_text{ width:100px; float:left; margin-left:10px;}
+.doc_left_gr .arrow_manage{ margin:0 0 2px 3px}
+.doc_left_gr .my_nickname{ line-height:16px; width:100px; word-break:break-all;}
+.doc_left_gr .my_position{ background:url(../images/dashed1.gif) repeat-x bottom; color:#878787; padding-bottom:5px;}
+.doc_left_gr .my_message{padding:2px 0;color:#666;}
+.doc_left_gr .my_message1{background:url(../images/dashed1.gif) repeat-x bottom;margin-bottom:8px; color:#666;line-height:16px; padding:4px 0}
+
+.doc_left_gr a.my_index{ display:block; width:94px; height:17px; overflow:hidden; background:url(../images/butt_my.gif)}/*09.3.18 new*/
+.doc_left_gr a:hover.my_index{background:url(../images/butt_my_o.gif)}/*09.3.18 new*/
+.clear{clear:both;height:0px;line-height:0px; font-size:0px;}
+
+/*.my_mangage{ width:83px; border:solid 1px #a1a1a1; background-color:#fff}
+.my_mangage ul{ line-height:22px; padding:5px 0 3px 15px}*//*09.3.18 del*/
+
+
+
+
+
+
+
+

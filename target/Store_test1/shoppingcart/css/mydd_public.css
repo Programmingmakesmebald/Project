@@ -1,0 +1,43 @@
+
+*{padding:0;margin:0}
+
+body{font-family: "ËÎÌå", Arial, Helvetica, sans-serif; font-size:12px; background:#fff; color:#404040}/*dry100818 ÐÞ¸Ä*/
+img{border:0}
+a{ color:#1a66b3; text-decoration:none}
+a:hover{ text-decoration:underline}
+.gray4012 a{ color:#404040; text-decoration:none;}
+.gray4012 a:hover{ color:#404040; text-decoration:underline;}
+.empty_box{clear:both; height:0px; overflow:hidden;}
+.empty_box1{clear:both; height:0px; overflow:hidden; border-bottom:1px solid #b8b6b6;}
+.empty_left{clear:left}
+.empty_right{clear:right}
+.size14{ font-size:14px}
+.gray87{ color:#878787}
+.gray666{ color:#666}
+.gray40b{font-weight:bold;}
+.font_b{font-weight:bold;}
+.red14_b{ color:#cc3300; font-weight:bold; font-size:14px;}
+.red_b{ color:#cc3300; font-weight:bold;}
+.grayb{ color:#fff; font-weight:bold;}
+.gray666b{ color:#666; font-weight:bold}
+.pot{ letter-spacing:-3px;}
+.clear{ clear:both;}
+ul,ol,li {list-style:none}
+
+.main_frame{ width:960px; margin:auto; border-left:1px solid #fff; border-right:1px solid #fff; background-color:#fff}
+.main_right{ float:left; width:779px;margin-left:10px; margin-top:10px}
+
+/*·­Ò³ÑùÊ½¿ªÊ¼*/
+.page_more{ height:30px; padding-top:18px; width:772px}
+.turn_page{ float:right}
+.add_top{ margin-top:5px; margin-right:5px}/*ÉÏ·­Ò³*/
+.turn_page div{ float:left; display:block}
+.turn_page img{float:left; margin-right:6px}
+.num_now{background:#C30; padding:0 2px; margin:0px 2px 0 2px; color:#fff; height:15px; overflow:hidden; line-height:15px; float:left}
+.num:link{background:#FEEEC2; padding:1px 4px; margin:2px; color:#404040; text-decoration:none;}
+.num:visited{background:#FEEEC2; padding:1px 4px; margin:2px; color:#404040; text-decoration:none;}
+.num:hover{background:#C30; padding:1px 4px; margin:2px; color:#fff; text-decoration:none}
+.tiaozhuan{width:30px; padding-left:2px; border:1px solid #AFAFAF; margin:0 4px; height:13px; line-height:13px; float:left}
+.t_text{ padding-top:2px}/*ÉÏ·­Ò³*/
+.next{margin-right:39px !important; margin-left:8px}
+.enter{margin-left:6px; margin-right:0 !important}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.heuet.Mapper.UserMapper">
+<!--    登录查询-->
+    <select id="selectUserInfo" parameterType="edu.heuet.Pojo.UserInfo" resultType="edu.heuet.Pojo.UserInfo">
+    select
+    UserName,UserId,School,Credit,PhoneNum
+    from
+    booksell.userinfo
+    <where>
+        <if test=" LPassword != null">
+            PhoneNum=#{PhoneNum} and LPassword =#{LPassword}
+        </if>
+        <if test= "LPassword == null">
+             PhoneNum=#{PhoneNum}
+        </if>
+    </where>
+</select>
+<!--注册插入-->
+    <insert id="insertUserInfo" keyProperty="edu.heuet.Pojo.UserInfo">
+        insert into
+            booksell.userinfo(PhoneNum,UserName,LPassword,School,Credit)
+            values(#{PhoneNum},#{UserName},#{LPassword},#{School},100)
+    </insert>
+<!-- 手机号存在性验证 -->
+    <select id="checkPNum" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        select * from userinfo
+        where #{PhoneNum}=PhoneNum
+    </select>
+
+    <update id="updateInfo" parameterType="edu.heuet.Pojo.UserInfo">
+        update userinfo
+        set
+            UserName=#{UserName},
+            PhoneNum=#{PhoneNum},
+            School=#{School}
+        where #{UserId}=UserId
+    </update>
+    <update id="updatePwd" parameterType="java.lang.String">
+        update userinfo
+        set
+            LPassword=#{NewLPassword}
+        where
+            #{UserId}=UserId
+            and #{LPassword}=LPassword
+    </update>
+</mapper>
