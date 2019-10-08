@@ -17,6 +17,7 @@ public class BookInfo {
     private List<String> ImagePath;
     private Integer BookState;
 
+
     public Integer getBookState() {
         return BookState;
     }

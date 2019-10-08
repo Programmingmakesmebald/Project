@@ -164,4 +164,15 @@ public class BookController {
         model.addAttribute("BookInfos",bookInfos);
         return "/orderinfo/order";
     }
+
+
+    @RequestMapping("/SelectByState")/**通过状态查询图书信息*/
+    public String SelectByState(@RequestParam(value="state",defaultValue ="4") Integer state,HttpSession session,Model model){
+//        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
+
+        List<BookInfo> bookInfos=bookService.selectByState(14,state);
+        model.addAttribute("bookInfos",bookInfos);
+        return "massage/mybook";
+
+    }
 }

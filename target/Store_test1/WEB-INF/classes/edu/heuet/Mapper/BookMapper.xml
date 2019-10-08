@@ -71,4 +71,22 @@
         from bookinfo
         where bookid=#{BookId}
     </select>
+
+
+
+    <select id="selectByState" resultType="edu.heuet.Pojo.BookInfo" >
+        select *
+        from bookinfo
+        <where>
+            <if test="state==4">
+                seller=#{userid}
+            </if>
+            <if test="state!=4">
+                and bookstate= #{state}
+                and seller= #{userid}
+            </if>
+        </where>
+
+
+    </select>
 </mapper>

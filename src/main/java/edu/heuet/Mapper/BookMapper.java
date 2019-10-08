@@ -24,4 +24,6 @@ public interface BookMapper {
     List<BookInfo> selectLike(BookInfo bookInfo);/** **/
 
     BookInfo selectById(@Param("BookId") Integer bookId);
+
+    List<BookInfo> selectByState(@Param("userid") Integer userid,@Param("state")  Integer state);
 }

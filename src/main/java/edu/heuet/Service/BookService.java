@@ -13,4 +13,6 @@ public interface BookService {
     List<BookInfo> selectLike(BookInfo bookInfo);
 
     BookInfo selectById(Integer bookId);
+
+    List<BookInfo> selectByState(Integer userid, Integer state);
 }

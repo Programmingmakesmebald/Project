@@ -90,4 +90,9 @@ public class BookServiceImp implements BookService {
     public BookInfo selectById(Integer bookId) {
         return bookMapper.selectById(bookId);
     }
+
+    @Override
+    public List<BookInfo> selectByState(Integer userid, Integer state) {
+        return bookMapper.selectByState(userid,state);
+    }
 }
