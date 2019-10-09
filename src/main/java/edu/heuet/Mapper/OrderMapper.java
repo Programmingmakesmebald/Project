@@ -1,6 +1,7 @@
 package edu.heuet.Mapper;
 
 import edu.heuet.Pojo.OrderInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,5 +12,11 @@ public interface OrderMapper {
 
     List<OrderInfo> selectOrders();  /** 查询全部订单**/
 
-    List<OrderInfo> selectOrderByBuyer(int Buyer);  /** 根据Buyer查询订单**/
+    List<OrderInfo> selectOrderByBuyer(int Buyer);/** 根据Buyer查询订单**/
+
+    boolean ChangeOrderState(@Param("OrderId")Long OrderId, @Param("state") int state);/** 改变订单状态*/
+
+    void ChangeBookState(@Param("OrderId")Long OrderId, @Param("state") int state);/** 改变图书状态*/
+
+    List<Integer> selectSellers(Long orderId);
 }

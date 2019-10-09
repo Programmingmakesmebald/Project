@@ -11,5 +11,9 @@ public interface OrderService {
 
     List<OrderInfo> selectOrders();  /** 查询全部订单**/
 
-    List<OrderInfo> selectOrderByBuyer(int Buyer);  /** 根据Buyer查询订单**/
+    List<OrderInfo> selectOrderByBuyer(int Buyer);/** 根据Buyer查询订单**/
+
+    boolean ChangeOrderState(Long orderId, int i);
+
+    List<Integer> selectSellers(Long orderId);
 }

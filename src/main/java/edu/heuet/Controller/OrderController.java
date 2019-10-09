@@ -35,6 +35,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    private OrderPay globalOrderPay;
     @RequestMapping("/createOrder")        /*** 测试创建订单**/
     public String CreateOrder(BookInfo bookInfo, HttpSession session, Model model)throws Exception{
         OrderInfo orderInfo=new OrderInfo();
@@ -75,6 +76,7 @@ public class OrderController {
         for (BookInfo b :bookInfos) {
             price+=b.getPrice();
             OrderInfo orderInfo=new OrderInfo();
+
             orderInfo.setBookId(b.getBookId());
             orderInfo.setSeller(b.getSeller());
             orderInfo.setPrice(b.getPrice());
@@ -90,6 +92,8 @@ public class OrderController {
         orderPay.setPrice(price);
         orderPay.setBookName(bookInfos.get(0).getBookName()+"···");
         orderPay.setBookText(bookInfos.get(0).getBookText()+"·······");
+        orderService.ChangeOrderState(orderPay.getOrderId(),1);
+        globalOrderPay=orderPay;
         return orderPay;
     }
 
@@ -123,11 +127,18 @@ public class OrderController {
 
 
     @RequestMapping("/pay")  /**支付完成后请求路径**/
-    public String  test1(String out_trade_no, Double total_amount, Model model) {
+    public String  test1(String out_trade_no, Double total_amount, Model model,HttpSession session) {
+        boolean i=orderService.ChangeOrderState(globalOrderPay.getOrderId(),2);
+        List<Integer>  Sellers=orderService.selectSellers(globalOrderPay.getOrderId());
+        for (Integer seller:Sellers) {
+            new MassageController().CreateMassageBySys(session.getAttribute("UserName")+":购买了你的图书请尽快发货哦！",seller);
+        }
+        System.out.println("支付完成！");
         model.addAttribute("money", total_amount);
         model.addAttribute("no", out_trade_no);
         return "/index/index";
     }
+
 
     @RequestMapping("/selectOrder")//page当前页码;pageSize每页的记录数
     String  selectOrder(Map<String,Object> map, Model model,
@@ -150,6 +161,13 @@ public class OrderController {
         map.put("pageInfo",pageInfo);
         model.addAttribute("Buyer",Buyer);
         return "/Order_admin/selectOrder";
+    }
+
+
+    @RequestMapping("/selectOrdersByState")
+        public String  selectOrdersByState(Model model,Integer State,HttpSession session){
+
+        return "";
     }
 
 }

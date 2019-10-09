@@ -7,6 +7,16 @@ public class Massage {
     private Long Sendtime;
     private String content;
     private String formatTime;
+    private Integer msgstate;
+
+    public Integer getMsgstate() {
+        return msgstate;
+    }
+
+    public void setMsgstate(Integer msgstate) {
+        this.msgstate = msgstate;
+    }
+
     public Long getInforid() {
         return inforid;
     }

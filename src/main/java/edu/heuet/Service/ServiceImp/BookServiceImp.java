@@ -95,4 +95,9 @@ public class BookServiceImp implements BookService {
     public List<BookInfo> selectByState(Integer userid, Integer state) {
         return bookMapper.selectByState(userid,state);
     }
+
+    @Override
+    public boolean changeState(Integer bookId, Integer state) {
+        return bookMapper.changeState(bookId,state);
+    }
 }

@@ -173,6 +173,19 @@ public class BookController {
         List<BookInfo> bookInfos=bookService.selectByState(14,state);
         model.addAttribute("bookInfos",bookInfos);
         return "massage/mybook";
-
     }
+
+    @RequestMapping("/changeState")/*** 改变图书状态***/
+    @ResponseBody
+    public boolean ChangeState(@RequestParam(value = "BookId") Integer BookId ,@RequestParam(value = "state") Integer state){
+        state++;
+        System.out.println("111111111111111");
+        boolean i=bookService.changeState(BookId,state);
+        if(i) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

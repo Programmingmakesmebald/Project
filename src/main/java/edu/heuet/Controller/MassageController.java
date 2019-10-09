@@ -1,7 +1,7 @@
 package edu.heuet.Controller;
 
 import edu.heuet.Pojo.Massage;
-import edu.heuet.Service.TestService;
+import edu.heuet.Service.MassageService;
 import edu.heuet.Util.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/test")
-public class TestController {
+@RequestMapping("/massage")
+public class MassageController {
     @Autowired
-    TestService testService;
+    MassageService massageService;
 
     @RequestMapping("/CreateMassage")
     @ResponseBody
@@ -26,15 +26,30 @@ public class TestController {
         massage.setSender(userid);
         massage.setSendtime(System.currentTimeMillis());
         massage.setInforid(TimeUtil.getOrderId());
-        testService.createMassage(massage);
+        massageService.createMassage(massage);
         return "success";
+    }
+
+    public boolean CreateMassageBySys(String msg,Integer receiver){
+        Massage massage=new Massage();
+        massage.setSender(001);
+        massage.setContent(msg);
+        massage.setMsgstate(0);
+        massage.setInforid(TimeUtil.getOrderId());
+        massage.setReceiver(receiver);
+        massage.setSendtime(System.currentTimeMillis());
+        boolean i=massageService.createMassage(massage);
+        if(i)
+            return true ;
+        else
+            return false;
     }
 
 
     @RequestMapping("/GetMassage")
     public String GetMassage(Model model, HttpSession session){
         int userid =Integer.parseInt(session.getAttribute("UserId").toString());
-        List<Massage> massages= testService.getMassage(userid);
+        List<Massage> massages= massageService.getMassage(userid);
         List<Massage> massages1=new ArrayList<>();
         for (Massage m:massages) {
             String time=TimeUtil.changeCToTime(m.getSendtime());

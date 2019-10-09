@@ -89,4 +89,11 @@
 
 
     </select>
+
+    <update id="changeState" parameterType="java.lang.Integer">
+        update bookinfo
+        set
+        bookstate=#{state}
+        where bookid=#{bookId}
+    </update>
 </mapper>
