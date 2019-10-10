@@ -30,7 +30,7 @@
     <%i++;%>
 </c:forEach>
 <script  src="/massage/js/StateJs.js" charset="UTF-8" type="application/javascript"></script>
-<script src="/massage/js/jquery-3.4.0.min.js" type="application/javascript" charset="UTF-8"></script>
+<%--<script src="/massage/js/jquery-3.4.0.min.js" type="application/javascript" charset="UTF-8"></script>--%>
 
 
 </body>

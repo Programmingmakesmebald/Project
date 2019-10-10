@@ -20,5 +20,11 @@ out.print(session.getAttribute("UserName"));
 <a href="/jsp/buy-sell/sell.jsp">我要卖书</a>
 <br/>
 <a href="/cart/showCartByPage"> 查看我的购物车</a>
+
+
+<br>
+<a href="/order/selectOrdersByState">我的订单</a><br><br>
+<a href="/book/SelectByState">我的售书</a><br>
+<a href="/massage/GetMassage">我的消息</a>
 </body>
 </html>

@@ -40,6 +40,21 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
+    public List<OrderInfo> selectOrderByState(Integer buyer, Integer state) {
+        return orderMapper.selectOrderByState(buyer,state);
+    }
+
+    @Override
+    public boolean ChangeOrderStateByBookId(Integer bookId, Integer state) {
+        return orderMapper.ChangeOrderStateByBookId(bookId,state);
+    }
+
+    @Override
+    public OrderInfo selectOrdersByBookId(Integer bookId) {
+        return orderMapper.selectOrdersByBookId(bookId);
+    }
+
+    @Override
     public List<Integer> selectSellers(Long orderId) {
         return orderMapper.selectSellers(orderId);
     }

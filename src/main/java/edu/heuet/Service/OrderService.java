@@ -16,4 +16,10 @@ public interface OrderService {
     boolean ChangeOrderState(Long orderId, int i);
 
     List<Integer> selectSellers(Long orderId);
+
+    List<OrderInfo> selectOrderByState(Integer buyer, Integer state);
+
+    boolean ChangeOrderStateByBookId(Integer bookId, Integer state);
+
+    OrderInfo selectOrdersByBookId(Integer bookId);
 }

@@ -17,4 +17,8 @@ public interface BookService {
     List<BookInfo> selectByState(Integer userid, Integer state);
 
     boolean changeState(Integer bookId, Integer state);
+
+    Integer selectByIdToOrders(Integer bookId);
+
+    void changeOrderState(Integer bookId, Integer state);
 }

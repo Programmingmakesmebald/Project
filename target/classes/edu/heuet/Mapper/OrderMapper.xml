@@ -27,4 +27,45 @@
     <select id="selectOrderByBuyer" resultType="edu.heuet.Pojo.OrderInfo" parameterType="int">
         select * from orders where Buyer=#{orderInfo.Buyer}
     </select>
+
+
+    <update id="ChangeOrderState" >
+        update orders set
+        OrderState=#{state}
+        where
+        OrderId=#{OrderId}
+    </update>
+    <update id="ChangeBookState">
+        update bookinfo set
+        bookstate=#{state}
+        where
+            bookid in (select orders.BookId from orders where OrderId=#{OrderId} )
+    </update>
+    <select id="selectSellers" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        select Seller from orders where OrderId=#{orderId}
+    </select>
+
+    <select id="selectOrderByState" resultType="edu.heuet.Pojo.OrderInfo" parameterType="java.lang.Integer">
+        select * from orders
+        <where>
+            <if test="state==4">
+                Buyer=#{Buyer}
+            </if>
+            <if test="state!=4">
+                And Buyer=#{Buyer}
+                AND OrderState=#{state}
+            </if>
+        </where>
+    </select>
+
+
+    <update id="ChangeOrderStateByBookId" parameterType="java.lang.Integer">
+        update orders set OrderState=#{state} where BookId=#{BookId}
+    </update>
+
+    <select id="selectOrdersByBookId" resultType="edu.heuet.Pojo.OrderInfo" parameterType="java.lang.Integer">
+        select * from orders where BookId=#{BookId}
+    </select>
+
+
 </mapper>

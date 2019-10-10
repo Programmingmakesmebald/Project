@@ -19,4 +19,10 @@ public interface OrderMapper {
     void ChangeBookState(@Param("OrderId")Long OrderId, @Param("state") int state);/** 改变图书状态*/
 
     List<Integer> selectSellers(Long orderId);
+
+    List<OrderInfo> selectOrderByState(@Param("Buyer") Integer buyer,@Param("state") Integer state);
+
+    boolean ChangeOrderStateByBookId(@Param("BookId") Integer bookId,@Param("state") Integer state);
+
+    OrderInfo selectOrdersByBookId(Integer bookId);
 }

@@ -8,13 +8,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("massageService")
 public class MassageServiceImp implements MassageService {
     @Autowired
     MassageMapper massageMapper;
 
     public boolean createMassage(Massage massage) {
-        return massageMapper.createMassage(massage);
+        try {
+            System.out.println("1111111111111111111111");
+            return massageMapper.createMassage(massage);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override

@@ -15,9 +15,9 @@
             图书名称：<input type="text"  name="BookName"   ><br>
             图书价格：<input type="text"  name="Price"      ><br>
             图书类别：<br>
-                      <input type="radio" name="TypeId"     value="1" checked>语文
-                      <input type="radio" name="TypeId"     value="2">数学
-                      <input type="radio" name="TypeId"     value="3">英语<br>
+                      <input type="radio" name="TypeId"     value="101" checked>语文
+                      <input type="radio" name="TypeId"     value="102">数学
+                      <input type="radio" name="TypeId"     value="103">英语<br>
             图书简介：<input type="text"  name="BookText"   ><br>
             添加图片：<input type="file"  name="BookPicture" accept="image/*" multiple="multiple"><br>
             <input type="submit" value="发布"><br/><br>

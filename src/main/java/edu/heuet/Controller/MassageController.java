@@ -19,30 +19,26 @@ public class MassageController {
     @Autowired
     MassageService massageService;
 
-    @RequestMapping("/CreateMassage")
-    @ResponseBody
-    public String CreateMassage(Massage massage,HttpSession session, Model model){
-        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
-        massage.setSender(userid);
-        massage.setSendtime(System.currentTimeMillis());
-        massage.setInforid(TimeUtil.getOrderId());
-        massageService.createMassage(massage);
-        return "success";
-    }
+//    @RequestMapping("/CreateMassage")
+//    @ResponseBody
+//    public String CreateMassage(Massage massage,HttpSession session, Model model){
+//        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
+//        massage.setSender(userid);
+//        massage.setSendtime(System.currentTimeMillis());
+//        massage.setInforid(TimeUtil.getOrderId());
+//        massageService.createMassage(massage);
+//        return "success";
+//    }
 
-    public boolean CreateMassageBySys(String msg,Integer receiver){
+    public boolean CreateMassageBySys(String msg,Integer receiver,MassageService massageService){
         Massage massage=new Massage();
-        massage.setSender(001);
+        massage.setSender(110);
         massage.setContent(msg);
         massage.setMsgstate(0);
         massage.setInforid(TimeUtil.getOrderId());
         massage.setReceiver(receiver);
         massage.setSendtime(System.currentTimeMillis());
-        boolean i=massageService.createMassage(massage);
-        if(i)
-            return true ;
-        else
-            return false;
+        return massageService.createMassage(massage);
     }
 
 
@@ -57,6 +53,6 @@ public class MassageController {
             massages1.add(m);
         }
         model.addAttribute("massages",massages1);
-        return "massage/receiver";
+        return "massage/massages";
     }
 }

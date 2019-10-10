@@ -46,9 +46,12 @@ public class UserController {
         return s;
     }
 
-
-
-
+    /**退出登录**/
+    @RequestMapping("/unlogin")
+    public String Unlogin(HttpSession session){
+        session.invalidate();
+        return "/index/index";
+    }
 
 
 

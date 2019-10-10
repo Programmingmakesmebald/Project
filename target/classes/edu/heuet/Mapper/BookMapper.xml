@@ -96,4 +96,14 @@
         bookstate=#{state}
         where bookid=#{bookId}
     </update>
+
+
+    <select id="selectByIdToOrders" resultType="java.lang.Integer">
+        select Buyer from orders where BookId=#{BookId}
+    </select>
+
+
+    <update id="changeOrderState" >
+        update orders set OrderState=#{state} where BookId=#{BookId}
+    </update>
 </mapper>

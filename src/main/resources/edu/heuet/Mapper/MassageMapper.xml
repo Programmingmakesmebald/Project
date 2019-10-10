@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.heuet.Mapper.MassageMapper">
-    <insert id="createMassage" parameterType="edu.heuet.Pojo.Massage">
+    <insert id="createMassage" parameterType="edu.heuet.Pojo.Massage" >
         insert into
         massage(inforid, sender, receiver, sendtime, content,msgstate)
         values(#{inforid},#{sender},#{receiver},#{sendtime},#{content},#{msgstate})

@@ -10,6 +10,7 @@ import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.OrderInfo;
 
 import edu.heuet.Pojo.OrderPay;
+import edu.heuet.Service.MassageService;
 import edu.heuet.Service.OrderService;
 import edu.heuet.Util.TimeUtil;
 
@@ -19,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,6 +36,10 @@ import java.util.Map;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private MassageController massageController;
+    @Autowired
+    private MassageService massageService;
 
     private OrderPay globalOrderPay;
     @RequestMapping("/createOrder")        /*** 测试创建订单**/
@@ -92,7 +98,7 @@ public class OrderController {
         orderPay.setPrice(price);
         orderPay.setBookName(bookInfos.get(0).getBookName()+"···");
         orderPay.setBookText(bookInfos.get(0).getBookText()+"·······");
-        orderService.ChangeOrderState(orderPay.getOrderId(),1);
+        orderService.ChangeOrderState(orderPay.getOrderId(),0);
         globalOrderPay=orderPay;
         return orderPay;
     }
@@ -128,10 +134,10 @@ public class OrderController {
 
     @RequestMapping("/pay")  /**支付完成后请求路径**/
     public String  test1(String out_trade_no, Double total_amount, Model model,HttpSession session) {
-        boolean i=orderService.ChangeOrderState(globalOrderPay.getOrderId(),2);
+        boolean i=orderService.ChangeOrderState(globalOrderPay.getOrderId(),1);
         List<Integer>  Sellers=orderService.selectSellers(globalOrderPay.getOrderId());
         for (Integer seller:Sellers) {
-            new MassageController().CreateMassageBySys(session.getAttribute("UserName")+":购买了你的图书请尽快发货哦！",seller);
+            massageController.CreateMassageBySys(session.getAttribute("UserName")+":购买了你的图书请尽快发货哦！",seller,massageService);
         }
         System.out.println("支付完成！");
         model.addAttribute("money", total_amount);
@@ -163,11 +169,26 @@ public class OrderController {
         return "/Order_admin/selectOrder";
     }
 
+    @RequestMapping("/ChangeOrderStateByBookId")
+    @ResponseBody
+    public boolean ChangeOrderStateByBookId(Integer BookId,Integer state){
+        boolean i=new BookController().ChangeState(BookId,state);
+        state++;
+        OrderInfo orderInfo=orderService.selectOrdersByBookId(BookId);
+        massageController.CreateMassageBySys("您的购买的商品："+BookId+"已经完成订单，欢迎您下次光临！",orderInfo.getBuyer(),massageService);
+        massageController.CreateMassageBySys("您的商品："+BookId+"已经出售完成！",orderInfo.getSeller(),massageService);
+        return orderService.ChangeOrderStateByBookId(BookId,state);
+    }
+
+
+
 
     @RequestMapping("/selectOrdersByState")
-        public String  selectOrdersByState(Model model,Integer State,HttpSession session){
-
-        return "";
+        public String  selectOrdersByState(Model model,@RequestParam(value = "State",defaultValue = "4") Integer State,HttpSession session){
+            Integer Buyer=Integer.parseInt(session.getAttribute("UserId").toString());
+            List<OrderInfo> orderInfos=orderService.selectOrderByState(Buyer,State);
+            model.addAttribute("orderInfos",orderInfos);
+        return "orderinfo/myOrder";
     }
 
 }

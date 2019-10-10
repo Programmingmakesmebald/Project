@@ -100,4 +100,14 @@ public class BookServiceImp implements BookService {
     public boolean changeState(Integer bookId, Integer state) {
         return bookMapper.changeState(bookId,state);
     }
+
+    @Override
+    public Integer selectByIdToOrders(Integer bookId) {
+        return bookMapper.selectByIdToOrders(bookId);
+    }
+
+    @Override
+    public void changeOrderState(Integer bookId, Integer state) {
+        bookMapper.changeOrderState(bookId,state);
+    }
 }

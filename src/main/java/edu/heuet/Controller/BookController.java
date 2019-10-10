@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Service.BookService;
+import edu.heuet.Service.MassageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.awt.print.Book;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +30,10 @@ public class BookController {
     private BookInfo bookInfo;
     @Autowired
     private BookService bookService;//图书的业务逻辑接口
-
+    @Autowired
+    private MassageController massageController;
+    @Autowired
+    private MassageService massageService;
     public static List<BookInfo> ShoppingOrder;
     //卖书的控制方法
     @RequestMapping("/sell")
@@ -168,9 +173,8 @@ public class BookController {
 
     @RequestMapping("/SelectByState")/**通过状态查询图书信息*/
     public String SelectByState(@RequestParam(value="state",defaultValue ="4") Integer state,HttpSession session,Model model){
-//        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
-
-        List<BookInfo> bookInfos=bookService.selectByState(14,state);
+        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
+        List<BookInfo> bookInfos=bookService.selectByState(userid,state);
         model.addAttribute("bookInfos",bookInfos);
         return "massage/mybook";
     }
@@ -178,10 +182,15 @@ public class BookController {
     @RequestMapping("/changeState")/*** 改变图书状态***/
     @ResponseBody
     public boolean ChangeState(@RequestParam(value = "BookId") Integer BookId ,@RequestParam(value = "state") Integer state){
+
         state++;
         System.out.println("111111111111111");
         boolean i=bookService.changeState(BookId,state);
         if(i) {
+            if(state==2){
+                bookService.changeOrderState(BookId,state);
+                massageController.CreateMassageBySys("您购买的商品："+ BookId+"，已发货",bookService.selectByIdToOrders(BookId),massageService);
+            }
             return true;
         }else{
             return false;

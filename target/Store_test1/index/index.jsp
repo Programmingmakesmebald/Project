@@ -605,12 +605,12 @@
                     <span id=""><span class="hi hi_none">欢迎光临小xun,
                     <%if(session.getAttribute("user")!=null){
                         out.print(session.getAttribute("UserName"));
+                    %> &nbsp; <span><a href="/user/unlogin">退出</a></span><%
                     }else {
                     %></span><a href="../index/login.jsp" class="login_link">登录</a><a href="../index/regist.jsp">免费注册</a></span><%
                             }%>
-
-
                 </div>
+
                 <div class="ddnewhead_area">
                     <a href="javascript:void(0);" id="area_one" class="ddnewhead_area_a" onmouseover="show_area_list();" onmouseout="hidden_area_list();">送至：<span id="curent_area"></span></a>
                     <ul class="ddnewhead_area_list" style="display: none;" id="area_list" onmouseover="this.style.display='block';" onmouseout="this.style.display='none';">

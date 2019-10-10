@@ -28,4 +28,8 @@ public interface BookMapper {
     List<BookInfo> selectByState(@Param("userid") Integer userid,@Param("state")  Integer state);
 
     boolean changeState(@Param("bookId") Integer bookId, @Param("state") Integer state);
+
+    Integer selectByIdToOrders(Integer bookId);
+
+    void changeOrderState(@Param("BookId") Integer bookId, @Param("state") Integer state);
 }
