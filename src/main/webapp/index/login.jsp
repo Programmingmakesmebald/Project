@@ -135,7 +135,11 @@
 
 </style>
 
-
+<%  if(request.getSession().getAttribute("flag")!=null){
+%><script type="text/javascript" charset="UTF-8">
+    alert("请登录！");
+</script><%
+}%>
 <div class="footer_nav_box">
     <div class="footer_nav"><a href="http://t.dangdang.com/companyInfo" target="_blank" rel="nofollow">公司简介</a><span class="sep">|</span><a
 

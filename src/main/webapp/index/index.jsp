@@ -2718,167 +2718,167 @@
         }).addImage("holder.js/1200x400?theme=new", "#test").run();
     </script>
     <!-- 推荐-->
-        <div class="main">
-            <div class="heading3">
-                <h3>为您推荐</h3>
-                <hr style="border-bottom: 5px solid #FF3333;">
-            </div>
+<%--        <div class="main">--%>
+<%--            <div class="heading3">--%>
+<%--                <h3>为您推荐</h3>--%>
+<%--                <hr style="border-bottom: 5px solid #FF3333;">--%>
+<%--            </div>--%>
 
-            <!--</div>-->
-            <div id="main">
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                        <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                            </p>
+<%--            <!--</div>-->--%>
+<%--            <div id="main">--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                        <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                            </p>--%>
 
-                    </div>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
-                <!--单个盒子-->
-                <div class="box">
-                    <!--图片盒子-->
-                    <div class="pic">
-                        <img src="/index/images/101.jpg"/>
-                        <p class="name" ddt-src="27921892">
-                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>
-                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>
-                        <p class="price"><span class="rob"><span class="sign">&yen;</span>
-                        <span class="num">89</span><span class="tail">.90</span></span>
-                    </div>
+<%--                </div>--%>
+<%--                <!--单个盒子-->--%>
+<%--                <div class="box">--%>
+<%--                    <!--图片盒子-->--%>
+<%--                    <div class="pic">--%>
+<%--                        <img src="/index/images/101.jpg"/>--%>
+<%--                        <p class="name" ddt-src="27921892">--%>
+<%--                            <a  title="吉祥纹莲花楼（当当专享签名本）" href=""  target="_blank">吉祥纹莲花楼</a></p>--%>
+<%--                        <p class="author"><span class="author_t"></span>藤萍 著，星文文化 出品</p>--%>
+<%--                        <p class="price"><span class="rob"><span class="sign">&yen;</span>--%>
+<%--                        <span class="num">89</span><span class="tail">.90</span></span>--%>
+<%--                    </div>--%>
 
-                </div>
+<%--                </div>--%>
 
-                <!--单个盒子标签复制20次...图片名字改改...-->
-            </div>
+<%--                <!--单个盒子标签复制20次...图片名字改改...-->--%>
+<%--            </div>--%>
 
-            <!--jQuery方式需要引入jQuery库,JS方式与CSS方式都要注释掉-->
-            <script src="/index/js/jquery-3.4.0.min.js" type="text/javascript"></script>
-            <!--引入JS,CSS方式注释掉-->
-            <script src="/index/js/index.js" type="text/javascript"></script>
+<%--            <!--jQuery方式需要引入jQuery库,JS方式与CSS方式都要注释掉-->--%>
+<%--            <script src="/index/js/jquery-3.4.0.min.js" type="text/javascript"></script>--%>
+<%--            <!--引入JS,CSS方式注释掉-->--%>
+<%--            <script src="/index/js/index.js" type="text/javascript"></script>--%>
 
 
 
-                    <div  class="book_parters "  name="图书馆首：战略合作伙伴_2" dd_name="战略合作伙伴"  ddt-area="403770" ddt-floor="403770" ddt-expose="on" >
-       <div id='component_403770'></div>
-</div><div class="spacer c_spacer"></div><div  class="book_1ad "  name="图书馆首：底部通栏广告_3" dd_name="底通"  ddt-area="403771" ddt-floor="403771" ddt-expose="on" ><div id='component_403771'></div></div><div class="spacer c_spacer"></div><div  class="book_returntop_area "  name="图书馆首：回到顶部_4" dd_name="问卷调查"  ddt-area="403772" ddt-floor="403772" ddt-expose="on" >
-        <div id='component_403772'></div>
-        <div  class="con book_yjdc"     >
-        <a       nname="book-65152-9156_4-503233_1" href="http://survey.dangdang.com/html/2488.html" target="_blank" title="新版调研"  class="" ddt-pit="1" ddt-src="http://survey.dangdang.com/html/2488.html" dd_name="有奖调查_1">
-    新版调研                        </a>
-</div><div  class="con book_returntop"     ><a href=javascript:void(0);  ddt-pit='1' ddt-src=javascript:void(0); dd_name=回到顶部>返回顶部</a></div></div><div class="spacer c_spacer"></div>
+<%--                    <div  class="book_parters "  name="图书馆首：战略合作伙伴_2" dd_name="战略合作伙伴"  ddt-area="403770" ddt-floor="403770" ddt-expose="on" >--%>
+<%--       <div id='component_403770'></div>--%>
+<%--</div><div class="spacer c_spacer"></div><div  class="book_1ad "  name="图书馆首：底部通栏广告_3" dd_name="底通"  ddt-area="403771" ddt-floor="403771" ddt-expose="on" ><div id='component_403771'></div></div><div class="spacer c_spacer"></div><div  class="book_returntop_area "  name="图书馆首：回到顶部_4" dd_name="问卷调查"  ddt-area="403772" ddt-floor="403772" ddt-expose="on" >--%>
+<%--        <div id='component_403772'></div>--%>
+<%--        <div  class="con book_yjdc"     >--%>
+<%--        <a       nname="book-65152-9156_4-503233_1" href="http://survey.dangdang.com/html/2488.html" target="_blank" title="新版调研"  class="" ddt-pit="1" ddt-src="http://survey.dangdang.com/html/2488.html" dd_name="有奖调查_1">--%>
+<%--    新版调研                        </a>--%>
+<%--</div><div  class="con book_returntop"     ><a href=javascript:void(0);  ddt-pit='1' ddt-src=javascript:void(0); dd_name=回到顶部>返回顶部</a></div></div><div class="spacer c_spacer"></div>--%>
 
-    <div class="spacer c_spacer"></div></div></div><style></style>
+<%--    <div class="spacer c_spacer"></div></div></div><style></style>--%>
 <script type="text/javascript" src="http://book.dangdang.com/Standard/Framework/Extend/hosts/js/jquery/lazyload181.js"></script>
 <script type="text/javascript" src="http://book.dangdang.com/Standard/Framework/Extend/hosts/js/jquery/jquery.imgmask.js"></script>
 <script type="text/javascript" src="http://book.dangdang.com/Standard/Framework/Extend/hosts/js/mix.js"></script>
@@ -3195,7 +3195,12 @@
         </div>
     </div>
 </div>
-<script src="/index/js/shoppingNum.js" type="application/javascript" charset="UTF-8"> </script>
+
+<% if(session.getAttribute("user")!=null){%>
+    <script src="/index/js/shoppingNum.js" type="application/javascript" charset="UTF-8"> </script>
+        <%}else {%>
+    <script charset="UTF-8" type="text/javascript" > function $(){ document.getElementById("shoppingcount").innerHTML="0"; }
+    </script> <%}%>
 <script src="//static.dangdang.com/js/login/check_snbrowse.js?20190919" type="text/javascript"></script>
 <script  type="text/javascript">login_session.browsePageOperate();</script>
 <script type="text/javascript" src="//click.dangdang.com/js_tracker.js?20190919"></script>
