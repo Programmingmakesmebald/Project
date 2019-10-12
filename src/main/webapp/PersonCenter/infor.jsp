@@ -81,7 +81,7 @@
 				</a>
 			</div>
 			<div class="ddnew_order">
-				<a target="_blank" href="/PersonCenter/order.html" name="我的订单" dd_name="我的订单" rel="nofollow">我的订单
+				<a target="_blank" href="/PersonCenter/myorder.jsp" name="我的订单" dd_name="我的订单" rel="nofollow">我的订单
 					<b id="unpaid_num" style="color:#ff2832;font: bold 12px Arial;"></b>
 				</a>
 			</div>
@@ -122,9 +122,9 @@
 			<h3 class="my_menu_title"><a id="J_myhomeBtn" href="/PersonCenter/infor.jsp">个人中心</a></h3>
 			<dl>
 				<dt id="class600" name="orders">我的交易</dt>
-				<dd><a class="j-menuItem" name="myallorders" href="/PersonCenter/order.html" target="_parent">我的订单</a></dd>
+				<dd><a class="j-menuItem" name="myallorders" href="/PersonCenter/myorder.jsp" target="_parent">我的订单</a></dd>
 				<dt id="class605" name="sell">我卖的书</dt>
-				<dd><a class="j-menuItem" name="sell" href="#我卖的书" target="_parent">我卖的书</a></dd>
+				<dd><a class="j-menuItem" name="sell" href="/PersonCenter/mysell.jsp" target="_parent">我卖的书</a></dd>
 				<dt id="class620" name="account">我的钱包</dt>
 				<dd><a class="j-menuItem" name="mybalance" href="#我的余额" target="_parent">我的余额</a></dd>
 				<dt id="class630" name="selfservice">客服服务</dt>

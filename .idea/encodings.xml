@@ -2,6 +2,26 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/img/btn_bg.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/img/sevice_pic_new.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/img/waiting_m.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/img/wl_icon.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/js/pagetop2015.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/myorder.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/mysell.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/ordercss/footer_140522.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/ordercss/red_laydate.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/PersonCenter/orderjs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/book.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/css/book.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/css/modelbook.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/images/111.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/images/12.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/images/13.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/images/14.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/images/18.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/js/top.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index/xiangqing.jsp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/jsp/js/ajax.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/状态说明" charset="GBK" />
     <file url="PROJECT" charset="GBK" />

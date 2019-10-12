@@ -44,21 +44,21 @@
     <!--    静态资源处理-->
     <mvc:default-servlet-handler/>
     <!-- 如果没有配置json格式转换  一定要加上<mvc:annotation-driven/>  否则会扫描不到其他的注释-->
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/*/*"/>-->
-<!--            <mvc:mapping path="/**/*.jsp"/>-->
-<!--            <mvc:exclude-mapping path="/index/*.jsp"/>-->
-<!--            -->
-<!--            &lt;!&ndash;  登录 注册&ndash;&gt;-->
-<!--            <mvc:exclude-mapping path="/user/*"/>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*/*"/>
+            <mvc:mapping path="/**/*.jsp"/>
+            <mvc:exclude-mapping path="/index/*.jsp"/>
 
-<!--            &lt;!&ndash;    主页         &ndash;&gt;-->
-<!--            <mvc:exclude-mapping path="/book/main"/>-->
-<!--            <mvc:exclude-mapping path="/image/**/*."/>-->
-<!--            <mvc:exclude-mapping path="/jsp/BookList.jsp"/>-->
-<!--            <bean class="edu.heuet.interceptors.Session_Interceptor"/>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
+            <!--  登录 注册-->
+            <mvc:exclude-mapping path="/user/*"/>
+
+            <!--    主页         -->
+            <mvc:exclude-mapping path="/book/main"/>
+            <mvc:exclude-mapping path="/image/*.*"/>
+            <mvc:exclude-mapping path="/jsp/BookList.jsp"/>
+            <bean class="edu.heuet.interceptors.Session_Interceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
 

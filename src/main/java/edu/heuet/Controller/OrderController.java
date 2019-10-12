@@ -188,7 +188,7 @@ public class OrderController {
             Integer Buyer=Integer.parseInt(session.getAttribute("UserId").toString());
             List<OrderInfo> orderInfos=orderService.selectOrderByState(Buyer,State);
             model.addAttribute("orderInfos",orderInfos);
-        return "orderinfo/myOrder";
+        return "PersonCenter/myorder";
     }
 
 }
