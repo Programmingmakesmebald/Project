@@ -1,3 +1,6 @@
+<%@ page import="edu.heuet.Pojo.BookInfo" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -6,7 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="description" content="详情">
     <meta charset="utf-8">
-    <link href="css/book.css" rel="stylesheet" type="text/css">
+    <link href="/index/css/book.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" >
+    <script src="/bootstrap/jquery-3.4.0.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
     <script src="/??js/jquery.min.js,js/jcarousellite.min.js,js/jquery.lazyload.min.js,js/juicer.min.js,js/json2.min.js?v=7386480593" charset="gbk"></script>
 </head>
 <body>
@@ -33,15 +39,15 @@
     var reg = /\.dangdang\.com/;
     if (!window.localUrl.match(reg)) {
         var script = document.createElement("script");
-        script.src = "/js/initCookie.js";
+        script.src = "/index/js/initCookie.js";
         $("head").append(script);
     }
 </script>
 
-<script src="/js/item.js" language="javaScript"></script>
+<script src="/index/js/item.js" language="javaScript"></script>
 <script type="text/javascript">
 </script>
-<link href="css/header.css" rel="stylesheet" type="text/css">
+<link href="/index/css/header.css" rel="stylesheet" type="text/css">
 <script charset="gb2312" type="text/javascript">var width = 1; narrow = 0;</script>
 <script src="//static.dangdang.com/js/header2012/pagetop2015_0827.js?20180907" charset="gb2312" type="text/javascript"></script>
 <script src="//static.dangdang.com/js/header2012/dd.menu-aim.js?20180907" charset="gb2312" type="text/javascript"></script>
@@ -114,7 +120,7 @@
     <div id="header_end"></div>
     <!--CreateDate  2019-10-08 18:30:02--><div style="position:relative;" class="logo_line_out">
     <div class="logo_line" dd_name="搜索框">
-        <div class="logo"><img src="images/15691441038791.png" />
+        <div class="logo"><img src="/index/images/15691441038791.png" />
         </div>
         <div class="search">
             <form action="http://search.dangdang.com" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
@@ -283,14 +289,27 @@
         <div class="outlets" style="display:none" id="bread-crumb-outlets">
             <a class="o_close hidden" style="display: none;"></a>
             <a class="o_icon" href=" http://v.dangdang.com/" title="尾品汇" target="_blank" name="go_outlets">
-                <img src="images/outlets.png" alt="尾品汇">
+                <img src="/index/images/outlets.png" alt="尾品汇">
             </a>
             <a class="o_banner hidden" id="olbp" href=" http://v.dangdang.com/17862_3533_1" target="_blank" name="Go_pinpai" style="display: none;">
                 <img src="" class="J-outlets-img">
             </a>
         </div>
     </div>
-
+    <%
+        List<BookInfo> bookInfos=(List<BookInfo>) request.getAttribute("bookInfos");
+//    List<BookPicture> bookPictures=(List<BookPicture>) request.getAttribute("bookPictures");
+        int i=(int)request.getAttribute("i");
+        List<String> imageList=new ArrayList<String>();
+        BookInfo bookInfo=bookInfos.get(i);
+    %>
+    <%
+        String path=bookInfos.get(i).getPath();
+        String[] pathList=path.split(",");
+        for (String pathlist:pathList) {
+            imageList.add(pathlist);
+        }
+    %>
     <!-- 面包屑 end -->
     <!-- 图书展示区 begin -->
     <div class="product_main clearfix" dd_name="单品区域">
@@ -299,7 +318,7 @@
 
             <div class="pic" id="largePicDiv">
                 <a href="javascript:;" dd_name="大图" class="img">
-                    <img id="largePic" alt="三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！&#10;"
+                    <img id="largePic" alt="<%=bookInfo.getBookName()%>！&#10;"
                          src="http://img3m4.ddimg.cn/32/35/23579654-1_w_3.jpg"
 
                          width="320" height="320"
@@ -363,6 +382,14 @@
                     </div>
                 </div>
             </div>
+            本书图片：<br>
+            <%
+                for(String image :imageList){
+            %>
+            <img src="<%=image%>" alt="图片找不到了" width="150px" height="250px" style="display: flex;">
+            <%
+                }
+            %>
             <!-- 大图区结束 -->
         </div>
         <div class="show_info">
@@ -372,7 +399,7 @@
                     <div class="name_info" ddt-area="001">
                         <!-- 主标题 -->
                         <h1 title="三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！">
-                            <img src="images/icon_ddzy.png" class="icon_name">
+                            <img src="/index/images/icon_ddzy.png" class="icon_name">
                             三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！    </h1>
                         <!-- 副标题、促销语 -->
                         <h2>
@@ -529,7 +556,7 @@
                 <div class="service_more" id="service-more" ddt-area="004">
                     <div class="narrow_dang">
                         <a href="javascript:void(0)" class="dang" id="shop_btn">
-                            <img src="images/narrow_dang.png" width="112" height="70"/>
+                            <img src="/index/images/narrow_dang.png" width="112" height="70"/>
                         </a>
                     </div>
 
@@ -640,6 +667,7 @@
             </div>
         </div>
     </div>
+
     <script src="//static.dangdang.com/js/login/check_snbrowse.js?20191004" type="text/javascript"></script>
     <script  type="text/javascript">login_session.browsePageOperate();</script>
     <script type="text/javascript" src="//click.dangdang.com/js_tracker.js?20191004"></script>

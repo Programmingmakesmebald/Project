@@ -15,6 +15,7 @@
 		<script src="../PersonCenter/orderjs/imip.js" type="text/javascript" ></script>
 		<link href="../PersonCenter/ordercss/laydate.css" rel="stylesheet" type="text/css">
 		<link href="../PersonCenter/ordercss/red_laydate.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/PersonCenter/css/order_info.css" type="text/css">
 	</head>
 	<body>
 		<link href="../PersonCenter/ordercss/mydd_head.css" rel="stylesheet" type="text/css">
@@ -136,9 +137,9 @@
 					</h3>
 					<dl>
 						<dt id="class600" name="orders">我的交易</dt>
-						<dd><a class="j-menuItem" name="myallorders" href="myorder.jsp" target="_parent"><span style="color: red;">我的订单</span></a></dd>
+						<dd><a class="j-menuItem" name="myallorders" href="/order/selectOrdersByState" target="_parent"><span style="color: red;">我的订单</span></a></dd>
 						<dt id="class605" name="sell">我卖的书</dt>
-						<dd><a class="j-menuItem" name="sell" href="mysell.jsp" target="_parent">我卖的书</a></dd>
+						<dd><a class="j-menuItem" name="sell" href="/book/SelectByState" target="_parent">我卖的书</a></dd>
 						<dt id="class620" name="account">我的钱包</dt>
 						<dd><a class="j-menuItem" name="mybalance" href="#我的余额" target="_parent">我的余额</a></dd>
 						<dt id="class630" name="selfservice">客服服务</dt>
@@ -204,204 +205,274 @@
 							<span class="order_detail2">订单状态</span>
 							<span class="order_detail3">操作</span>
 						</div>
-						<div class="turn_page" id="divbody">
-							<div id="headPaging" class="con paginating clearfix" name="m1418885_pid0_t12836" style="display: block;">
-							</div>
-						</div>
+<%--						<div class="turn_page" id="divbody">--%>
+<%--							<div id="headPaging" class="con paginating clearfix" name="m1418885_pid0_t12836" style="display: block;">--%>
+<%--							</div>--%>
+<%--						</div>--%>
 					</div>
 				</div>
 
                 <div class="order_show_all">
-                    <div id="J_order_list" style="display: block;">
-                    	<div id="orderList">
-							<% int  i=1;%>
-							<c:forEach items="${orderInfos}" var="orderInfo">
-                    		<!--订单状态为已完成或取消-->
-                    		<div class="order_remind" id="div<%=i%>">
-                    			<div class="order_show order_show_special" >
-                    				<div class="order_show_head order_show_head1" style="*z-index:;">
-                    					<span>订单号：</span>
-                    					<span class="order_number" shop_id="0">
-                    						<a dd_name="订单号查看" href="#订单详情页面" class="pay1" target="_blank">${orderInfo.getOrderId()}</a>
-                    					</span>
-                    					<span class="time_order">时间:</span><span>${orderInfo.getOrderTime()}</span>
-                    					<span class="price">￥&nbsp;订单价格
-                    						<span>${orderInfo.getPrice()}</span>
-                    					</span>
-                    					<span class="online_pay">网上支付</span>
-                    					<span class="pay_person">
-                    						买家用户名
-                    					</span>
-                    					<span class="customers_service">
-                    						<a dd_name="小能" class="cim_entry customer_service" shop_id="0" data-shopid="0" data-ddshopid="0" data-orderid="38738771566" data-sourcepage="order"></a>
-                    						<span>在线客服</span>
-                    					</span>	
-                    				</div>
-                    				<div class="order_show_area" style="*z-index:108;">
-                    					<div class="pic_show_area">
-                    						<ul>
-                    							<li class="">
-                    								<a dd_name="商品快照" href="#商品详情页面链接" target="_blank" class="j_productImg">
-                    									<img src="#}">
-                    								</a>
-                    								<span class="introduce_detail j_product_detail" style="display: none; left: 98px;">
-                    									<span class="info">
-                    										<a href="#商品详情页面" class="info_introduce">商品名称</a> 
-                    										<span class="price_s">
-                    											<span class="price_num">商品价格</span>
-                    											×
-                    											<span class="number">商品数量
-																</span>
-                    										</span>
-                    									</span>
-                    								</span>
-                    							</li>
-                    						</ul>
-                    					</div>
-                    					<div class="trace_order" style="z-index:148;">
-                    						<p></p>
-                    						<p>订单状态为已完成或取消</p>
-                    						<div class="trace_order_wrap j_orderTraceWrap trace"></div>
-                    					</div>
-                    					<div class="check_order">
-                    						<ul>
-                    							<li><a dd_name="订单详情" href="订单详情页面链接" class="pay1" target="_blank">订单详情</a></li>
-                    							<li><a dd_name="删除" id="orderdeletelink_38738771566" href="#" class="pay1">删除</a></li>
-                    						</ul>
-                    					</div>
-                    				</div>
-                    			</div>
-                    		</div>
-								<%i++;%>
-							</c:forEach>
-                    		<!--订单状态为待收货-->
-                    		<div class="order_remind">
-                    			<div class="order_show order_show_special" >
-                    				<div class="order_show_head order_show_head1" style="*z-index:;">
-                    					<span>订单号：</span>
-                    					<span class="order_number" shop_id="0">
-                    						<a dd_name="订单号查看" href="#订单详情页面" class="pay1" target="_blank">订单号</a>
-                    					</span>
-                    					<span class="time_order">订单创建时间</span>
-                    					<span class="price">￥&nbsp;订单总价格
-                    						<span></span>
-                    					</span>
-                    					<span class="online_pay">网上支付</span>
-                    					<span class="pay_person">
-                    						买家用户名
-                    					</span>
-                    					<span class="customers_service">
-                    						<a dd_name="小能" class="cim_entry customer_service" shop_id="0" data-shopid="0" data-ddshopid="0" data-orderid="38738771566" data-sourcepage="order"></a>
-                    						<span>在线客服</span>
-                    					</span>	
-                    				</div>
-                    				<div class="order_show_area" style="*z-index:108;">
-                    					<div class="pic_show_area">
-                    						<ul>
-                    							<li class="">
-                    								<a dd_name="商品快照" href="#商品详情页面链接" target="_blank" class="j_productImg">
-                    									<img src="#商品图片路径">
-                    								</a>
-                    								<span class="introduce_detail j_product_detail" style="display: none; left: 98px;">
-                    									<span class="info">
-                    										<a href="#商品详情页面" class="info_introduce">商品名称</a> 
-                    										<span class="price_s">
-                    											<span class="price_num">商品价格</span>
-                    											×
-                    											<span class="number">商品数量</span>
-                    										</span>
-                    									</span>
-                    								</span>
-                    							</li>
-                    						</ul>
-                    					</div>
-                    					<div class="trace_order" style="z-index:148;">
-                    						<p></p>
-                    						<p>待收货</p>
-                    						<div class="trace_order_wrap j_orderTraceWrap trace"></div>
-                    					</div>
-                    					<div class="check_order">
-                    						<ul>
-                    							<li><a dd_name="订单详情" href="订单详情页面链接" class="pay1" target="_blank">订单详情</a></li>
-                    						</ul>
-                    					</div>
-                    				</div>
-                    			</div>
-                    		</div>
-                    		
-                    		<!--订单状态为待付款-->
-                    		<div class="order_remind">
-                    			<div class="order_show order_show_special">
-                    				<div class="order_show_head order_show_head1" style="*z-index:;">
-                    					<span>订单号：</span>
-                    					<span class="order_number" shop_id="0">
-                    						<a dd_name="订单号查看" href="#订单详情页" class="pay1" target="_blank">订单号</a>
-                    					</span>
-                    					<span class="time_order">订单时间</span>
-                    					<span class="price">￥&nbsp;订单总价
-                    						<span></span>
-                    					</span>
-                    					<span class="online_pay">网上支付</span>
-                    					<span class="pay_person">收货人姓名</span>
-                    					<span class="customers_service">
-                    						<a dd_name="小能" class="cim_entry customer_service" shop_id="0" data-shopid="0" data-ddshopid="0" data-orderid="38737618556" data-sourcepage="order"></a>
-                    						<span>在线客服</span>
-                    					</span>
-                    				</div>
-                    				<div class="order_show_area" style="*z-index:108;">
-                    					<div class="pic_show_area">
-                    						<ul>
-                    							<li class="">
-                    								<a dd_name="商品快照" href="#商品详情页" target="_blank" class="j_productImg">
-                    									<img src="#商品图片路径">
-                    								</a>
-                    								<span class="introduce_detail j_product_detail" style="left: 98px; display: none;">
-                    									<span class="info">
-                    										<a href="#商品详情页面" class="info_introduce">商品名称</a>
-                    										<span class="price_s">
-                    											<span class="price_num">商品价格</span>
-                    											×
-                    											<span class="number">商品数量</span>
-                    										</span>
-                    									</span>
-                    								</span>
-                    							</li>
-                    						</ul>
-                    					</div>
-                    					<div class="trace_order" style="z-index:148;">
-                    						<p></p>
-                    						<p>等待付款</p>
-                    						<div class="trace_order_wrap j_orderTraceWrap trace"></div>
-                    					</div>
-                    					<div class="check_order">
-                    						<ul>
-                    							<li class="pay"><a>支付</a></li>
-                    							<li>
-                    								<a dd_name="订单详情" href="#订单详情页面" class="pay1" target="_blank">订单详情</a>
-                    							</li>
-                    							<li><a dd_name="取消" class="pay1">取消</a></li> 
-                    						</ul>
-                    					</div>
-                    				</div>
-                    				<input type="hidden" id="J-cancelOrderProductIds38737618556" value="27928355">
-                    			</div>
-                    		</div>
-                    		
-                    		<!--无某类型订单时显示-->
-                    		<div class="my_collect" style="display:none;" id="noContent">
-                    			<div class="collection_box">
-                    				<div class="show_list">
-                    					<div class="none_box">
-                    						<img src="../PersonCenter/img/monkey.jpg">
-                    						<h3>您没有该类型的订单，回首页<a dd_name="列表无数据返回首页" href="#首页链接    " target="_blank">逛逛去~~</a></h3>
-                    					</div>
-                    				</div>
-                    			</div>
-                    		</div>
-                    		
 
-                    		<div id="contentPaging" class="con paginating clearfix" name="m1418885_pid0_t12836"></div>
-                    	</div>
+					<% int  i=1;%>
+					<c:forEach items="${orderInfos}" var="orderInfo">
+						<div class="order_div">
+							<div class="order_div_up">
+								<div class="order_div_id">
+									<span class="order_id">订单号:</span>
+									<span class="order_id_span" id="orderId">${orderInfo.getOrderId()}</span>
+								</div>
+								<div class="order_div_time">
+									<span class="order_time">下单时间:</span>
+									<span class="order_time_span">${orderInfo.getOrderTime()}</span>
+								</div>
+								<div class="order_div_price">
+									<span class="order_price_span">￥订单价格</span>
+								</div>
+								<div class="order_div_state">
+									订单状态
+								</div>
+								<div class="order_div_do">
+									操作
+								</div>
+							</div>
+							<div class="order_div_down">
+
+								<div class="order_div_img">
+									<img class="order_div_img" name="图书图片" src=""/>
+								</div>
+								<div class="order_div_bookinfo">
+									<div class="order_div_bookname">
+										<span class="order_div_bookname" id="bookinfo">图书名称:
+										</span>
+										<span class="order_div_bookname_content">
+											JavaEE
+										</span>
+									</div>
+									<div class="order_div_booktype">
+										<span class="order_div_booktype" id="bookinfo">图书类型:</span>
+										<span class="order_div_booktype_content">专业课—技术型</span>
+									</div>
+									<div class="order_div_booktext">
+										<span class="order_div_booktext" id="bookinfo">
+											图书简介:
+										</span>
+										<p class="order_div_booktext_content" >
+											这是一本JavaEE书，包括Spring+strus2+He....
+										</p>
+									</div>
+								</div>
+								<div class="order_div_bookprice"><span style="font-size: 15px;"> ${orderInfo.getPrice()} ￥</span></div>
+								<div class="order_div_bookstate">
+									<span style="font-size: 12px;">
+										<c:if test="${orderInfo.getOrderState()==0}">未支付</c:if>
+										<c:if test="${orderInfo.getOrderState()==1}">代发货</c:if>
+										<c:if test="${orderInfo.getOrderState()==2}">待收货</c:if>
+										<c:if test="${orderInfo.getOrderState()==3}">已完成</c:if>
+									</span>
+								</div>
+								<div class="order_div_bookdo">
+									<span style="font-size: 12px;">
+										<c:if test="${orderInfo.getOrderState()==3}"><a>删除</a></c:if>
+										<c:if test="${orderInfo.getOrderState()==0}"><a>继续支付</a></c:if>
+										<c:if test="${orderInfo.getOrderState()==2}"><a>确定收货</a></c:if>
+									</span>
+								</div>
+
+
+							</div>
+						</div>
+						<%i++;%>
+					</c:forEach>
+<%--                    	<div id="orderList">--%>
+<%--							<% int  i=1;%>--%>
+<%--							<c:forEach items="${orderInfos}" var="orderInfo">--%>
+<%--                    		<!--订单状态为已完成或取消-->--%>
+<%--                    		<div class="order_remind" id="div<%=i%>">--%>
+<%--                    			<div class="order_show order_show_special" >--%>
+<%--                    				<div class="order_show_head order_show_head1" style="*z-index:;">--%>
+<%--                    					<span>订单号：</span>--%>
+<%--                    					<span class="order_number" shop_id="0">--%>
+<%--                    						<a dd_name="订单号查看" href="#订单详情页面" class="pay1" target="_blank">${orderInfo.getOrderId()}</a>--%>
+<%--                    					</span>--%>
+<%--                    					<span class="time_order">时间:</span><span>${orderInfo.getOrderTime()}</span>--%>
+<%--                    					<span class="price">￥&nbsp;订单价格--%>
+<%--                    						<span>${orderInfo.getPrice()}</span>--%>
+<%--                    					</span>--%>
+<%--                    					<span class="online_pay">网上支付</span>--%>
+<%--                    					<span class="pay_person">--%>
+<%--                    						买家用户名--%>
+<%--                    					</span>--%>
+<%--                    					<span class="customers_service">--%>
+<%--                    						<a dd_name="小能" class="cim_entry customer_service" shop_id="0" data-shopid="0" data-ddshopid="0" data-orderid="38738771566" data-sourcepage="order"></a>--%>
+<%--                    						<span>在线客服</span>--%>
+<%--                    					</span>	--%>
+<%--                    				</div>--%>
+<%--                    				<div class="order_show_area" style="*z-index:108;">--%>
+<%--                    					<div class="pic_show_area">--%>
+<%--                    						<ul>--%>
+<%--                    							<li class="">--%>
+<%--                    								<a dd_name="商品快照" href="#商品详情页面链接" target="_blank" class="j_productImg">--%>
+<%--                    									<img src="#}">--%>
+<%--                    								</a>--%>
+<%--                    								<span class="introduce_detail j_product_detail" style="display: none; left: 98px;">--%>
+<%--                    									<span class="info">--%>
+<%--                    										<a href="#商品详情页面" class="info_introduce">商品名称</a> --%>
+<%--                    										<span class="price_s">--%>
+<%--                    											<span class="price_num">商品价格</span>--%>
+<%--                    											×--%>
+<%--                    											<span class="number">商品数量--%>
+<%--																</span>--%>
+<%--                    										</span>--%>
+<%--                    									</span>--%>
+<%--                    								</span>--%>
+<%--                    							</li>--%>
+<%--                    						</ul>--%>
+<%--                    					</div>--%>
+<%--                    					<div class="trace_order" style="z-index:148;">--%>
+<%--                    						<p></p>--%>
+<%--                    						<p>订单状态为已完成或取消</p>--%>
+<%--                    						<div class="trace_order_wrap j_orderTraceWrap trace"></div>--%>
+<%--                    					</div>--%>
+<%--                    					<div class="check_order">--%>
+<%--                    						<ul>--%>
+<%--                    							<li><a dd_name="订单详情" href="订单详情页面链接" class="pay1" target="_blank">订单详情</a></li>--%>
+<%--                    							<li><a dd_name="删除" id="orderdeletelink_38738771566" href="#" class="pay1">删除</a></li>--%>
+<%--                    						</ul>--%>
+<%--                    					</div>--%>
+<%--                    				</div>--%>
+<%--                    			</div>--%>
+<%--                    		</div>--%>
+<%--								<%i++;%>--%>
+<%--							</c:forEach>--%>
+<%--                    		<!--订单状态为待收货-->--%>
+<%--                    		<div class="order_remind">--%>
+<%--                    			<div class="order_show order_show_special" >--%>
+<%--                    				<div class="order_show_head order_show_head1" style="*z-index:;">--%>
+<%--                    					<span>订单号：</span>--%>
+<%--                    					<span class="order_number" shop_id="0">--%>
+<%--                    						<a dd_name="订单号查看" href="#订单详情页面" class="pay1" target="_blank">订单号</a>--%>
+<%--                    					</span>--%>
+<%--                    					<span class="time_order">订单创建时间</span>--%>
+<%--                    					<span class="price">￥&nbsp;订单总价格--%>
+<%--                    						<span></span>--%>
+<%--                    					</span>--%>
+<%--                    					<span class="online_pay">网上支付</span>--%>
+<%--                    					<span class="pay_person">--%>
+<%--                    						买家用户名--%>
+<%--                    					</span>--%>
+<%--                    					<span class="customers_service">--%>
+<%--                    						<a dd_name="小能" class="cim_entry customer_service" shop_id="0" data-shopid="0" data-ddshopid="0" data-orderid="38738771566" data-sourcepage="order"></a>--%>
+<%--                    						<span>在线客服</span>--%>
+<%--                    					</span>	--%>
+<%--                    				</div>--%>
+<%--                    				<div class="order_show_area" style="*z-index:108;">--%>
+<%--                    					<div class="pic_show_area">--%>
+<%--                    						<ul>--%>
+<%--                    							<li class="">--%>
+<%--                    								<a dd_name="商品快照" href="#商品详情页面链接" target="_blank" class="j_productImg">--%>
+<%--                    									<img src="#商品图片路径">--%>
+<%--                    								</a>--%>
+<%--                    								<span class="introduce_detail j_product_detail" style="display: none; left: 98px;">--%>
+<%--                    									<span class="info">--%>
+<%--                    										<a href="#商品详情页面" class="info_introduce">商品名称</a> --%>
+<%--                    										<span class="price_s">--%>
+<%--                    											<span class="price_num">商品价格</span>--%>
+<%--                    											×--%>
+<%--                    											<span class="number">商品数量</span>--%>
+<%--                    										</span>--%>
+<%--                    									</span>--%>
+<%--                    								</span>--%>
+<%--                    							</li>--%>
+<%--                    						</ul>--%>
+<%--                    					</div>--%>
+<%--                    					<div class="trace_order" style="z-index:148;">--%>
+<%--                    						<p></p>--%>
+<%--                    						<p>待收货</p>--%>
+<%--                    						<div class="trace_order_wrap j_orderTraceWrap trace"></div>--%>
+<%--                    					</div>--%>
+<%--                    					<div class="check_order">--%>
+<%--                    						<ul>--%>
+<%--                    							<li><a dd_name="订单详情" href="订单详情页面链接" class="pay1" target="_blank">订单详情</a></li>--%>
+<%--                    						</ul>--%>
+<%--                    					</div>--%>
+<%--                    				</div>--%>
+<%--                    			</div>--%>
+<%--                    		</div>--%>
+<%--                    		--%>
+<%--                    		<!--订单状态为待付款-->--%>
+<%--                    		<div class="order_remind">--%>
+<%--                    			<div class="order_show order_show_special">--%>
+<%--                    				<div class="order_show_head order_show_head1" style="*z-index:;">--%>
+<%--                    					<span>订单号：</span>--%>
+<%--                    					<span class="order_number" shop_id="0">--%>
+<%--                    						<a dd_name="订单号查看" href="#订单详情页" class="pay1" target="_blank">订单号</a>--%>
+<%--                    					</span>--%>
+<%--                    					<span class="time_order">订单时间</span>--%>
+<%--                    					<span class="price">￥&nbsp;订单总价--%>
+<%--                    						<span></span>--%>
+<%--                    					</span>--%>
+<%--                    					<span class="online_pay">网上支付</span>--%>
+<%--                    					<span class="pay_person">收货人姓名</span>--%>
+<%--                    					<span class="customers_service">--%>
+<%--                    						<a dd_name="小能" class="cim_entry customer_service" shop_id="0" data-shopid="0" data-ddshopid="0" data-orderid="38737618556" data-sourcepage="order"></a>--%>
+<%--                    						<span>在线客服</span>--%>
+<%--                    					</span>--%>
+<%--                    				</div>--%>
+<%--                    				<div class="order_show_area" style="*z-index:108;">--%>
+<%--                    					<div class="pic_show_area">--%>
+<%--                    						<ul>--%>
+<%--                    							<li class="">--%>
+<%--                    								<a dd_name="商品快照" href="#商品详情页" target="_blank" class="j_productImg">--%>
+<%--                    									<img src="#商品图片路径">--%>
+<%--                    								</a>--%>
+<%--                    								<span class="introduce_detail j_product_detail" style="left: 98px; display: none;">--%>
+<%--                    									<span class="info">--%>
+<%--                    										<a href="#商品详情页面" class="info_introduce">商品名称</a>--%>
+<%--                    										<span class="price_s">--%>
+<%--                    											<span class="price_num">商品价格</span>--%>
+<%--                    											×--%>
+<%--                    											<span class="number">商品数量</span>--%>
+<%--                    										</span>--%>
+<%--                    									</span>--%>
+<%--                    								</span>--%>
+<%--                    							</li>--%>
+<%--                    						</ul>--%>
+<%--                    					</div>--%>
+<%--                    					<div class="trace_order" style="z-index:148;">--%>
+<%--                    						<p></p>--%>
+<%--                    						<p>等待付款</p>--%>
+<%--                    						<div class="trace_order_wrap j_orderTraceWrap trace"></div>--%>
+<%--                    					</div>--%>
+<%--                    					<div class="check_order">--%>
+<%--                    						<ul>--%>
+<%--                    							<li class="pay"><a>支付</a></li>--%>
+<%--                    							<li>--%>
+<%--                    								<a dd_name="订单详情" href="#订单详情页面" class="pay1" target="_blank">订单详情</a>--%>
+<%--                    							</li>--%>
+<%--                    							<li><a dd_name="取消" class="pay1">取消</a></li> --%>
+<%--                    						</ul>--%>
+<%--                    					</div>--%>
+<%--                    				</div>--%>
+<%--                    				<input type="hidden" id="J-cancelOrderProductIds38737618556" value="27928355">--%>
+<%--                    			</div>--%>
+<%--                    		</div>--%>
+<%--                    		--%>
+<%--                    		<!--无某类型订单时显示-->--%>
+<%--                    		<div class="my_collect" style="display:none;" id="noContent">--%>
+<%--                    			<div class="collection_box">--%>
+<%--                    				<div class="show_list">--%>
+<%--                    					<div class="none_box">--%>
+<%--                    						<img src="../PersonCenter/img/monkey.jpg">--%>
+<%--                    						<h3>您没有该类型的订单，回首页<a dd_name="列表无数据返回首页" href="#首页链接    " target="_blank">逛逛去~~</a></h3>--%>
+<%--                    					</div>--%>
+<%--                    				</div>--%>
+<%--                    			</div>--%>
+<%--                    		</div>--%>
+<%--                    		--%>
+
+<%--                    		<div id="contentPaging" class="con paginating clearfix" name="m1418885_pid0_t12836"></div>--%>
+<%--                    	</div>--%>
                     	<script src="../PersonCenter/orderjs/orderList.js?20171017" type="text/javascript"></script>
                     </div>
                     <link href="../PersonCenter/ordercss/ad.css" rel="stylesheet" type="text/css">

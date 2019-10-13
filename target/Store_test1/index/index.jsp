@@ -587,9 +587,10 @@
 <div id="hd">
     <div id="tools">
         <div class="tools">
-            <div class="ddnewhead_operate" dd_name="顶链接">
-                <ul class="ddnewhead_operate_nav">
 
+            <div class="ddnewhead_operate" dd_name="顶链接">
+                <span style="font-size: 20px;font-weight: bold"><img src="/index/images/book.png" style="width:23px;height: 23px;margin-left: 20px;margin-top: 5px;"><a href="/jsp/buy-sell/sell.jsp">我要售书</a></span>
+                <ul class="ddnewhead_operate_nav">
                     <li class="hover "><a class="menu_btn" href="javascript:void(0);" style="cursor:default;" name="ddkf_0" dd_name="客户服务" id="a_bzzxchannel" onmouseover="showgaoji('a_bzzxchannel','__ddnav_bzzx');" onmouseout="hideotherchannel('a_bzzxchannel','__ddnav_bzzx');">客户服务</a>
                         <ul class="ddnewhead_gcard_list" id="__ddnav_bzzx" onmouseover="showgaoji('a_bzzxchannel','__ddnav_bzzx');" onmouseout="hideotherchannel('a_bzzxchannel','__ddnav_bzzx');">
                             <li><a target="_blank" href="" name="ddkf_2" dd_name="帮助中心">帮助中心</a></li>
@@ -600,8 +601,11 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="new_head_znx" id="znx_content" style="display:none;"></div>
+                <div class="new_head_znx" id="znx_content" style="display:none;">
+
+                </div>
                 <div class="ddnewhead_welcome" display="none;">
+                    <span><a href="/massage/GetMassage">我的消息</a></span>
                     <span id=""><span class="hi hi_none">欢迎光临小xun,
                     <%if(session.getAttribute("user")!=null){
                         out.print(session.getAttribute("UserName"));
@@ -611,46 +615,46 @@
                             }%>
                 </div>
 
-                <div class="ddnewhead_area">
-                    <a href="javascript:void(0);" id="area_one" class="ddnewhead_area_a" onmouseover="show_area_list();" onmouseout="hidden_area_list();">送至：<span id="curent_area"></span></a>
-                    <ul class="ddnewhead_area_list" style="display: none;" id="area_list" onmouseover="this.style.display='block';" onmouseout="this.style.display='none';">
-                        <li><a href="javascript:void(0);" onclick="change_area('111','北京')" num="111">北京</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('112','天津')" num="112">天津</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('113','河北')" num="113">河北</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('114','山西')" num="114">山西</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('115','内蒙古')" num="115">内蒙古</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('121','辽宁')" num="121">辽宁</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('122','吉林')" num="122">吉林</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('123','黑龙江')" num="123">黑龙江</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('131','上海')" num="131">上海</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('132','江苏')" num="132">江苏</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('133','浙江')" num="133">浙江</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('134','安徽')" num="134">安徽</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('135','福建')" num="135">福建</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('136','江西')" num="136">江西</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('137','山东')" num="137">山东</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('141','河南')" num="141">河南</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('142','湖北')" num="142">湖北</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('143','湖南')" num="143">湖南</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('144','广东')" num="144">广东</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('145','广西')" num="145">广西</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('146','海南')" num="146">海南</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('150','重庆')" num="150">重庆</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('151','四川')" num="151">四川</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('152','贵州')" num="152">贵州</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('153','云南')" num="153">云南</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('154','西藏')" num="154">西藏</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('161','陕西')" num="161">陕西</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('162','甘肃')" num="162">甘肃</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('163','青海')" num="163">青海</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('164','宁夏')" num="164">宁夏</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('165','新疆')" num="165">新疆</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('171','台湾')" num="171">台湾</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('172','香港')" num="172">香港</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('173','澳门')" num="173">澳门</a></li>
-                        <li><a href="javascript:void(0);" onclick="change_area('174','钓鱼岛')" num="174">钓鱼岛</a></li>
-                    </ul>
-                </div>
+<%--                <div class="ddnewhead_area">--%>
+<%--                    <a href="javascript:void(0);" id="area_one" class="ddnewhead_area_a" onmouseover="show_area_list();" onmouseout="hidden_area_list();">送至：<span id="curent_area"></span></a>--%>
+<%--                    <ul class="ddnewhead_area_list" style="display: none;" id="area_list" onmouseover="this.style.display='block';" onmouseout="this.style.display='none';">--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('111','北京')" num="111">北京</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('112','天津')" num="112">天津</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('113','河北')" num="113">河北</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('114','山西')" num="114">山西</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('115','内蒙古')" num="115">内蒙古</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('121','辽宁')" num="121">辽宁</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('122','吉林')" num="122">吉林</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('123','黑龙江')" num="123">黑龙江</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('131','上海')" num="131">上海</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('132','江苏')" num="132">江苏</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('133','浙江')" num="133">浙江</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('134','安徽')" num="134">安徽</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('135','福建')" num="135">福建</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('136','江西')" num="136">江西</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('137','山东')" num="137">山东</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('141','河南')" num="141">河南</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('142','湖北')" num="142">湖北</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('143','湖南')" num="143">湖南</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('144','广东')" num="144">广东</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('145','广西')" num="145">广西</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('146','海南')" num="146">海南</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('150','重庆')" num="150">重庆</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('151','四川')" num="151">四川</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('152','贵州')" num="152">贵州</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('153','云南')" num="153">云南</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('154','西藏')" num="154">西藏</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('161','陕西')" num="161">陕西</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('162','甘肃')" num="162">甘肃</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('163','青海')" num="163">青海</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('164','宁夏')" num="164">宁夏</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('165','新疆')" num="165">新疆</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('171','台湾')" num="171">台湾</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('172','香港')" num="172">香港</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('173','澳门')" num="173">澳门</a></li>--%>
+<%--                        <li><a href="javascript:void(0);" onclick="change_area('174','钓鱼岛')" num="174">钓鱼岛</a></li>--%>
+<%--                    </ul>--%>
+<%--                </div>--%>
             </div>
         </div>
     </div>

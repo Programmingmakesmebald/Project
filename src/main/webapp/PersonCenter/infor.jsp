@@ -13,6 +13,7 @@
 <link href="/PersonCenter/css/mydd_title.css" rel="stylesheet" type="text/css">
 <link href="/PersonCenter/css/mydd_leftnavi.css" rel="stylesheet" type="text/css">
 <link href="/PersonCenter/css/mydd_foot.css" rel="stylesheet" type="text/css">
+<link href="/PersonCenter/css/order_info.css" rel="stylesheet" type="text/css">
 <script type="application/javascript"></script>
 <link href="/PersonCenter/css/header_150803.css" rel="stylesheet" type="text/css">
 <script charset="gb2312" type="text/javascript">var width = 0; narrow = 1;</script>
@@ -122,9 +123,9 @@
 			<h3 class="my_menu_title"><a id="J_myhomeBtn" href="/PersonCenter/infor.jsp">个人中心</a></h3>
 			<dl>
 				<dt id="class600" name="orders">我的交易</dt>
-				<dd><a class="j-menuItem" name="myallorders" href="/PersonCenter/myorder.jsp" target="_parent">我的订单</a></dd>
+				<dd><a class="j-menuItem" name="myallorders" href="/order/selectOrdersByState" target="_parent">我的订单</a></dd>
 				<dt id="class605" name="sell">我卖的书</dt>
-				<dd><a class="j-menuItem" name="sell" href="/PersonCenter/mysell.jsp" target="_parent">我卖的书</a></dd>
+				<dd><a class="j-menuItem" name="sell" href="/book/SelectByState" target="_parent">我卖的书</a></dd>
 				<dt id="class620" name="account">我的钱包</dt>
 				<dd><a class="j-menuItem" name="mybalance" href="#我的余额" target="_parent">我的余额</a></dd>
 				<dt id="class630" name="selfservice">客服服务</dt>

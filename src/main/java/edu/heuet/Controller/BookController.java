@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Service.BookService;
 import edu.heuet.Service.MassageService;
+import edu.heuet.Util.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +49,7 @@ public class BookController {
         bookInfo.setBookName(BookName);
         bookInfo.setBookText(BookText);
         bookInfo.setBookState(1);
+        bookInfo.setBookTime(TimeUtil.getNowTimeC());
 
 
         //图片处理
@@ -95,7 +97,7 @@ public class BookController {
         map.put("bookInfos",bookInfos);
 //        map.put("bookPictures",bookPictures);
         map.put("i",i);
-        return "jsp/buy-sell/one_book";
+        return "index/book";
     }
 
 
@@ -120,7 +122,7 @@ public class BookController {
 //            b.setImagePath(paths2);
 //        }
         model.addAttribute("pagemsg",pageInfo );//回显分页数据
-        return "jsp/BookList";
+        return "index/bookinfo";
     }
 
     @RequestMapping("/mysell")
@@ -175,8 +177,14 @@ public class BookController {
     public String SelectByState(@RequestParam(value="state",defaultValue ="4") Integer state,HttpSession session,Model model){
         Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
         List<BookInfo> bookInfos=bookService.selectByState(userid,state);
-        model.addAttribute("bookInfos",bookInfos);
-        return "massage/mybook";
+        List<BookInfo> bookInfos1=new ArrayList<>();
+        for (BookInfo b :bookInfos ) {
+            String s=b.getPath().split(",")[0];
+            b.setPath(s);
+            bookInfos1.add(b);
+        }
+        model.addAttribute("bookInfos",bookInfos1);
+        return "PersonCenter/mysell";
     }
 
     @RequestMapping("/changeState")/*** 改变图书状态***/

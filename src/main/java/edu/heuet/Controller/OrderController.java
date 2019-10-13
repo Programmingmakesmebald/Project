@@ -77,7 +77,7 @@ public class OrderController {
         List<OrderInfo> orderInfos=new ArrayList<>();
         long orderId=TimeUtil.getOrderId();
         double price=0;
-        String ordertime=TimeUtil.changeTimeToC(TimeUtil.getNowTimeC());
+        String ordertime=TimeUtil.getNowTimeC();
         Integer userid= Integer.parseInt(session.getAttribute("UserId").toString());
         for (BookInfo b :bookInfos) {
             price+=b.getPrice();

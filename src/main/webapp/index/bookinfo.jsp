@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,7 @@
     <meta name="description" content="二手书上xun书" />
     <meta name="keywords" content="中国当代小说,中国当代小说类图书推荐,中国当代小说类图书正版,中国当代小说类图书价格" />
 
-    <link rel="Stylesheet" type="text/css" href="css/modelbook.css" />
+    <link rel="Stylesheet" type="text/css" href="/index/css/modelbook.css" />
     <style>
         html { font-size: 12px; color: #404040; font-family: 'Microsoft YaHei','Arial','SimSun'; }
     body, button, ul, li, ol, p, dl, dd, h1, h2, h3, h4, h5, h6, img, iframe, form, div { margin: 0; padding: 0; list-style-type: none; border: 0; }
@@ -58,7 +59,7 @@
     </style>
 </head>
 <body ddt-page=s_605253>
-<link rel="Stylesheet" type="text/css" href="css/header.css" />
+<link rel="Stylesheet" type="text/css" href="/index/css/header.css" />
 
 
 <div id="hd">
@@ -136,7 +137,7 @@
     <div id="header_end"></div>
     <div style="position:relative;" class="logo_line_out">
     <div class="logo_line" dd_name="搜索框">
-        <div class="logo"><img src="images/15691441038791.png" />
+        <div class="logo"><img src="/index/images/15691441038791.png" />
             </div>
         <div class="search">
             <form action="" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
@@ -310,7 +311,7 @@
         </ul>
     </div></div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="/index/js/jquery.min.js"></script>
 <script language="javascript">var minsize=1210;var screensize=screen.width;if (screensize<minsize){document.body.className="narrow_page"}</script>
 <script type="text/javascript">
     var skudata = {"23579654":[23579654],"24156030":[24156030],"25137790":[25137790],"26921715":[26921715],"20974282":[20974282],"25208978":[25208978],"20994167":[20994167],"25160766":[25160766],"24169745":[24169745],"25092039":[25092039],"23978773":[23978773],"24566793":[24566793],"25146931":[25146931],"25062216":[25062216],"24167579":[24167579],"24169747":[24169747],"25141265":[25141265],"24106554":[24106554],"25208541":[25208541],"27873783":[27873783],"25247347":[25247347],"25147357":[25147357],"20445588":[20445588],"24516880":[24516880],"25283803":[25283803],"27889594":[27889594],"25203037":[25203037],"20500323":[20500323],"23326299":[23326299],"23326297":[23326297],"25201595":[25201595],"24042130":[24042130],"25160767":[25160767],"24188188":[24188188],"24169854":[24169854],"24169853":[24169853],"25246372":[25246372],"24202983":[24202983],"26913843":[26913843],"25168811":[25168811],"26516309":[26516309],"25193892":[25193892],"25353527":[25353527],"23725133":[23725133],"25242482":[25242482],"24566792":[24566792],"24169749":[24169749],"25238317":[25238317],"25222017":[25222017],"23326296":[23326296],"25179435":[25179435],"27851159":[27851159],"25239540":[25239540],"23451435":[23451435],"23326298":[23326298],"21071195":[21071195],"26516307":[26516307],"25238316":[25238316],"25093095":[25093095],"25221469":[25221469]};
@@ -431,7 +432,7 @@
             <script>
                 var f_brand = {brands:{}};
             </script>
-            <script src="js/nsearch/ncategoryfilter.js?20181022"></script>
+            <script src="/index/js/nsearch/ncategoryfilter.js?20181022"></script>
             <script>
                 $('.filtrate_box .cloth_slide_btn').css({"margin-left":"-"+($('.filtrate_box .cloth_slide_btn').width())/2+"px"});
                 if(document.all){
@@ -657,17 +658,22 @@
                     <div id="search_nature_rg" dd_name="普通商品区域">
                        <!-- 详情页商品开始-->
                         <ul class="bigimg" id="component_59">
-        <li ddt-pit="1" class="line1" id="">
-            <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
+                            <c:set var="totalPages" value="${requestScope.pagemsg.totalPage}"/>
+                            <c:set var="page" value="${requestScope.pagemsg.currentPage}"/>
+                <% int k=0; %>
+
+                <c:forEach var="book" items="${requestScope.pagemsg.lists}">
+        <li ddt-pit="1" class="line1" id="1">
+            <a title="${book.getBookName()}"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="one_info/<%=k%>"  target="_blank" >
+                <img src="${book.getImagePath().get(0)}" alt='${book.getBookName()}' />
                 <p class="cool_label"></p>
             </a>
-            <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
+            <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="one_info/<%=k%>" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
             </p>
-            <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-            <p class="price" > <span class="search_now_price">&yen;46.50</span>
+            <p class="detail" >${book.getBookText()}</p>
+            <p class="price" > <span class="search_now_price">&yen;${book.getPrice()}</span>
                 <a class="search_discount" style="text-decoration:none;">定价：</a>
-                <span class="search_pre_price">&yen;93.00</span>
+                <span class="search_pre_price">&yen;${book.getPrice()*2}</span>
                 <span class="search_discount">&nbsp;(5折) </span>
                 </p>
             <div class="lable_label"><span class="new_lable" y=""></span>
@@ -678,187 +684,191 @@
                 </span>
                 <a href="" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>
         </li>
-                            <li ddt-pit="2" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="3" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="4" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="5" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="6" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="7" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="8" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="9" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
-                            <li ddt-pit="10" class="line1" id="">
-                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >
-                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />
-                                    <p class="cool_label"></p>
-                                </a>
-                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>
-                                </p>
-                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>
-                                <p class="price" > <span class="search_now_price">&yen;46.50</span>
-                                    <a class="search_discount" style="text-decoration:none;">定价：</a>
-                                    <span class="search_pre_price">&yen;93.00</span>
-                                    <span class="search_discount">&nbsp;(5折) </span>
-                                </p>
-                                <div class="lable_label"><span class="new_lable" y=""></span>
-                                </div>
-                                <p class="search_star_line" >
-                <span class="search_star_black">
-                    <span style="width: 90%;"></span>
-                </span>
-                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>
+                    <% k++;%>
+                    </c:forEach>
+<%--                        --%>
+<%--                            <li ddt-pit="2" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="3" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="4" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="5" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="6" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="7" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="8" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="9" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
+<%--                            <li ddt-pit="10" class="line1" id="">--%>
+<%--                                <a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="http://product.dangdang.com/23579654.html"  target="_blank" >--%>
+<%--                                    <img src='http://img3m4.ddimg.cn/32/35/23579654-1_b_2.jpg' alt=' 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！' />--%>
+<%--                                    <p class="cool_label"></p>--%>
+<%--                                </a>--%>
+<%--                                <p class="name" name="title" ><a title=" 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ " href="http://product.dangdang.com/23579654.html" ddclick="act=normalResult_title&pos=23579654_0_1_p" name="itemlist-title" dd_name="单品标题" target="_blank" > 三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！ </a>--%>
+<%--                                </p>--%>
+<%--                                <p class="detail" >相关推荐：三体中的物理学 《三体》的幻想源于经典物理中的三体问题，即三个体积质量相当的天体，在远离其它星系以致其它星系的引力影响可忽略不计的情况下，三个天体在互相引力的作用下互相围绕运行，其运行轨迹将产生不可预测的混沌。很多年来，数学家们一直希望能建立三体乃至多体问题的数学模型，可遗憾的是，得到的结果仅仅是三体问题在非限制条件下的不可解。刘慈欣正是基于这样的科学事实，用大胆的想象和严谨的推断，在三体星系的行星中构建了一个外星文明形态，并描绘了该文明在如同不可捉摸的命运一般的 恒纪元 与 乱纪元 [ 注 1] 的轮替中，数百次的毁灭和重生。三体的故事有着广袤的时间与空间纬度，其以明暗两条线索发展，一条描述了科学家叶文洁在目睹了文革的疯狂与愚昧之后，痛苦的思索着后工业时代对人本</p>--%>
+<%--                                <p class="price" > <span class="search_now_price">&yen;46.50</span>--%>
+<%--                                    <a class="search_discount" style="text-decoration:none;">定价：</a>--%>
+<%--                                    <span class="search_pre_price">&yen;93.00</span>--%>
+<%--                                    <span class="search_discount">&nbsp;(5折) </span>--%>
+<%--                                </p>--%>
+<%--                                <div class="lable_label"><span class="new_lable" y=""></span>--%>
+<%--                                </div>--%>
+<%--                                <p class="search_star_line" >--%>
+<%--                <span class="search_star_black">--%>
+<%--                    <span style="width: 90%;"></span>--%>
+<%--                </span>--%>
+<%--                                    <a href="http://product.dangdang.com/23579654.html?point=comment_point" target="_blank" name="itemlist-review" dd_name="单品评论" class="search_comment_num" ddclick="act=click_review_count&pos=23579654_0_1_p">889584条评论</a></p><span class="tag_box"></span><p class="search_book_author"><span><a href='http://search.dangdang.com/?key2=刘慈欣&medium=01&category_path=01.00.00.00.00.00' name='itemlist-author' dd_name='单品作者' title='刘慈欣'>刘慈欣</a></span><span > /2010-11-01</span><span>  /<a href='http://search.dangdang.com/?key=&key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00' name='P_cbs' dd_name='单品出版社' title='重庆出版社'>重庆出版社</a></span><div class="shop_button"><p class="bottom_p"><a  class='search_btn_cart ' name='Buy' dd_name='加入购物车' href='javascript:AddToShoppingCart(23579654)' ddclick='act=normalResult_addToCart&pos=23579654_0_1_p'>加入购物车</a><a class='search_btn_collect' name='collect' dd_name='加入收藏' id="" href="javascript:void(0);" name="Sc" ddclick='act=normalResult_favor&pos=23579654_0_1_p'>收藏</a></p></div>                </li>--%>
     </ul>
+
 </div>
     <script>
         $(function(){
@@ -1717,7 +1727,7 @@
                     }
                 </script>
             </div>
-            <div class="footer_copyright"><span>Copyright (C) xun书, All Rights Reserved</span><a href="" target="_blank" class="footer_img" rel="nofollow"><img src="images/111.jpg"></a><span><a
+            <div class="footer_copyright"><span>Copyright (C) xun书, All Rights Reserved</span><a href="" target="_blank" class="footer_img" rel="nofollow"><img src="/index/images/111.jpg"></a><span><a
 
                     href="" target="_blank" rel="nofollow">京ICP证041189号</a></span><span>出版物经营许可证 新出发京批字第直0673号</span></div>
         </div>

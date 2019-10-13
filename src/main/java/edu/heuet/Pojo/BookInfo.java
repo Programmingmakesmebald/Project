@@ -16,7 +16,15 @@ public class BookInfo {
     private String Path;
     private List<String> ImagePath;
     private Integer BookState;
+    private String BookTime;
 
+    public String getBookTime() {
+        return BookTime;
+    }
+
+    public void setBookTime(String bookTime) {
+        BookTime = bookTime;
+    }
 
     public Integer getBookState() {
         return BookState;

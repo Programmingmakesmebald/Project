@@ -47,7 +47,8 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*/*"/>
-            <mvc:mapping path="/**/*.jsp"/>
+            <mvc:mapping path="/*/*.jsp"/>
+            <mvc:mapping path="/*/*/*.jsp"/>
             <mvc:exclude-mapping path="/index/*.jsp"/>
 
             <!--  登录 注册-->
