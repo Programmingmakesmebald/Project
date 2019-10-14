@@ -1,5 +1,6 @@
 package edu.heuet.Mapper;
 
+import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.OrderInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -25,4 +26,6 @@ public interface OrderMapper {
     boolean ChangeOrderStateByBookId(@Param("BookId") Integer bookId,@Param("state") Integer state);
 
     OrderInfo selectOrdersByBookId(Integer bookId);
+
+    BookInfo selectBookInfos(Integer bookId);
 }

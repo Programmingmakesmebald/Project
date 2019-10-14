@@ -46,18 +46,15 @@
     <!-- 如果没有配置json格式转换  一定要加上<mvc:annotation-driven/>  否则会扫描不到其他的注释-->
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/*/*"/>
-            <mvc:mapping path="/*/*.jsp"/>
-            <mvc:mapping path="/*/*/*.jsp"/>
+            <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/index/*.jsp"/>
-
             <!--  登录 注册-->
             <mvc:exclude-mapping path="/user/*"/>
-
             <!--    主页         -->
             <mvc:exclude-mapping path="/book/main"/>
+            <mvc:exclude-mapping path="/book/one_info/*"/>
+            <mvc:exclude-mapping path="/index/**/*.*"/>
             <mvc:exclude-mapping path="/image/*.*"/>
-            <mvc:exclude-mapping path="/jsp/BookList.jsp"/>
             <bean class="edu.heuet.interceptors.Session_Interceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

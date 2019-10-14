@@ -187,7 +187,13 @@ public class OrderController {
         public String  selectOrdersByState(Model model,@RequestParam(value = "State",defaultValue = "4") Integer State,HttpSession session){
             Integer Buyer=Integer.parseInt(session.getAttribute("UserId").toString());
             List<OrderInfo> orderInfos=orderService.selectOrderByState(Buyer,State);
-            model.addAttribute("orderInfos",orderInfos);
+            List<OrderInfo> orderInfos1=new ArrayList<>();
+            for (OrderInfo o:orderInfos) {
+               BookInfo bookInfo= orderService.selectBookInfos(o.getBookId());
+                o.setBookInfo(bookInfo);
+                orderInfos1.add(o);
+            }
+            model.addAttribute("orderInfos",orderInfos1);
         return "PersonCenter/myorder";
     }
 

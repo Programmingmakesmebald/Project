@@ -40,9 +40,14 @@
 					</li>
 				</ul>
 				<div class="ddnewhead_welcome" display="none;">
-					<span id="nickname"><span class="hi">Hi,<a class="login_link"><b>用户名</b></a>
-						<a href="#" target="_self">[退出]</a></span>
-					</span>
+					<span><a href="/massage/GetMassage">我的消息</a></span>
+					<span id=""><span class="hi hi_none">欢迎光临小xun,
+                    <%if(session.getAttribute("user")!=null){
+						out.print(session.getAttribute("UserName"));
+					%> &nbsp; <span><a href="/user/unlogin">退出</a></span><%
+						}else {
+						%></span><a href="../index/login.jsp" class="login_link">登录</a><a href="../index/regist.jsp">免费注册</a></span><%
+					}%>
 				</div>
 				<div class="new_head_znx" id="znx_content" style="display:none;"></div>
 			</div>

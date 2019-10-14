@@ -1,5 +1,6 @@
 package edu.heuet.Service;
 
+import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.OrderInfo;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface OrderService {
     boolean ChangeOrderStateByBookId(Integer bookId, Integer state);
 
     OrderInfo selectOrdersByBookId(Integer bookId);
+
+    BookInfo selectBookInfos(Integer bookId);   /** 查询图书信息**/
 }

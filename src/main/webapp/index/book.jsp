@@ -71,8 +71,14 @@
                 </ul>
                 <div class="new_head_znx" id="znx_content" style="display:none;"></div>
                 <div class="ddnewhead_welcome" display="none;">
-                    <span id=""><span class="hi hi_none">欢迎光临小xun，请</span><a href="login.html" class="login_link">登录</a>
-                        <a href="regist.html">免费注册</a></span>
+                    <span><a href="/massage/GetMassage">我的消息</a></span>
+                    <span id=""><span class="hi hi_none">欢迎光临小xun,
+                    <%if(session.getAttribute("user")!=null){
+                        out.print(session.getAttribute("UserName"));
+                    %> &nbsp; <span><a href="/user/unlogin">退出</a></span><%
+                        }else {
+                        %></span><a href="../index/login.jsp" class="login_link">登录</a><a href="../index/regist.jsp">免费注册</a></span><%
+                    }%>
                 </div>
                 <div class="ddnewhead_area">
                     <a href="javascript:void(0);" id="area_one" class="ddnewhead_area_a" onmouseover="show_area_list();" onmouseout="hidden_area_list();">送至：<span id="curent_area"></span></a>
@@ -169,7 +175,7 @@
             <a href="http://search.dangdang.com/advsearch" class="search_advs" target="_blank" name="ddnav_adv_s" dd_name="高级搜索">高级搜索</a>
         </div>
         <div id="suggest_key" class="suggest_key" style="display:none;" ></div>
-        <div class="ddnew_cart"><a href="javascript:AddToShoppingCart(0);" name="购物车" dd_name="购物车"><i class="icon_card"></i>购物车<b id="cart_items_count"></b></a></div>
+        <div class="ddnew_cart"><a href="/cart/showCartByPage" name="shoppingcart" dd_name="购物车"><i class="icon_card"></i>购物车<b id="shoppingcount"></b></a></div>
         <div class="ddnew_order"><a target="_blank" href="http://myhome.dangdang.com/myOrder" name="我的订单" dd_name="我的订单" rel="nofollow">我的订单<b id="unpaid_num" style="color:#ff2832;font:bold 12px Arial;"></b></a></div>
     </div>
 </div><div class="nav_top" dd_name="一级导航条">
@@ -187,66 +193,27 @@
             <span class="new_pub_line_b"></span>
             <div class="new_pub_nav_shadow" id="menu_list">
                 <ul class="new_pub_nav" id="menulist_content">
-                    <li class="n_b first"  dd_name="常用必修"  id="li_label_1" data-submenu-id="__ddnav_sort1" data_index="1" data_key="34102" data_type="'goods'" >
-                <span class="nav" id="categoryh_1">
-                    <a name="newcate1"  dd_name="英语" id="cate_34242" href="" target="_blank">英语</a>、<a name="newcate1"  dd_name="思修" id="" href="" target="_blank">思修</a>、<a name="newcate1"  dd_name="马原" id="" href="" target="_blank">马原</a></span><span class="sign"></span>
+                    <li>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">常用必修:</span><br/>
+                        <span style="font-size: 8px;">
+                            <a href="/book/main?BookType=101">数学</a>、<a href="/book/main?BookType=102">英语</a>、<a href="/book/main?BookType=103">马原</a>、<a href="/book/main?BookType=104">毛概</a><br/>
+                            <a href="/book/main?BookType=105">高数</a>、<a href="/book/main?BookType=106">线性代数</a>、<a href="/book/main?BookType=107">概率论</a><br/>
+                            <a href="/book/main?BookType=100">其他</a></span><br/>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">专业课本:</span><br/>
+                        <span style="font-size: 8px;"><a href="/book/main?BookType=201">数学物理 </a>、<a href="/book/main?BookType=202">专业英语</a><br/>
+                            <a href="/book/main?BookType=203">政治经管</a>、<a href="/book/main?BookType=204">电子计算机</a><br/>
+                            <a href="/book/main?BookType=205">土木机械</a>、<a href="/book/main?BookType=200">其他</a></span><br/>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">休闲小说:</span><br/>
+                        <span style="font-size: 8px;"><a href="/book/main?BookType=301">言情 </a>、<a href="/book/main?BookType=302">玄幻</a>、<a href="/book/main?BookType=303">科幻</a>
+                            <a href="/book/main?BookType=300">其他</a></span><br/>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">考研考级:</span><br/>
+                        <span style="font-size: 8px;">
+                            <a href="/book/main?BookType=401">考研资料 </a>、<a href="/book/main?BookType=402">计算机二级</a><br/>
+                            <a href="/book/main?BookType=403">英语四六级</a>、<a href="/book/main?BookType=404">雅思托福</a><br/>
+                            <a href="/book/main?BookType=405">教资</a>、<a href="/book/main?BookType=406">会计</a>、<a href="/book/main?BookType=400">其他</a></span><br/>
+                        <a href="/book/main?BookType=500"> <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">其他资料</span></a>
                     </li>
-                    <li class="n_b"  dd_name="常用必修"  id="li_label_2" data-submenu-id="__ddnav_sort2" data_index="2" data_key="56262" data_type="'book'" >
-                <span class="nav" id="categoryh_2">
-                    <a name="newcate2"  dd_name="近代史" id="cate_56263" href="" target="_blank">近代史</a>、<a name="newcate2"  dd_name="毛概" id="" href="" target="_blank">毛概</a>、<a name="newcate2"  dd_name="高数" id="" href="" target="_blank">高数</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="常用必修"  id="li_label_3" data-submenu-id="__ddnav_sort3" data_index="3" data_key="55442" data_type="'goods'" >
-                <span class="nav" id="categoryh_3">
-                    <a name="newcate3"  dd_name="线性代数" id="cate_55469" href="" target="_blank">线性代数</a>、<a name="newcate3"  dd_name="概率论" id="cate_56020" href="" target="_blank">概率论</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="专业课本"  id="li_label_4" data-submenu-id="__ddnav_sort4" data_index="4" data_key="34202" data_type="'goods'" >
-                <span class="nav" id="categoryh_4">
-                    <a name="newcate4"  dd_name="数学物理" id="cate_45522" href="" target="_blank">数学物理</a>、<a name="newcate4"  dd_name="专业英语" id="cate_53062" href="" target="_blank">专业英语</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="专业课本"  id="li_label_5" data-submenu-id="__ddnav_sort5" data_index="5" data_key="34212" data_type="'goods'" >
-                <span class="nav" id="categoryh_5">
-                    <a name="newcate5"  dd_name="政治经管" id="cate_45532" href="" target="_blank">政治经管</a>、<a name="newcate5"  dd_name="电气电子" id="cate_53072" href="" target="_blank">电气电子</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="专业课本"  id="li_label_6" data-submenu-id="__ddnav_sort6" data_index="6" data_key="34232" data_type="'goods'" >
-                <span class="nav" id="categoryh_6">
-                    <a name="newcate6"  dd_name="土木机械" id="" href="" target="_blank">土木机械</a>、<a name="newcate6"  dd_name="计算机" id="" href="" target="_blank">计算机</a>、<a name="newcate6"  dd_name="其他" id="cate_45552" href="" target="_blank">其他</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="休闲小说"  id="li_label_7" data-submenu-id="__ddnav_sort7" data_index="7" data_key="34112" data_type="'goods'" >
-                <span class="nav" id="categoryh_7">
-                    <a name="newcate7"  dd_name="言情" id="cate_35772" href="" target="_blank">言情</a>、<a name="newcate7"  dd_name="都市" id="cate_35782" href="" target="_blank">都市</a>、<a name="newcate7"  dd_name="玄幻" id="cate_35792" href="" target="_blank">玄幻</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="休闲小说"  id="li_label_8" data-submenu-id="__ddnav_sort8" data_index="8" data_key="34142" data_type="'goods'" >
-                <span class="nav" id="categoryh_8">
-                    <a name="newcate8"  dd_name="科幻" id="cate_38642" href="" target="_blank">科幻</a>、<a name="newcate8"  dd_name="其他" id="cate_53032" href="" target="_blank">其他</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="考研资料"  id="li_label_9" data-submenu-id="__ddnav_sort9" data_index="9" data_key="34132" data_type="'goods'" >
-                <span class="nav" id="categoryh_9">
-                    <a name="newcate9"  dd_name="英语" id="cate_52282" href="" target="_blank">英语</a>、<a name="newcate9"  dd_name="数学" id="cate_54045" href="" target="_blank">数学</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="考研资料"  id="li_label_10" data-submenu-id="__ddnav_sort10" data_index="10" data_key="34122" data_type="'goods'" >
-                <span class="nav" id="categoryh_10">
-                    <a name="newcate10"  dd_name="政治" id="cate_37332" href="" target="_blank">政治</a>、<a name="newcate10"  dd_name="其他" id="cate_54231" href="">其他</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="考级考证"  id="li_label_11" data-submenu-id="__ddnav_sort11" data_index="11" data_key="34152" data_type="'goods'" >
-                <span class="nav" id="categoryh_11">
-                    <a name="newcate11"  dd_name="计算机二级" id="cate_40152" href="" target="_blank">计算机二级</a>、<a name="newcate11"  dd_name="英语四六级" id="cate_53794" href="" target="_blank">英语四六级</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="考级考证"  id="li_label_12" data-submenu-id="__ddnav_sort12" data_index="12" data_key="34222" data_type="'goods'" >
-                <span class="nav" id="categoryh_12">
-                    <a name="newcate12"  dd_name="雅思托福" id="cate_54859" href="" target="_blank">雅思托福</a>、<a name="newcate12"  dd_name="教师资格证" id="cate_45542" href="" target="_blank">教师资格证</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="考级考证"  id="li_label_13" data-submenu-id="__ddnav_sort13" data_index="13" data_key="34162" data_type="'goods'" >
-                <span class="nav" id="categoryh_13">
-                    <a name="newcate13"  dd_name="会计证" id="cate_41592" href="" target="_blank">会计证</a>、<a name="newcate13"  dd_name="其他" id="cate_41602" href="" target="_blank">其他</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="其他"  id="li_label_14" data-submenu-id="__ddnav_sort14" data_index="14" data_key="34172" data_type="'goods'" >
-                <span class="nav" id="categoryh_14">
-                    <a name="newcate14"  dd_name="期刊/音像" id="" href="" target="_blank">期刊/音像</a>、<a name="newcate14"  dd_name="科技生活" id="" href="" target="_blank">科技生活</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="其他"  id="li_label_15" data-submenu-id="__ddnav_sort15" data_index="15" data_key="34182" data_type="'goods'" >
-                <span class="nav" id="categoryh_15">
-                    <a name="newcate15"  dd_name="心灵鸡汤" id="" href="" target="_blank">心灵鸡汤</a>、<a name="newcate15"  dd_name="其他" id="" href="" target="_blank">其他</a></span><span class="sign"></span>
-                    </li>
+                </ul>
                 </ul>
                 <div class="new_pub_nav_pop" style="display: none;" id="__ddnav_sort1"></div>
                 <div class="new_pub_nav_pop" style="display: none;" id="__ddnav_sort2"></div>
@@ -319,11 +286,11 @@
             <div class="pic" id="largePicDiv">
                 <a href="javascript:;" dd_name="大图" class="img">
                     <img id="largePic" alt="<%=bookInfo.getBookName()%>！&#10;"
-                         src="http://img3m4.ddimg.cn/32/35/23579654-1_w_3.jpg"
+                         src="<%=imageList.get(0)%>"
 
                          width="320" height="320"
                             />
-                    <div id="moveMask" class="zoom_pup" style='position: absolute;background: url(images/zoom_pup.png);display:none'></div>
+                    <div id="moveMask" class="zoom_pup" style='position: absolute;background: url(/index/images/zoom_pup.png);display:none'></div>
                 </a>
                 <div style="display:none" id="promo-icon-tpl">
                     <script type="text/html" data-type="flash">
@@ -340,7 +307,7 @@
 
                 <div class="big_pic" style="display: none;" id="detailPicDiv">
                     <img src="http://img3m4.ddimg.cn/32/35/23579654-1_u_3.jpg"
-                         alt="三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！&#10;"
+                         alt="<%= bookInfo.getBookName()%>"
                          height="800" width="800" id="detailPic">
                 </div>
 
@@ -386,7 +353,7 @@
             <%
                 for(String image :imageList){
             %>
-            <img src="<%=image%>" alt="图片找不到了" width="150px" height="250px" style="display: flex;">
+            <img src="<%=image%>" alt="图片找不到了" width="75px" height="100px" style="float: left;margin: 10px;">
             <%
                 }
             %>
@@ -399,8 +366,8 @@
                     <div class="name_info" ddt-area="001">
                         <!-- 主标题 -->
                         <h1 title="三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！">
-                            <img src="/index/images/icon_ddzy.png" class="icon_name">
-                            三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！    </h1>
+                            <img src="" class="icon_name">
+                            <%=bookInfo.getBookName()%>:      <%=bookInfo.getBookText()%>   </h1>
                         <!-- 副标题、促销语 -->
                         <h2>
                 <span class="head_title_name" title="&nbsp;&nbsp;">
@@ -415,7 +382,14 @@
                     <!-- 出版物begin -->
                     <!-- 图书信息区 -->
                     <div class="messbox_info">
-                        <span class="t1" id="author" dd_name="作者" ddt-area="002">作者:<a href="http://search.dangdang.com/?key2=%C1%F5%B4%C8%D0%C0&medium=01&category_path=01.00.00.00.00.00"  target="_blank" dd_name="作者">刘慈欣</a></span><span class="t1" dd_name="出版社" ddt-area="003">出版社:<a href="http://search.dangdang.com/?key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00" target="_blank" dd_name="出版社">重庆出版社</a></span><span class="t1">出版时间:2010年11月&nbsp;</span>    <!-- 评论数 -->
+<%--                        <span class="t1" id="author" dd_name="作者" ddt-area="002">作者:--%>
+<%--                            <a href="http://search.dangdang.com/?key2=%C1%F5%B4%C8%D0%C0&medium=01&category_path=01.00.00.00.00.00"  target="_blank" dd_name="作者">--%>
+<%--                                刘慈欣</a>--%>
+<%--                        </span>--%>
+<%--                        <span class="t1" dd_name="出版社" ddt-area="003">出版社:--%>
+<%--                            <a href="http://search.dangdang.com/?key3=%D6%D8%C7%EC%B3%F6%B0%E6%C9%E7&medium=01&category_path=01.00.00.00.00.00" target="_blank" dd_name="出版社">重庆出版社</a>--%>
+<%--                        </span>--%>
+                        <span class="t1">上架时间:<%=bookInfo.getBookTime()%>&nbsp;</span>    <!-- 评论数 -->
                         <div class="pinglun clearfix">
                             <!-- 排名 -->
                             <span class="t1" id="pubbang" style="display:none" dd_name="图书排行榜排名"></span>
@@ -424,7 +398,7 @@
             <span class="star_box">
                 <span class="star" style="width:93%"></span>
             </span>
-            <a href="javascript:void(0)" id="comm_num_down" dd_name="评论数">894321</a>条评论
+            <a href="javascript:void(0)" id="comm_num_down" dd_name="浏览数"><%=bookInfo.getFrequency()%></a>人浏览
         </span>
                             <!--        <a href="javascript:;" class="score write_comment" id="w-comment">我要写评论</a>-->
                         </div>
@@ -448,7 +422,7 @@
                                         <span  id="dd-price-text">书价</span>
                                     </p>
                                     <p id="dd-price">
-                                        <span class="yen">&yen;</span>93.00                </p>
+                                        <span class="yen">&yen;</span><%=bookInfo.getPrice()%>                </p>
                                 </div>
 
                                 <div class="price_zhe" id="dd-zhe"></div>
@@ -462,22 +436,11 @@
 
                     <!-- 地址区 -->
                     <div class="area_info clearfix">
-                        <div class="left letter03">配送至</div>
+                        <div class="left letter03">卖家</div>
+                        <span class="2" id="geo-name" dd_name="卖家"><%=bookInfo.getSeller()%></span>
                         <div class="right" id="geo-info">
                             <div class="select_add clearfix">
-                                <span class="text" id="geo-name" dd_name="配送至">北京市东城区</span>
-                                <div class="area_pop" style="display:none;" id="geo-pop">
-                                    <a href="javascript:;" class="close"></a>
-                                    <ul class="tab" id="geo-pop-name">
-                                        <li><a href="javascript:;">北京</a></li>
-                                        <li><a href="javascript:;">北京市</a></li>
-                                        <li><a href="javascript:;">东城区</a></li>
-                                    </ul>
-                                    <ul class="clearfix list list_notaligned" style="display: none;" data-list-name="province"></ul>
-                                    <ul class="clearfix list list_notaligned" style="display: none;" data-list-name="city"></ul>
-                                    <ul class="clearfix list list_notaligned" style="display: none;" data-list-name="district"></ul>
-                                    <ul class="clearfix list list_notaligned" style="display: none;" data-list-name="town"></ul>
-                                </div>
+
                                 <b></b>
                                 免运费        </div>
                         </div>
@@ -493,13 +456,9 @@
                     <!-- 地址区end -->
                     <!-- 按钮区begin -->
                     <div class="buy_box clearfix" ddt-area="030">
-                        <div class="num">
-                            <input id="buy-num" class="text" value="1" type="text" />
-                            <a href="javascript:;" class="num_add" id="num_add" dd_name="数量加"></a>
-                            <a href="javascript:;" class="num_del num_disabled" id="num_del" dd_name="数量减"></a>
-                        </div>
                         <div class="buy_box_btn">
                             <a href="javascript:;" id="part_buy_button" class="btn btn_red" dd_name="加入购物车"><i class="cart"></i>加入购物车</a>
+                            <a href="javascript:;" id="part_buy_button" class="btn btn_red" dd_name="购买"><i class="cart"></i>购买</a>
                             <a href="javascript:;" id="gift_card_button" class="btn btn_red" dd_name="礼品卡加入购物车" style="display:none"><i class="cart"></i>加入购物车</a>
                             <a href="javascript:;" id="buy_now_button" class="btn_buy_now" dd_name="立即购买" style="display: none"></a>
                             <a href="javascript:;" id="deposit_buy_button" rel="nofollow" class="btn btn_green" dd_name="支付定金" style="display: none"></a>
@@ -667,7 +626,11 @@
             </div>
         </div>
     </div>
-
+    <% if(session.getAttribute("user")!=null){%>
+    <script src="/index/js/shoppingNum.js" type="application/javascript" charset="UTF-8"> </script>
+    <%}else {%>
+    <script charset="UTF-8" type="text/javascript" > function $(){ document.getElementById("shoppingcount").innerHTML="0"; }
+    </script> <%}%>
     <script src="//static.dangdang.com/js/login/check_snbrowse.js?20191004" type="text/javascript"></script>
     <script  type="text/javascript">login_session.browsePageOperate();</script>
     <script type="text/javascript" src="//click.dangdang.com/js_tracker.js?20191004"></script>

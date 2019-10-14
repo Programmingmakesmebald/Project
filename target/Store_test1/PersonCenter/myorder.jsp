@@ -48,13 +48,16 @@
 						</ul>
 						<div id="znx_content" class="new_head_znx" style="display: none;"></div>
 						<div class="ddnewhead_welcome" display="none;">
-							<span id="nickname">
-								<span class="hi">Hi,
-									<a class="login_link" href="../PersonCenter/infor.html" target="_blank"><b>用户名</b></a>
-									<a href="#" target="_self">[退出]</a>
-								</span>
-							</span>
+							<span><a href="/massage/GetMassage">我的消息</a></span>
+							<span id=""><span class="hi hi_none">欢迎光临小xun,
+                    <%if(session.getAttribute("user")!=null){
+						out.print(session.getAttribute("UserName"));
+					%> &nbsp; <span><a href="/user/unlogin">退出</a></span><%
+								}else {
+								%></span><a href="../index/login.jsp" class="login_link">登录</a><a href="../index/regist.jsp">免费注册</a></span><%
+							}%>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -239,14 +242,14 @@
 							<div class="order_div_down">
 
 								<div class="order_div_img">
-									<img class="order_div_img" name="图书图片" src=""/>
+									<img class="order_div_img" name="图书图片" src="${orderInfo.getBookInfo().getPath().split(",")[0]}"/>
 								</div>
 								<div class="order_div_bookinfo">
 									<div class="order_div_bookname">
 										<span class="order_div_bookname" id="bookinfo">图书名称:
 										</span>
 										<span class="order_div_bookname_content">
-											JavaEE
+											${orderInfo.getBookInfo().getBookName()}
 										</span>
 									</div>
 									<div class="order_div_booktype">
@@ -258,7 +261,7 @@
 											图书简介:
 										</span>
 										<p class="order_div_booktext_content" >
-											这是一本JavaEE书，包括Spring+strus2+He....
+											这是一本JavaEE书，包括Spring+strus2+He....${orderInfo.getBookInfo().getBookText()}
 										</p>
 									</div>
 								</div>

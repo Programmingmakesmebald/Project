@@ -5,9 +5,11 @@ import edu.heuet.Mapper.BookMapper;
 import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.PageInfo;
 import edu.heuet.Service.BookService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,9 +28,10 @@ public class BookServiceImp implements BookService {
     }
 
 
-    public PageInfo<BookInfo> findByPage(int currentPage)
+    public PageInfo<BookInfo> findByPage(int currentPage,int BookType)
     {
         HashMap<String,Object> map=new HashMap<String,Object>();
+
         PageInfo<BookInfo> pageInfo = new PageInfo<>();
 
         pageInfo.setCurrentPage(currentPage);
@@ -36,17 +39,21 @@ public class BookServiceImp implements BookService {
         int pageSize=10;
         pageInfo.setPageSize(pageSize);
 
-        int totalCount=bookMapper.counts();
+
+        map.put("BookType",BookType);
+        map.put("start",(currentPage-1)*pageSize);
+        map.put("size",pageInfo.getPageSize());
+        //封装每页显示的数据
+        List<BookInfo> lists =bookMapper.findByPage(map);
+
+
+        int totalCount=bookMapper.counts(BookType);
         pageInfo.setTotalCount(totalCount);
 
         double tC=totalCount;
         Double num=Math.ceil(tC/pageSize);
         pageInfo.setTotalPage(num.intValue());
 
-        map.put("start",(currentPage-1)*pageSize);
-        map.put("size",pageInfo.getPageSize());
-        //封装每页显示的数据
-        List<BookInfo> lists =bookMapper.findByPage(map);
         List<BookInfo> list1=new ArrayList<>();
         for( BookInfo b:lists){
             String  s=b.getPath();
@@ -77,9 +84,9 @@ public class BookServiceImp implements BookService {
     }
 
 
-    public int counts() {
-        return bookMapper.counts();
-    }
+//    public int counts() {
+//        return bookMapper.counts();
+//    }
 
     @Override
     public List<BookInfo> selectLike(BookInfo bookInfo) {

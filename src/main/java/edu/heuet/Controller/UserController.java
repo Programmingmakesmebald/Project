@@ -62,7 +62,7 @@ public class UserController {
         System.out.println(userInfo);
         UserInfo u=userService.selectUserInfo(userInfo);
         System.out.println(u);
-        if(!u.getUserId().isEmpty()){
+        if(u!=null){
             //跳转到首页
             if(userInfo.getLPassword()!=null){
                 session.setAttribute("UserName", u.getUserName());
@@ -75,10 +75,10 @@ public class UserController {
                     session.setAttribute("UserName", u.getUserName());
                     session.setAttribute("UserId", u.getUserId());
                     session.setAttribute("user",u);
-                    return "index/index";
+                    return "index/failed";
                 }else {
                     System.out.println("22222222222222222");
-                    return "jsp/register";
+                    return "index/failed";
                 }
             }
 
@@ -86,7 +86,7 @@ public class UserController {
         }else {
             //跳转到注册页面
             System.out.println("111111111111");
-            return "jsp/register";
+            return "index/failed";
         }
 
     }

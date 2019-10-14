@@ -48,20 +48,22 @@ function checkNum() {/****   检查手机号格式是否正确**/
     }
 }
 
-function addCart() {
+function addCart(BookId) {
     var xhr=new XMLHttpRequest();
     var add=document.getElementById("cartAdd");
-    var bookId=document.getElementById("BookId").value;
+    var bookId=BookId;
     xhr.open("post","/cart/addCart");
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("BookId="+bookId);
     xhr.onreadystatechange=function () {
         if(xhr.status==200 && xhr.readyState==4){
-            if(xhr.responseText==true){
-                document.getElementById("block").innerHTML="添加成功";
+            if(xhr.responseText=="true"){
+                // document.getElementById("block").innerHTML="添加成功";
+                alert("Success!");
                 add.disabled=true;
             }else {
-                document.getElementById("block").innerHTML="添加失败";
+                // document.getElementById("block").innerHTML="添加失败";
+                alert("Lost!");
             }
         }
     };

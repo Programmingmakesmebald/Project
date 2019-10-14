@@ -710,86 +710,25 @@
             <span class="new_pub_line_b"></span>
             <div class="new_pub_nav_shadow" id="menu_list">
                 <ul class="new_pub_nav" id="menulist_content">
-                    <li class="n_b first"  dd_name="图书童书"  id="li_label_1" data-submenu-id="__ddnav_sort1" data_index="1" data_key="34102" data_type="'goods'" >
-                <span class="nav" id="categoryh_1">
-                    <a name="newcate1"  dd_name="图书" id="cate_34242" href="" target="_blank">图书</a>、<a name="newcate1"  dd_name="童书" id="cate_34252" href="" target="_blank">童书</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="电子书网络文学"  id="li_label_2" data-submenu-id="__ddnav_sort2" data_index="2" data_key="56262" data_type="'book'" >
-                <span class="nav" id="categoryh_2">
-                    <a name="newcate2"  dd_name="电子书" id="cate_56263" href="" target="_blank">电子书</a>、<a name="newcate2"  dd_name="网络文学" id="cate_56484" href="" target="_blank">网络文学</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="创意文具拍卖"  id="li_label_3" data-submenu-id="__ddnav_sort3" data_index="3" data_key="55442" data_type="'goods'" >
-                <span class="nav" id="categoryh_3">
-                    <a name="newcate3"  dd_name="创意文具" id="cate_55469" href="" target="_blank">创意文具</a>、<a name="newcate3"  dd_name="拍卖" id="cate_56020" href="" target="_blank">拍卖</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="服饰内衣"  id="li_label_4" data-submenu-id="__ddnav_sort4" data_index="4" data_key="34202" data_type="'goods'" >
-                <span class="nav" id="categoryh_4">
-                    <a name="newcate4"  dd_name="服饰" id="cate_45522" href="" target="_blank">服饰</a>、<a name="newcate4"  dd_name="内衣" id="cate_53062" href="" target="_blank">内衣</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="鞋靴箱包"  id="li_label_5" data-submenu-id="__ddnav_sort5" data_index="5" data_key="34212" data_type="'goods'" >
-                <span class="nav" id="categoryh_5">
-                    <a name="newcate5"  dd_name="鞋靴" id="cate_45532" href="" target="_blank">鞋靴</a>、<a name="newcate5"  dd_name="箱包" id="cate_53072" href="" target="_blank">箱包</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="运动户外"  id="li_label_6" data-submenu-id="__ddnav_sort6" data_index="6" data_key="34232" data_type="'goods'" >
-                <span class="nav" id="categoryh_6">
-                    <a name="newcate6"  dd_name="运动户外" id="cate_45552" href="" target="_blank">运动户外</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="孕婴童"  id="li_label_7" data-submenu-id="__ddnav_sort7" data_index="7" data_key="34112" data_type="'goods'" >
-                <span class="nav" id="categoryh_7">
-                    <a name="newcate7"  dd_name="孕" id="cate_35772" href="" target="_blank">孕</a>、
-                    <a name="newcate7"  dd_name="婴" id="cate_35782" href="" target="_blank">婴</a>、
-                    <a name="newcate7"  dd_name="童" id="cate_35792" href="" target="_blank">童</a></span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="家居家纺汽车"  id="li_label_8" data-submenu-id="__ddnav_sort8" data_index="8" data_key="34142" data_type="'goods'" >
-                <span class="nav" id="categoryh_8">
-                    <a name="newcate8"  dd_name="家居" id="cate_38642" href="" target="_blank">家居</a>、
-                    <a name="newcate8"  dd_name="家纺" id="cate_53032" href="" target="_blank">家纺</a>、
-                    <a name="newcate8"  dd_name="汽车" id="cate_38662" href="" target="_blank">汽车</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="家具家装康体"  id="li_label_9" data-submenu-id="__ddnav_sort9" data_index="9" data_key="34132" data_type="'goods'" >
-                <span class="nav" id="categoryh_9">
-                    <a name="newcate9"  dd_name="家具" id="cate_52282" href="" target="_blank">家具</a>、
-                    <a name="newcate9"  dd_name="家装" id="cate_54045" href="" target="_blank">家装</a>、
-                    <a name="newcate9"  dd_name="康体" id="cate_54046" href="" target="_blank">康体</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="美妆个人护理成人"  id="li_label_10" data-submenu-id="__ddnav_sort10" data_index="10" data_key="34122" data_type="'goods'" >
-                <span class="nav" id="categoryh_10">
-                    <a name="newcate10"  dd_name="美妆" id="cate_37332" href="" target="_blank">美妆</a>、
-                    <a name="newcate10"  dd_name="个人护理" id="cate_54231" href="" target="_blank">个人护理</a>、
-                    <a name="newcate10"  dd_name="成人" id="cate_54230" href="" target="_blank">成人</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="食品茶酒生鲜"  id="li_label_11" data-submenu-id="__ddnav_sort11" data_index="11" data_key="34152" data_type="'goods'" >
-                <span class="nav" id="categoryh_11">
-                    <a name="newcate11"  dd_name="食品" id="cate_40152" href="" target="_blank">食品</a>、
-                    <a name="newcate11"  dd_name="茶酒" id="cate_53794" href="" target="_blank">茶酒</a>、
-                    <a name="newcate11"  dd_name="生鲜" id="cate_40162" href="" target="_blank">生鲜</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="腕表珠宝饰品眼镜"  id="li_label_12" data-submenu-id="__ddnav_sort12" data_index="12" data_key="34222" data_type="'goods'" >
-                <span class="nav" id="categoryh_12">
-                    <a name="newcate12"  dd_name="腕表" id="cate_54859" href="" target="_blank">腕表</a>、
-                    <a name="newcate12"  dd_name="珠宝饰品" id="cate_45542" href="" target="_blank">珠宝饰品</a>、
-                    <a name="newcate12"  dd_name="眼镜" id="cate_53122" href="" target="_blank">眼镜</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="手机数码"  id="li_label_13" data-submenu-id="__ddnav_sort13" data_index="13" data_key="34162" data_type="'goods'" >
-                <span class="nav" id="categoryh_13">
-                    <a name="newcate13"  dd_name="手机" id="cate_41592" href="" target="_blank">手机</a>、
-                    <a name="newcate13"  dd_name="数码" id="cate_41602" href="" target="_blank">数码</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="电脑办公"  id="li_label_14" data-submenu-id="__ddnav_sort14" data_index="14" data_key="34172" data_type="'goods'" >
-                <span class="nav" id="categoryh_14">
-                    <a name="newcate14"  dd_name="电脑办公" id="cate_42602" href="" target="_blank">电脑办公</a>
-                </span><span class="sign"></span>
-                    </li>
-                    <li class="n_b"  dd_name="家用电器"  id="li_label_15" data-submenu-id="__ddnav_sort15" data_index="15" data_key="34182" data_type="'goods'" >
-                <span class="nav" id="categoryh_15">
-                    <a name="newcate15"  dd_name="家用电器" id="cate_44162" href="" target="_blank">家用电器</a>
-                </span><span class="sign"></span>
+                    <li>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">常用必修:</span><br/>
+                        <span style="font-size: 8px;">
+                            <a href="/book/main?BookType=101">数学</a>、<a href="/book/main?BookType=102">英语</a>、<a href="/book/main?BookType=103">马原</a>、<a href="/book/main?BookType=104">毛概</a><br/>
+                            <a href="/book/main?BookType=105">高数</a>、<a href="/book/main?BookType=106">线性代数</a>、<a href="/book/main?BookType=107">概率论</a><br/>
+                            <a href="/book/main?BookType=100">其他</a></span><br/>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">专业课本:</span><br/>
+                        <span style="font-size: 8px;"><a href="/book/main?BookType=201">数学物理 </a>、<a href="/book/main?BookType=202">专业英语</a><br/>
+                            <a href="/book/main?BookType=203">政治经管</a>、<a href="/book/main?BookType=204">电子计算机</a><br/>
+                            <a href="/book/main?BookType=205">土木机械</a>、<a href="/book/main?BookType=200">其他</a></span><br/>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">休闲小说:</span><br/>
+                        <span style="font-size: 8px;"><a href="/book/main?BookType=301">言情 </a>、<a href="/book/main?BookType=302">玄幻</a>、<a href="/book/main?BookType=303">科幻</a>
+                            <a href="/book/main?BookType=300">其他</a></span><br/>
+                        <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">考研考级:</span><br/>
+                        <span style="font-size: 8px;">
+                            <a href="/book/main?BookType=401">考研资料 </a>、<a href="/book/main?BookType=402">计算机二级</a><br/>
+                            <a href="/book/main?BookType=403">英语四六级</a>、<a href="/book/main?BookType=404">雅思托福</a><br/>
+                            <a href="/book/main?BookType=405">教资</a>、<a href="/book/main?BookType=406">会计</a>、<a href="/book/main?BookType=400">其他</a></span><br/>
+                        <a href="/book/main?BookType=500"> <span style="font-size: 13px;font-weight: bold;margin-left: 2px;">其他资料</span></a>
                     </li>
                 </ul>
                 <div class="new_pub_nav_pop" style="display: none;" id="__ddnav_sort1"></div>

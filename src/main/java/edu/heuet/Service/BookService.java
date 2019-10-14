@@ -9,7 +9,7 @@ import java.util.List;
 public interface BookService {
     Boolean insertBookInfo(BookInfo bookInfo);//卖书
     List<BookInfo> selectBookInfo();//浏览查询
-    PageInfo<BookInfo> findByPage(int currentPage);
+    PageInfo<BookInfo> findByPage(int currentPage,int BookType);
     List<BookInfo> selectLike(BookInfo bookInfo);
 
     BookInfo selectById(Integer bookId);

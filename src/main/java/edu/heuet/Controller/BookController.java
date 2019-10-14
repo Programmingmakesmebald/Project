@@ -108,8 +108,8 @@ public class BookController {
      * */
 
     @RequestMapping("/main")
-    public String  main(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model){
-        PageInfo pageInfo =bookService.findByPage(currentPage);
+    public String  main(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,@RequestParam(value="BookType",defaultValue="0",required=false)int BookType, Model model){
+        PageInfo pageInfo =bookService.findByPage(currentPage,BookType);
 //        List<BookInfo>  booklist=pageInfo.getLists();
 //        for( BookInfo b:booklist){
 //            String  s=b.getPath();
@@ -125,16 +125,16 @@ public class BookController {
         return "index/bookinfo";
     }
 
-    @RequestMapping("/mysell")
-    public String getSellerBook(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,HttpSession session, Model model){
-        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
-//        PageInfo pageInfo=bookService.selectMySell(currentPage,userid);
-//        model.addAttribute("pagemsg",pageInfo);
-
-
-
-        return "";
-    }
+//    @RequestMapping("/mysell")
+//    public String getSellerBook(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,HttpSession session, Model model){
+//        Integer userid=Integer.parseInt(session.getAttribute("UserId").toString());
+////        PageInfo pageInfo=bookService.selectMySell(currentPage,userid);
+////        model.addAttribute("pagemsg",pageInfo);
+//
+//
+//
+//        return "";
+//    }
 
     @RequestMapping("/search")
     public String book(Model model,Map<String,Object> map,
@@ -154,7 +154,7 @@ public class BookController {
 
         map.put("pageInfo", pageInfo);
         model.addAttribute("key", key);
-        return "jsp/LikeBook";
+        return "index/bookLikes";
     }
 
 

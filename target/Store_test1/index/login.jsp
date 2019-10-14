@@ -135,7 +135,8 @@
 
 </style>
 
-<%  if(request.getSession().getAttribute("flag")!=null){
+<%  if(Integer.parseInt(request.getSession().getAttribute("flag").toString())==1){
+    request.getSession().setAttribute("flag",2);
 %><script type="text/javascript" charset="UTF-8">
     alert("请登录！");
 </script><%

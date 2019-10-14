@@ -67,5 +67,7 @@
         select * from orders where BookId=#{BookId}
     </select>
 
-
+    <select id="selectBookInfos" parameterType="java.lang.Integer" resultType="edu.heuet.Pojo.BookInfo">
+        select * from bookinfo where bookid=#{bookId}
+    </select>
 </mapper>

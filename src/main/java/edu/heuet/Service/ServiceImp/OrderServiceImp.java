@@ -1,6 +1,7 @@
 package edu.heuet.Service.ServiceImp;
 
 import edu.heuet.Mapper.OrderMapper;
+import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.OrderInfo;
 import edu.heuet.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,11 @@ public class OrderServiceImp implements OrderService {
     @Override
     public OrderInfo selectOrdersByBookId(Integer bookId) {
         return orderMapper.selectOrdersByBookId(bookId);
+    }
+
+    @Override
+    public BookInfo selectBookInfos(Integer bookId) {
+        return orderMapper.selectBookInfos(bookId);
     }
 
     @Override

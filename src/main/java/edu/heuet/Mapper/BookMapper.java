@@ -13,7 +13,7 @@ public interface BookMapper {
 
 
     List<BookInfo> findByPage(HashMap<String,Object> map);//分页操作
-    int counts();//图书总数
+    int counts(@Param("BookType") int BookType);//图书总数
     /**
      * 查询所有图书数据
      *

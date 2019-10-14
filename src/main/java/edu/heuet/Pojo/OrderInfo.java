@@ -1,6 +1,7 @@
 package edu.heuet.Pojo;
 
 import java.sql.Date;
+import java.util.List;
 
 public class OrderInfo {
     private long OrderId;
@@ -10,9 +11,15 @@ public class OrderInfo {
     private Integer OrderState;
     private Double Price;
     private String OrderTime;
+    private BookInfo bookInfo;
 
+    public BookInfo getBookInfo() {
+        return bookInfo;
+    }
 
-
+    public void setBookInfo(BookInfo bookInfo) {
+        this.bookInfo = bookInfo;
+    }
 
     public long getOrderId() {
         return OrderId;

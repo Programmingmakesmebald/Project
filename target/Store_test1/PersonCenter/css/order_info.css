@@ -1,0 +1,99 @@
+.order_div{
+    /*background: rgba(79, 86, 71, 0.45);*/
+    width: 100%;
+    height: 160px;
+    margin-top: 10px;
+}
+.order_div_up{
+    display: flex;
+    background-color: rgba(31, 64, 160, 0.12);
+    float: top;
+    height: 20%;
+}
+.order_div_down{
+    background-color: rgba(104, 104, 218, 0.07);
+    float: bottom;
+    height: 80%;
+}
+.order_div_id{
+    margin-left: 1%;
+    margin-top: 8px;
+    width:25%;
+}
+.order_div_time{
+    margin-left: 7%;
+    width:20%;
+    margin-top: 8px;
+
+}
+.order_div_price{
+    margin-left: 10%;
+    margin-top: 8px;
+  }
+.order_div_do {
+    margin-left: 12%;
+    margin-top: 8px;
+}
+.order_div_state{
+    margin-left: 6%;
+    margin-top: 8px;
+}
+.order_div_img{
+    float: left;
+    width:10%;
+    height: 100%;
+    margin-left: 2%;
+}
+img.order_div_img{
+    height: 96%;
+    width: 96%;
+    margin: 4.5%;
+}
+.order_div_bookinfo{
+    margin-top:0.6%;
+    margin-left: 4%;
+    float: left;
+    width:43% ;
+    height: 98%;
+}
+.order_div_bookname{
+    float: top;
+    height: 22%;
+    width: 100%;
+}
+.order_div_booktype{
+    height: 22%;
+    width: 100%;
+}
+.order_div_booktext{
+    height: 56%;
+    width:  100%;
+}
+span#bookinfo{
+    font-size: 13px;
+    font-weight: bold ;
+}
+.order_div_bookprice{
+    margin-top:3%;
+    float: left;
+    margin-left: 3%;
+    width: 10%;
+    height: auto;
+    text-align: center;
+}
+.order_div_bookstate{
+    margin-top:3%;
+    float: left;
+    margin-left: 1%;
+    width: 10%;
+    height: auto;
+    text-align: center;
+}
+.order_div_bookdo{
+    margin-top:3%;
+    float: left;
+    margin-left: 5%;
+    width: 10%;
+    height: auto;
+    text-align: center;
+}
