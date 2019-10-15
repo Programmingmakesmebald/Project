@@ -156,28 +156,28 @@
 						<div class="order_menu">
 							<ul class="menu_list">
 								<li class="j_menu current" statuscondition="0">
-									<a href="javascript:;" dd_name="全部售卖记录">
+									<a href="/book/SelectByState" dd_name="全部售卖记录">
 										<span class="j_menu_text">全部售卖记录</span>
 									</a>
 									<span class="number_color">&nbsp;</span>
 								</li>
 								<li class="j_menu" statuscondition="1">
-									<a href="javascript:;" dd_name="未出售">
+									<a href="/book/SelectByState?state=0" dd_name="未出售">
 										<span class="j_menu_text">未出售</span>
 									</a>
 								</li>
 								<li class="j_menu" statuscondition="7">
-									<a href="javascript:;" dd_name="待发货">
+									<a href="/book/SelectByState?state=1" dd_name="待发货">
 										<span class="j_menu_text">待发货</span>
 									</a>
 								</li>
 								<li class="j_menu" statuscondition="13">
-									<a href="javascript:;" dd_name="待收货">
+									<a href="/book/SelectByState?state=2" dd_name="待收货">
 										<span class="j_menu_text">待收货</span>
 									</a>
 								</li>
 								<li class="j_menu" statuscondition="18">
-									<a href="javascript:;" dd_name="已售出">
+									<a href="/book/SelectByState?state=3" dd_name="已售出">
 										<span class="j_menu_text">已售出</span>
 									</a>
 								</li>
@@ -254,14 +254,35 @@
 										<c:if test="${bookInfo.getBookState()==1}">待发货</c:if>
 										<c:if test="${bookInfo.getBookState()==2}">待收货</c:if>
 										<c:if test="${bookInfo.getBookState()==3}">已售出</c:if>
+										<c:if test="${bookInfo.getBookState()==-1}">已取消</c:if>
 									</span>
 								</div>
 								<div class="order_div_bookdo">
 									<span style="font-size: 12px;">
-										<c:if test="${bookInfo.getBookState()==3}"><a>删除</a></c:if>
-										<c:if test="${bookInfo.getBookState()==2}"><a style="color: #761c19;">*不可操作</a></c:if>
-										<c:if test="${bookInfo.getBookState()==0}"><a>取消上架</a></c:if>
-										<c:if test="${bookInfo.getBookState()==1}"><a>确定发货</a></c:if>
+										<c:if test="${bookInfo.getBookState()==3}"><a onclick="
+										var s=confirm('确定删除嘛？');
+										if(s){
+											window.location.href='/book/deleteBook?BookId=${bookInfo.getBookId()}';
+										}
+										">删除</a></c:if>
+										<c:if test="${bookInfo.getBookState()==2}"><a  style="color: #761c19;">*不可操作</a></c:if>
+										<c:if test="${bookInfo.getBookState()==-1}"><a  style="color: #761c19;">*已取消</a></c:if>
+										<c:if test="${bookInfo.getBookState()==0}"><a
+										onclick="
+										var s=confirm('确定取消嘛？');
+										if(s){
+											window.location.href='/book/deleteBook?BookId=${bookInfo.getBookId()}&state=${bookInfo.getBookState()}';
+										}
+										"
+										>取消上架</a></c:if>
+										<c:if test="${bookInfo.getBookState()==1}"><a
+												onclick="
+										var s=confirm('确定收货了嘛？');
+										if(s){
+											window.location.href='/book/changeState?BookId=${bookInfo.getBookId()}&state=${bookInfo.getBookState()}';
+										}
+										"
+										>确定发货</a></c:if>
 									</span>
 								</div>
 
