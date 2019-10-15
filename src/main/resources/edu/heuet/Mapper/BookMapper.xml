@@ -7,7 +7,6 @@
     <select id="selectBookInfo" parameterType="edu.heuet.Pojo.BookInfo" resultType="edu.heuet.Pojo.BookInfo">
         select * from
             booksell.bookinfo
-
     </select>
 <!--卖书-->
     <insert id="insertBookInfo" keyProperty="edu.heuet.Pojo.BookInfo">
@@ -91,6 +90,7 @@
         <where>
             <if test="state==4">
                 seller=#{userid}
+                and  bookstate in (-1,0,1,2,3)
             </if>
             <if test="state!=4">
                 and bookstate= #{state}

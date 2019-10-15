@@ -61,6 +61,11 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
+    public boolean deleteOrder(Integer bookId) {
+        return orderMapper.deleteOrder(bookId);
+    }
+
+    @Override
     public List<Integer> selectSellers(Long orderId) {
         return orderMapper.selectSellers(orderId);
     }

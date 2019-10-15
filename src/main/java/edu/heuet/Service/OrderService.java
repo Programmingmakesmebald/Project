@@ -24,5 +24,7 @@ public interface OrderService {
 
     OrderInfo selectOrdersByBookId(Integer bookId);
 
-    BookInfo selectBookInfos(Integer bookId);   /** 查询图书信息**/
+    BookInfo selectBookInfos(Integer bookId);
+
+    boolean deleteOrder(Integer bookId);   /** 查询图书信息**/
 }

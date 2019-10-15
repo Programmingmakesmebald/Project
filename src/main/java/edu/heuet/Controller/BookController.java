@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.print.Book;
 import java.io.File;
@@ -136,7 +137,7 @@ public class BookController {
 //        return "";
 //    }
 
-    @RequestMapping("/search")
+    @RequestMapping("/search") //关键字搜索
     public String book(Model model,Map<String,Object> map,
                        @RequestParam(value = "key", defaultValue = "-1") String key,
                        @RequestParam(value = "page", defaultValue = "1") Integer page) {
@@ -188,21 +189,28 @@ public class BookController {
     }
 
     @RequestMapping("/changeState")/*** 改变图书状态***/
-    @ResponseBody
-    public boolean ChangeState(@RequestParam(value = "BookId") Integer BookId ,@RequestParam(value = "state") Integer state){
+    public void ChangeState(@RequestParam(value = "BookId") Integer BookId , @RequestParam(value = "state") Integer state, HttpServletResponse response) throws IOException {
 
         state++;
         System.out.println("111111111111111");
         boolean i=bookService.changeState(BookId,state);
-        if(i) {
-            if(state==2){
-                bookService.changeOrderState(BookId,state);
-                massageController.CreateMassageBySys("您购买的商品："+ BookId+"，已发货",bookService.selectByIdToOrders(BookId),massageService);
-            }
-            return true;
-        }else{
-            return false;
+        if(state==2){
+            bookService.changeOrderState(BookId,state);
+            massageController.CreateMassageBySys("您购买的商品："+ BookId+"，已发货",bookService.selectByIdToOrders(BookId),massageService);
         }
+        response.sendRedirect("/book/SelectByState");
+
     }
+
+    @RequestMapping("/deleteBook")  /**删除图书或者取消订单*/
+    public void DeleteBook(Integer BookId,Integer state,HttpServletResponse response) throws IOException {
+        if(state==0){               /**如果状态是上架状态则将图书状态置为-1   否则置为5 删除状态**/
+            bookService.changeState(BookId,-1);
+        }else {
+            bookService.changeState(BookId,5);
+        }
+        response.sendRedirect("/book/SelectByState");
+    }
+
 
 }

@@ -28,4 +28,6 @@ public interface OrderMapper {
     OrderInfo selectOrdersByBookId(Integer bookId);
 
     BookInfo selectBookInfos(Integer bookId);
+
+    boolean deleteOrder(Integer bookId);/***删除订单**/
 }

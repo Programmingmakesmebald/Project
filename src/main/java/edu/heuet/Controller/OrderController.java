@@ -10,6 +10,7 @@ import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.OrderInfo;
 
 import edu.heuet.Pojo.OrderPay;
+import edu.heuet.Service.BookService;
 import edu.heuet.Service.MassageService;
 import edu.heuet.Service.OrderService;
 import edu.heuet.Util.TimeUtil;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,8 @@ public class OrderController {
     private MassageController massageController;
     @Autowired
     private MassageService massageService;
+    @Autowired
+    private BookService bookService;
 
     private OrderPay globalOrderPay;
     @RequestMapping("/createOrder")        /*** 测试创建订单**/
@@ -170,20 +174,31 @@ public class OrderController {
     }
 
     @RequestMapping("/ChangeOrderStateByBookId")
-    @ResponseBody
-    public boolean ChangeOrderStateByBookId(Integer BookId,Integer state){
-        boolean i=new BookController().ChangeState(BookId,state);
+    @ResponseBody    /**  通过图书改变订单状态***/
+    public void ChangeOrderStateByBookId(Integer BookId,Integer state,HttpServletResponse response) throws IOException {
+//        boolean i=new BookController().ChangeState(BookId,state);
         state++;
+        bookService.changeState(BookId,state);
         OrderInfo orderInfo=orderService.selectOrdersByBookId(BookId);
         massageController.CreateMassageBySys("您的购买的商品："+BookId+"已经完成订单，欢迎您下次光临！",orderInfo.getBuyer(),massageService);
         massageController.CreateMassageBySys("您的商品："+BookId+"已经出售完成！",orderInfo.getSeller(),massageService);
-        return orderService.ChangeOrderStateByBookId(BookId,state);
+        orderService.ChangeOrderStateByBookId(BookId,state);
+        response.sendRedirect("/order/selectOrdersByState");
+    }
+
+
+    @RequestMapping("/deleteOrder")
+    /**删除订单**/
+    public void DeleteOrderStateByBookId(@RequestParam("BookId") Integer BookId,HttpServletResponse response) throws IOException {
+        orderService.deleteOrder(BookId);
+        response.sendRedirect("/order/selectOrdersByState");
     }
 
 
 
 
-    @RequestMapping("/selectOrdersByState")
+
+    @RequestMapping("/selectOrdersByState")     /*** 查找各种订单通过状态**/
         public String  selectOrdersByState(Model model,@RequestParam(value = "State",defaultValue = "4") Integer State,HttpSession session){
             Integer Buyer=Integer.parseInt(session.getAttribute("UserId").toString());
             List<OrderInfo> orderInfos=orderService.selectOrderByState(Buyer,State);

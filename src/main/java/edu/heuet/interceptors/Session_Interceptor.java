@@ -16,12 +16,12 @@ public class Session_Interceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object user =request.getSession().getAttribute("user");
-        int flag=0;
+        int flag=0          /** 判断是否访问拦截页面**/;
         if(user==null){
             flag=1;
             request.getSession().setAttribute("flag",flag);
             LOGGER.debug("对不起您没有访问权限！");
-            response.sendRedirect("/index/login.jsp");
+            response.sendRedirect("/index/login.jsp");  /**跳转到登录页面**/
             return false;
         }
         if(user instanceof UserInfo){

@@ -9,16 +9,16 @@ import java.util.List;
 public interface BookService {
     Boolean insertBookInfo(BookInfo bookInfo);//卖书
     List<BookInfo> selectBookInfo();//浏览查询
-    PageInfo<BookInfo> findByPage(int currentPage,int BookType);
-    List<BookInfo> selectLike(BookInfo bookInfo);
+    PageInfo<BookInfo> findByPage(int currentPage,int BookType);///分页查找图书信息
+    List<BookInfo> selectLike(BookInfo bookInfo);  /** 关键字查找*/
 
-    BookInfo selectById(Integer bookId);
+    BookInfo selectById(Integer bookId);///通过BookID查找图书信息
 
-    List<BookInfo> selectByState(Integer userid, Integer state);
+    List<BookInfo> selectByState(Integer userid, Integer state);  /** 通过状态以及用户信息查找图书信息**/
 
-    boolean changeState(Integer bookId, Integer state);
+    boolean changeState(Integer bookId, Integer state);   /*** 改变图书状态**/
 
-    Integer selectByIdToOrders(Integer bookId);
+    Integer selectByIdToOrders(Integer bookId);  /** 通过图书Id查询订单号***/
 
-    void changeOrderState(Integer bookId, Integer state);
+    void changeOrderState(Integer bookId, Integer state);/** 通过图书Id改变*订单状态**/
 }

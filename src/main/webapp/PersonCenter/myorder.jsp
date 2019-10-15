@@ -164,22 +164,22 @@
 									<span class="number_color">&nbsp;</span>
 								</li>
 								<li class="j_menu" statuscondition="1">
-									<a href="/order/selectOrdersByState?state=0" dd_name="待支付">
+									<a href="/order/selectOrdersByState?State=0" dd_name="待支付">
 										<span class="j_menu_text">待支付</span>
 									</a>
 								</li>
 								<li class="j_menu" statuscondition="7">
-									<a href="/order/selectOrdersByState?state=1" dd_name="待发货">
+									<a href="/order/selectOrdersByState?State=1" dd_name="待发货">
 										<span class="j_menu_text">待发货</span>
 									</a>
 								</li>
 								<li class="j_menu" statuscondition="13">
-									<a href="/order/selectOrdersByState?state=2" dd_name="待收货">
+									<a href="/order/selectOrdersByState?State=2" dd_name="待收货">
 										<span class="j_menu_text">待收货</span>
 									</a>
 								</li>
 								<li class="j_menu" statuscondition="18">
-									<a href="/order/selectOrdersByState?state=3" dd_name="已买货物">
+									<a href="/order/selectOrdersByState?State=3" dd_name="已买货物">
 										<span class="j_menu_text">已买货物</span>
 									</a>
 								</li>
@@ -269,16 +269,31 @@
 								<div class="order_div_bookstate">
 									<span style="font-size: 12px;">
 										<c:if test="${orderInfo.getOrderState()==0}">未支付</c:if>
-										<c:if test="${orderInfo.getOrderState()==1}">代发货</c:if>
+										<c:if test="${orderInfo.getOrderState()==1}">待发货</c:if>
 										<c:if test="${orderInfo.getOrderState()==2}">待收货</c:if>
 										<c:if test="${orderInfo.getOrderState()==3}">已完成</c:if>
 									</span>
 								</div>
 								<div class="order_div_bookdo">
 									<span style="font-size: 12px;">
-										<c:if test="${orderInfo.getOrderState()==3}"><a>删除</a></c:if>
-										<c:if test="${orderInfo.getOrderState()==0}"><a>继续支付</a></c:if>
-										<c:if test="${orderInfo.getOrderState()==2}"><a>确定收货</a></c:if>
+										<c:if test="${orderInfo.getOrderState()==3}"><a  onclick="
+										var s=confirm('确定删除嘛？');
+										if(s){
+											window.location.href='/order/deleteOrder?BookId=${orderInfo.getBookId()}';
+										}
+										">删除</a></c:if>
+										<c:if test="${orderInfo.getOrderState()==1}"><span style="color:#f01e28">*不可操作</span></c:if>
+										<c:if test="${orderInfo.getOrderState()==0}"><a onclick="
+												var s=confirm('确定继续嘛？');
+												if(s){
+												window.location.href='/book/CreateOrder?BookId=${orderInfo.getBookId()}';
+												}">继续支付</a></c:if>
+										<c:if test="${orderInfo.getOrderState()==2}"><a
+												onclick="
+														var s=confirm('确定收货嘛？');
+														if(s){
+														window.location.href='/order/ChangeOrderStateByBookId?BookId=${orderInfo.getBookId()}&state=${orderInfo.getOrderState()}';
+														}">确定收货</a></c:if>
 									</span>
 								</div>
 

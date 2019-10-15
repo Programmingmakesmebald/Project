@@ -70,4 +70,10 @@
     <select id="selectBookInfos" parameterType="java.lang.Integer" resultType="edu.heuet.Pojo.BookInfo">
         select * from bookinfo where bookid=#{bookId}
     </select>
+
+    <!--    删除订单-->
+    <delete id="deleteOrder">
+        delete from orders where BookId=#{bookId}
+    </delete>
+
 </mapper>

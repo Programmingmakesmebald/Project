@@ -31,6 +31,7 @@ public class MassageController {
 //    }
 
     public boolean CreateMassageBySys(String msg,Integer receiver,MassageService massageService){
+        /**创建系统消息**/
         Massage massage=new Massage();
         massage.setSender(110);
         massage.setContent(msg);
@@ -42,7 +43,7 @@ public class MassageController {
     }
 
 
-    @RequestMapping("/GetMassage")
+    @RequestMapping("/GetMassage")/*** 获取系统消息**/
     public String GetMassage(Model model, HttpSession session){
         int userid =Integer.parseInt(session.getAttribute("UserId").toString());
         List<Massage> massages= massageService.getMassage(userid);

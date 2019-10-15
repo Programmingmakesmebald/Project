@@ -90,7 +90,7 @@ public class UserController {
         }
 
     }
-    @RequestMapping("/check")
+    @RequestMapping("/check")   /** 核对验证码**/
     public @ResponseBody  String check(@RequestParam("PhoneNum") String PhoneNum , @RequestParam("goal") int goal , Model model){
                 if(goal==0){
                     codelogin = new CheckCode().CheckCode1();
@@ -107,7 +107,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("/alterInfo")
+    @RequestMapping("/alterInfo")   /**修改个人资料**/
     public String AlterInfo(UserInfo userInfo,Model model,HttpSession session){
         UserInfo userInfo1=(UserInfo) session.getAttribute("user");
         String userid=session.getAttribute("UserId").toString();
@@ -124,7 +124,7 @@ public class UserController {
         }
         return "PersonCenter/infor";
     }
-    @RequestMapping("/alterPwd")
+    @RequestMapping("/alterPwd")  /*** 修改密码**/
     @ResponseBody
     public String AlterPwd(@RequestParam("LPassword") String LPassword,@RequestParam("NewLPassword")String NewLPassword ,HttpSession session){
         userService.updatePwd(LPassword,NewLPassword,session.getAttribute("UserId").toString());
