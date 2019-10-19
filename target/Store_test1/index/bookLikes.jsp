@@ -89,7 +89,14 @@
                 </ul>
                 <div class="new_head_znx" id="znx_content" style="display:none;"></div>
                 <div class="ddnewhead_welcome" display="none;">
-                    <span id=""><span class="hi hi_none">欢迎光临小xun，请</span><a href="login.html" class="login_link">登录</a><a href="regist.html">免费注册</a></span>
+                    <span><a href="/massage/GetMassage">我的消息</a></span>
+                    <span id=""><span class="hi hi_none">欢迎光临小xun,
+                    <%if(session.getAttribute("user")!=null){
+                        out.print(session.getAttribute("UserName"));
+                    %> &nbsp; <span><a href="/user/unlogin">退出</a></span><%
+                        }else {
+                        %></span><a href="../index/login.jsp" class="login_link">登录</a><a href="../index/regist.jsp">免费注册</a></span><%
+                    }%>
                 </div>
                 <div class="ddnewhead_area">
                     <a href="javascript:void(0);" id="area_one" class="ddnewhead_area_a" onmouseover="show_area_list();" onmouseout="hidden_area_list();">送至：<span id="curent_area"></span></a>
@@ -252,22 +259,11 @@
     <div class="sub">
         <ul>
             <li><a name='nav2'  target=_blank  href=>图书排行榜</a></li>
-            <li><a name='nav2'  target=_blank  href=>童书</a></li>
-            <li><a name='nav2'  target=_blank  href=>教辅</a></li>
-            <li><a name='nav2'  target=_blank  href=>小说</a></li>
-            <li><a name='nav2'  target=_blank  href=>文学</a></li>
-            <li><a name='nav2'  target=_blank  href=>青春文学</a></li>
-            <li><a name='nav2'  target=_blank  href=>艺术</a></li>
-            <li><a name='nav2'  target=_blank  href=>成功励志</a></li>
-            <li><a name='nav2'  target=_blank  href=>管理</a></li>
-            <li><a name='nav2'  target=_blank  href=>历史</a></li>
-            <li><a name='nav2'  target=_blank  href=>哲学宗教</a></li>
-            <li><a name='nav2'  target=_blank  href=>亲子家教</a></li>
-            <li><a name='nav2'  target=_blank  href=>保健养生</a></li>
-            <li><a name='nav2'  target=_blank  href=>考试</a></li>
-            <li><a name='nav2'  target=_blank  href=>科技</a></li>
-            <li><a name='nav2'  target=_blank  href=>进口原版</a></li>
-            <li><a name='nav2'  target=_blank  href=>网络文学</a></li>
+            <li><a name='nav2'  target=_blank  href=>常用必修</a></li>
+            <li><a name='nav2'  target=_blank  href=>专业课本</a></li>
+            <li><a name='nav2'  target=_blank  href=>休闲小说</a></li>
+            <li><a name='nav2'  target=_blank  href=>考研考证</a></li>
+            <li><a name='nav2'  target=_blank  href=>其他资料</a></li>
         </ul>
     </div></div>
 

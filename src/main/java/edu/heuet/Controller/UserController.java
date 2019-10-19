@@ -75,7 +75,7 @@ public class UserController {
                     session.setAttribute("UserName", u.getUserName());
                     session.setAttribute("UserId", u.getUserId());
                     session.setAttribute("user",u);
-                    return "index/failed";
+                    return "index/index";
                 }else {
                     System.out.println("22222222222222222");
                     return "index/failed";
@@ -111,24 +111,26 @@ public class UserController {
     public String AlterInfo(UserInfo userInfo,Model model,HttpSession session){
         UserInfo userInfo1=(UserInfo) session.getAttribute("user");
         String userid=session.getAttribute("UserId").toString();
-        String username=session.getAttribute("UserName").toString();
         userInfo.setUserId(userid);
-        boolean s=userService.updateInfo(userInfo);
-        if(s){
-            session.setAttribute("UserName",username);
+        boolean i=userService.updateInfo(userInfo);
+        if(i) {
+            session.setAttribute("UserName", userInfo.getUserName());
             userInfo1.setPhoneNum(userInfo.getPhoneNum());
             userInfo1.setSchool(userInfo.getSchool());
             userInfo1.setUserName(userInfo.getUserName());
-            session.setAttribute("user",userInfo1);
+            session.setAttribute("user", userInfo1);
+            model.addAttribute("flag",3);
+            return "PersonCenter/success";
         }else {
+            model.addAttribute("flag",4);
+            return "PersonCenter/infor";
         }
-        return "PersonCenter/infor";
+
     }
     @RequestMapping("/alterPwd")  /*** 修改密码**/
-    @ResponseBody
-    public String AlterPwd(@RequestParam("LPassword") String LPassword,@RequestParam("NewLPassword")String NewLPassword ,HttpSession session){
-        userService.updatePwd(LPassword,NewLPassword,session.getAttribute("UserId").toString());
-        return "success";
+    public String AlterPwd(@RequestParam("LPassword") String LPassword,@RequestParam("NewLPassword")String NewLPassword ,Model model,HttpSession session){
+        int i=userService.updatePwd(LPassword,NewLPassword,session.getAttribute("UserId").toString());
+        return "index/login";
     }
 
 

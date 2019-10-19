@@ -78,7 +78,7 @@ public class BookController {
         //Book插入数据库
         bookService.insertBookInfo(bookInfo);
 
-        return "jsp/buy-sell/sell";
+        return "index/index";
     }
     //全部图书信息显示
 //    @RequestMapping("/info")
@@ -101,8 +101,14 @@ public class BookController {
         return "index/book";
     }
 
-
-
+    /***添加访客记录**/
+    @RequestMapping("/addFrequent")
+    public void updateFrequent(Integer bookId){
+        System.out.println("22222222222222222");
+        System.out.println("BookId="+bookId);
+        bookService.updateFrequent(bookId);
+        System.out.println("11111111111111111");
+    }
     /**
      *
      * 分页  查询

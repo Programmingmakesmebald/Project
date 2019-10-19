@@ -30,7 +30,7 @@ public class CartController
     //实现添加商品进购物车
     @RequestMapping("/addCart")
     @ResponseBody                /***     添加到购物车***/
-    public boolean addCart(String BookId, HttpSession session){
+    public boolean addCart(@RequestParam(value = "BookId") String BookId, HttpSession session){
         Integer UserId =Integer.parseInt(session.getAttribute("UserId").toString());
         Integer bookid=Integer.parseInt(BookId);
         boolean s= cartService.addCart(UserId,bookid);

@@ -20,5 +20,7 @@ public interface BookService {
 
     Integer selectByIdToOrders(Integer bookId);  /** 通过图书Id查询订单号***/
 
-    void changeOrderState(Integer bookId, Integer state);/** 通过图书Id改变*订单状态**/
+    void changeOrderState(Integer bookId, Integer state); /** 通过图书Id改变*订单状态**/
+
+    void updateFrequent(Integer bookId);/***增加访客次数纪录**/
 }

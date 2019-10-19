@@ -1,0 +1,2 @@
+#mask{z-index:9999;top:0;width:100%;height:100%;background-color:grey;background-color:rgba(0,0,0,.5);position:fixed;display:none}
+#sema{z-index:10000;top:0;width:100%;position:fixed;display:none}

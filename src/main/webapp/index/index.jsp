@@ -589,7 +589,7 @@
         <div class="tools">
 
             <div class="ddnewhead_operate" dd_name="顶链接">
-                <span style="font-size: 20px;font-weight: bold"><img src="/index/images/book.png" style="width:23px;height: 23px;margin-left: 20px;margin-top: 5px;"><a href="/jsp/buy-sell/sell.jsp">我要售书</a></span>
+                <span style="font-size: 20px;font-weight: bold"><img src="/index/images/book.png" style="width:23px;height: 23px;margin-left: 20px;margin-top: 5px;"><a href="/index/Sellbook.jsp">我要售书</a></span>
                 <ul class="ddnewhead_operate_nav">
                     <li class="hover "><a class="menu_btn" href="javascript:void(0);" style="cursor:default;" name="ddkf_0" dd_name="客户服务" id="a_bzzxchannel" onmouseover="showgaoji('a_bzzxchannel','__ddnav_bzzx');" onmouseout="hideotherchannel('a_bzzxchannel','__ddnav_bzzx');">客户服务</a>
                         <ul class="ddnewhead_gcard_list" id="__ddnav_bzzx" onmouseover="showgaoji('a_bzzxchannel','__ddnav_bzzx');" onmouseout="hideotherchannel('a_bzzxchannel','__ddnav_bzzx');">
@@ -668,8 +668,12 @@
                 <label  for="key_S" class="label_search" id="label_key" onclick="this.style.color='rgb(255, 255, 255)';" style="visibility: visible; color: rgb(102, 102, 102);" >oracle二手书</label>
                 <input type="text" class="text gray"  name="key" ID="key_S" autocomplete="off" onclick="key_onclick(event);" onfocus="key_onfocus(event);"  onblur="key_onblur();" onbeforepaste="onpaste_search();"/><a href="javascript:void(0);" onclick="clearkeys();" class="del-keywords"></a><span class="select"  onmouseover="allCategoryShow();"  onmouseleave="allCategoryHide();" onmouseout='if("\v"!="v"){ allCategoryHide();}'><span id="Show_Category_Name" dd_name="全部分类">全部分类</span><span class="icon"></span>
                 <div id="search_all_category" class="select_pop" style="height:0px;padding: 0px;border-width: 0px;" dd_name="搜索分类">
-                    <a href="javascript:void(0);" onclick="selectCategory('',this);" ><span id="Show_Category_Name" dd_name="全部分类">全部分类</span></a>
-
+                    <a href="/book/main" onclick="selectCategory('',this);" ><span id="Show_Category_Name" dd_name="全部分类">全部分类</span></a>
+                    <a href="/book/main?BookType=10" onclick="selectCategory('100000',this);" dd_name="尾品汇"><span>常用必修</span></a>
+                    <a href="/book/main?BookType=20" onclick="selectCategory('01.00.00.00.00.00',this);" dd_name="图书"><span>专业课本</span></a>
+                    <a href="/book/main?BookType=30" onclick="selectCategory('98.00.00.00.00.00',this);" dd_name="电子书"><span>休闲小说</span></a>
+                    <a href="/book/main?BookType=40" onclick="selectCategory('03.00.00.00.00.00',this);" dd_name="音像"><span>考研考级</span></a>
+                    <a href="/book/main?BookType=50" onclick="selectCategory('05.00.00.00.00.00',this);" dd_name="影视"><span>其他资料</span></a>
                 </div>
             </span>
                 <input type="hidden" id="default_key" value="oracle"/>
@@ -682,15 +686,15 @@
                 <input type="button" class="button" dd_name="搜索按钮" onclick="javascript:document.getElementById('search_btn').click();"/>
             </form>
         </div>
-        <div class="search_bottom">
-            <div class="search_hot">热搜:
-                <a href="" name="hotword" target="_blank">春日序曲</a>
-                <a href="">水湄物语新书</a>
-                <a href="" name="hotword" target="_blank">小车迷立体书</a>
-                <a href="" name="hotword" target="_blank">范志红日历</a>
-                <a href="" name="hotword" target="_blank">简笔画</a></div>
-            <a href="" class="search_advs" target="_blank" name="ddnav_adv_s" dd_name="高级搜索">高级搜索</a>
-        </div>
+<%--        <div class="search_bottom">--%>
+<%--            <div class="search_hot">热搜:--%>
+<%--                <a href="" name="hotword" target="_blank">春日序曲</a>--%>
+<%--                <a href="">水湄物语新书</a>--%>
+<%--                <a href="" name="hotword" target="_blank">小车迷立体书</a>--%>
+<%--                <a href="" name="hotword" target="_blank">范志红日历</a>--%>
+<%--                <a href="" name="hotword" target="_blank">简笔画</a></div>--%>
+<%--            <a href="" class="search_advs" target="_blank" name="ddnav_adv_s" dd_name="高级搜索">高级搜索</a>--%>
+<%--        </div>--%>
         <div id="suggest_key" class="suggest_key" style="display:none;" ></div>
         <div class="ddnew_cart"><a href="/cart/showCartByPage" name="shoppingcart" dd_name="购物车"><i class="icon_card"></i>购物车<b id="shoppingcount"></b></a></div>
         <div class="ddnew_order"><a target="_blank" href="/PersonCenter/infor.jsp" name="我的订单" dd_name="我的订单" rel="nofollow">个人中心<b id="unpaid_num" style="color:#ff2832;font:bold 12px Arial;"></b></a></div>
@@ -752,24 +756,24 @@
     </div></div>
     <div class="sub">
         <ul>
-            <li><a name='nav2'  target=_blank  href=>图书排行榜</a></li>
-            <li><a name='nav2'  target=_blank  href=>童书</a></li>
-            <li><a name='nav2'  target=_blank  href=>教辅</a></li>
-            <li><a name='nav2'  target=_blank  href=>小说</a></li>
-            <li><a name='nav2'  target=_blank  href=>文学</a></li>
-            <li><a name='nav2'  target=_blank  href=>青春文学</a></li>
-            <li><a name='nav2'  target=_blank  href=>艺术</a></li>
-            <li><a name='nav2'  target=_blank  href=>成功励志</a></li>
-            <li><a name='nav2'  target=_blank  href=>管理</a></li>
-            <li><a name='nav2'  target=_blank  href=>历史</a></li>
-            <li><a name='nav2'  target=_blank  href=>哲学宗教</a></li>
-            <li><a name='nav2'  target=_blank  href=>亲子家教</a></li>
-            <li><a name='nav2'  target=_blank  href=>保健养生</a></li>
-            <li><a name='nav2'  target=_blank  href=>考试</a></li>
-            <li><a name='nav2'  target=_blank  href=>科技</a></li>
-            <li><a name='nav2'  target=_blank  href=>进口原版</a></li>
-            <li><a name='nav2'  target=_blank  href=>电子书</a></li>
-            <li><a name='nav2'  target=_blank  href=>网络文学</a></li>
+            <li><a name='nav2'  target=_blank  href="/book/main">图书排行榜</a></li>
+            <li><a name='nav2'  target=_blank  href="/book/main?BookType=10">常用必修</a></li>
+            <li><a name='nav2'  target=_blank  href="/book/main?BookType=20">专业课本</a></li>
+            <li><a name='nav2'  target=_blank  href="/book/main?BookType=30">休闲小说</a></li>
+            <li><a name='nav2'  target=_blank  href="/book/main?BookType=40">考研考证</a></li>
+            <li><a name='nav2'  target=_blank  href="/book/main?BookType=50">其他资料</a></li>
+<%--            <li><a name='nav2'  target=_blank  href=>艺术</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>成功励志</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>管理</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>历史</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>哲学宗教</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>亲子家教</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>保健养生</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>考试</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>科技</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>进口原版</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>电子书</a></li>--%>
+<%--            <li><a name='nav2'  target=_blank  href=>网络文学</a></li>--%>
         </ul>
     </div></div>
 
@@ -789,7 +793,7 @@
                 <div  class="con flq_body"     >
                     <div  class="level_one "  name="m403752_pid5367_t10274"  type=bar father=1 >
                         <dl  class="con primary_dl"  name="m403752_pid5367_t10275"  son='1'  >
-                            <dt  class="con "  name="m403752_pid5367_t10276"  >常用必修</dt>
+                            <dt  class="con "  name="m403752_pid5367_t10276"  ><a href="/book/main?BookType=10">常用必修</a></dt>
                             <dd  class="con sec_cate"  name="m403752_pid5367_t10277"   ></dd>
                         </dl>
                         <div  class="con "  name="m403752_pid5367_t10278"   >
@@ -870,7 +874,7 @@
 
     <dt>
         <a    nname="book-65152-9163_1-468597_1"  class="" href="" target="_blank"
-              title="专业图书" ddt-pit="1" ddt-src="">专业课本        </a>
+              title="专业图书" ddt-pit="1" ddt-src=""><a href="/book/main?BookType=20">专业课本</a>        </a>
     </dt>
 </dl>
     <div  class="hide submenu "  name="m403752_pid5368_5366_t9145"  type=item >
@@ -935,7 +939,8 @@
                         <dl class='primary_dl'son=1 ddt-area="5357" dd_name="文本列表定制">
 
     <dt>
-        休闲小说
+        <a href="/book/main?BookType=30">休闲小说</a>
+
     </dt>
 
        </dl>
@@ -989,7 +994,7 @@
 
     <dt>
         <a  name="04"   nname="book-65152-9163_1-468600_1"  class="" href="" target="_blank"
-            title="文学社科" ddt-pit="1" ddt-src="">考研资料     </a>
+            title="文学社科" ddt-pit="1" ddt-src=""><a href="/book/main?BookType=40">考研资料</a>     </a>
     </dt>
 </dl>
     <div  class="hide submenu "  name="m403752_pid5370_5366_t9145"  type=item >
@@ -1035,7 +1040,7 @@
                         <dl class='primary_dl'son=1 ddt-area="5357" dd_name="文本列表定制">
 
     <dt>
-        考级考证
+        <a href="/book/main?BookType=40">考级考证</a>
     </dt>
     </dd>    </dl>
     <div  class="hide submenu "  name="m403752_pid5371_5366_t9145"  type=item >
@@ -1096,7 +1101,7 @@
 
     <dt>
         <a    nname="book-65152-9163_1-468615_1"  class="" href="" target="_blank"
-              title="成功/励志" ddt-pit="1" ddt-src="">其他        </a>
+              title="成功/励志" ddt-pit="1" ddt-src=""><a href="/book/main?BookType=50">其他 </a>       </a>
     </dt>
 </dl>
     <div  class="hide submenu "  name="m403752_pid5376_5366_t9145"  type=item >

@@ -95,7 +95,7 @@
                         out.print(session.getAttribute("UserName"));
                     %> &nbsp; <span><a href="/user/unlogin">退出</a></span><%
                         }else {
-                        %></span><a href="../index/login.jsp" class="login_link">登录</a><a href="../index/regist.jsp">免费注册</a></span><%
+                        %></span><a href="/index/login.jsp" class="login_link">登录</a><a href="/index/regist.jsp">免费注册</a></span><%
                     }%>
                 </div>
                 <div class="ddnewhead_area">
@@ -148,37 +148,18 @@
             </div>
         <div class="search">
             <form action="" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
-                <label  for="key_S" class="label_search" id="label_key" onclick="this.style.color='rgb(255, 255, 255)';" style="visibility: visible; color: rgb(102, 102, 102);" >日历2020</label>
+                <label  for="key_S" class="label_search" id="label_key" onclick="this.style.color='rgb(255, 255, 255)';" style="visibility: visible; color: rgb(102, 102, 102);" >JavaEE</label>
                 <input type="text" class="text gray"  name="key" ID="key_S" autocomplete="off" onclick="key_onclick(event);" onfocus="key_onfocus(event);"  onblur="key_onblur();" onbeforepaste="onpaste_search();"/><a href="javascript:void(0);" onclick="clearkeys();" class="del-keywords"></a><span class="select"  onmouseover="allCategoryShow();"  onmouseleave="allCategoryHide();" onmouseout='if("\v"!="v"){ allCategoryHide();}'><span id="Show_Category_Name" dd_name="全部分类">全部分类</span><span class="icon"></span>
                 <div id="search_all_category" class="select_pop" style="height:0px;padding: 0px;border-width: 0px;" dd_name="搜索分类">
-                    <a href="javascript:void(0);" onclick="selectCategory('',this);" ><span id="Show_Category_Name" dd_name="全部分类">全部分类</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory('100000',this);" dd_name="尾品汇"><span>尾品汇</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory('01.00.00.00.00.00',this);" dd_name="图书"><span>图书</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory('98.00.00.00.00.00',this);" dd_name="电子书"><span>电子书</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory('03.00.00.00.00.00',this);" dd_name="音像"><span>音像</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory('05.00.00.00.00.00',this);" dd_name="影视"><span>影视</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4002074,this);" dd_name="时尚美妆"><span>时尚美妆</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4001940,this);" dd_name="母婴用品"><span>母婴用品</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4002061,this);" dd_name="玩具"><span>玩具</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4004866,this);" dd_name="孕婴服饰"><span>孕婴服饰</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4004344,this);" dd_name="童装童鞋"><span>童装童鞋</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003900,this);" dd_name="家居日用"><span>家居日用</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003760,this);" dd_name="家具装饰"><span>家具装饰</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003844,this);" dd_name="服装"><span>服装</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003872,this);" dd_name="鞋"><span>鞋</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4001829,this);" dd_name="箱包皮具"><span>箱包皮具</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003639,this);" dd_name="手表饰品"><span>手表饰品</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003728,this);" dd_name="运动户外"><span>运动户外</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4002429,this);" dd_name="汽车用品"><span>汽车用品</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4002145,this);" dd_name="食品"><span>食品</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4006497,this);" dd_name="手机通讯"><span>手机通讯</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003613,this);" dd_name="数码影音"><span>数码影音</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4003819,this);" dd_name="电脑办公"><span>电脑办公</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4007241,this);" dd_name="大家电"><span>大家电</span></a>
-                    <a href="javascript:void(0);" onclick="selectCategory(4001001,this);" dd_name="家用电器"><span>家用电器</span></a>
+                    <a href="/book/main" onclick="selectCategory('',this);" ><span id="Show_Category_Name" dd_name="全部分类">全部分类</span></a>
+                    <a href="/book/main?BookType=10" onclick="selectCategory('100000',this);" dd_name="尾品汇"><span>常用必修</span></a>
+                    <a href="/book/main?BookType=20" onclick="selectCategory('01.00.00.00.00.00',this);" dd_name="图书"><span>专业课本</span></a>
+                    <a href="/book/main?BookType=30" onclick="selectCategory('98.00.00.00.00.00',this);" dd_name="电子书"><span>休闲小说</span></a>
+                    <a href="/book/main?BookType=40" onclick="selectCategory('03.00.00.00.00.00',this);" dd_name="音像"><span>考研考级</span></a>
+                    <a href="/book/main?BookType=50" onclick="selectCategory('05.00.00.00.00.00',this);" dd_name="影视"><span>其他资料</span></a>
                 </div>
             </span>
-                <input type="hidden" id="default_key" value="日历2020"/>
+                <input type="hidden" id="default_key" value="JavaEE"/>
                 <input type="submit" id="search_btn" dd_name="搜索按钮"  style="display:none"/>
                 <input id="SearchFromTop" style="display:none" type="hidden" name="SearchFromTop" value="1"/>
                 <input type="button" id="suggest_product_btn" name="suggestproduct_btn"  style="display:none" onclick="void(0)"/>
@@ -188,15 +169,16 @@
                 <input type="button" class="button" dd_name="搜索按钮" onclick="javascript:document.getElementById('search_btn').click();"/>
             </form>
         </div>
-        <div class="search_bottom">
-            <div class="search_hot">热搜:
-                <a href="http://search.dangdang.com/?key=%C1%CB%B2%BB%C6%F0%B5%C4%D6%D0%B9%FA" name="hotword" target="_blank">了不起的中国</a>
-                <a href="http://search.dangdang.com/?key=%B0%CD%C0%AD%B0%CD%C0%AD" name="hotword" target="_blank">巴拉巴拉</a>
-                <a href="http://search.dangdang.com/?key=%CE%D2%BA%CD%CE%D2%B5%C4%D7%E6%B9%FA" name="hotword" target="_blank">我和我的祖国</a>
-                <a href="http://search.dangdang.com/?key=%B4%BA%C8%D5%D0%F2%C7%FA" name="hotword" target="_blank">春日序曲</a>
-                <a href="http://search.dangdang.com/?key=%C3%EB%C9%B11%D4%AA%C7%C0" name="hotword" target="_blank">秒杀1元抢</a></div>
-            <a href="http://search.dangdang.com/advsearch" class="search_advs" target="_blank" name="ddnav_adv_s" dd_name="高级搜索">高级搜索</a>
-        </div>
+<%--        <div class="search_bottom">--%>
+<%--            <div class="search_hot">热搜:--%>
+<%--                <a href="http://search.dangdang.com/?key=%C1%CB%B2%BB%C6%F0%B5%C4%D6%D0%B9%FA" name="hotword" target="_blank">了不起的中国</a>--%>
+<%--                <a href="http://search.dangdang.com/?key=%B0%CD%C0%AD%B0%CD%C0%AD" name="hotword" target="_blank">巴拉巴拉</a>--%>
+<%--                <a href="http://search.dangdang.com/?key=%CE%D2%BA%CD%CE%D2%B5%C4%D7%E6%B9%FA" name="hotword" target="_blank">我和我的祖国</a>--%>
+<%--                <a href="http://search.dangdang.com/?key=%B4%BA%C8%D5%D0%F2%C7%FA" name="hotword" target="_blank">春日序曲</a>--%>
+<%--                <a href="http://search.dangdang.com/?key=%C3%EB%C9%B11%D4%AA%C7%C0" name="hotword" target="_blank">秒杀1元抢</a></div>--%>
+<%--                <a href="http://search.dangdang.com/advsearch" class="search_advs" target="_blank" name="ddnav_adv_s" dd_name="高级搜索">高级搜索</a>--%>
+<%--            </div>--%>
+
         <div id="suggest_key" class="suggest_key" style="display:none;" ></div>
         <div class="ddnew_cart"><a href="/cart/showCartByPage" name="shoppingcart" dd_name="购物车"><i class="icon_card"></i>购物车<b id="shoppingcount"></b></a></div>
         <div class="ddnew_order"><a target="_blank" href="http://myhome.dangdang.com/myOrder" name="我的订单" dd_name="我的订单" rel="nofollow">我的订单<b id="unpaid_num" style="color:#ff2832;font:bold 12px Arial;"></b></a></div>
@@ -259,22 +241,11 @@
     <div class="sub">
         <ul>
             <li><a name='nav2'  target=_blank  href=>图书排行榜</a></li>
-            <li><a name='nav2'  target=_blank  href=>童书</a></li>
-            <li><a name='nav2'  target=_blank  href=>教辅</a></li>
-            <li><a name='nav2'  target=_blank  href=>小说</a></li>
-            <li><a name='nav2'  target=_blank  href=>文学</a></li>
-            <li><a name='nav2'  target=_blank  href=>青春文学</a></li>
-            <li><a name='nav2'  target=_blank  href=>艺术</a></li>
-            <li><a name='nav2'  target=_blank  href=>成功励志</a></li>
-            <li><a name='nav2'  target=_blank  href=>管理</a></li>
-            <li><a name='nav2'  target=_blank  href=>历史</a></li>
-            <li><a name='nav2'  target=_blank  href=>哲学宗教</a></li>
-            <li><a name='nav2'  target=_blank  href=>亲子家教</a></li>
-            <li><a name='nav2'  target=_blank  href=>保健养生</a></li>
-            <li><a name='nav2'  target=_blank  href=>考试</a></li>
-            <li><a name='nav2'  target=_blank  href=>科技</a></li>
-            <li><a name='nav2'  target=_blank  href=>进口原版</a></li>
-            <li><a name='nav2'  target=_blank  href=>网络文学</a></li>
+            <li><a name='nav2'  target=_blank  href=>常用必修</a></li>
+            <li><a name='nav2'  target=_blank  href=>专业课本</a></li>
+            <li><a name='nav2'  target=_blank  href=>休闲小说</a></li>
+            <li><a name='nav2'  target=_blank  href=>考研考证</a></li>
+            <li><a name='nav2'  target=_blank  href=>其他资料</a></li>
         </ul>
     </div></div>
 

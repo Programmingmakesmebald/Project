@@ -11,8 +11,8 @@
 <!--卖书-->
     <insert id="insertBookInfo" keyProperty="edu.heuet.Pojo.BookInfo">
         insert into
-            booksell.bookinfo(seller,typeid,price,bookname,BookText,path,bookstate)
-            values(#{Seller},#{TypeId},#{Price},#{BookName},#{BookText},#{Path},#{BookState})
+            booksell.bookinfo(seller,typeid,price,bookname,BookText,path,bookstate,booktime,frequency)
+            values(#{Seller},#{TypeId},#{Price},#{BookName},#{BookText},#{Path},#{BookState},#{BookTime},0)
     </insert>
 
 
@@ -34,7 +34,12 @@
         bookinfo
         <where>
             <if test="BookType!=0">
-                typeid=#{BookType}
+                <if test="BookType==10 or BookType==20 or BookType==30 or BookType==40 or BookType==50">
+                    typeid like '${BookType}%'
+                </if>
+                <if test="BookType!=10 and BookType!=20 and BookType!=30 and BookType!=40 and BookType!=50">
+                    typeid=#{BookType}
+                </if>
             </if>
         </where>
         <if test="start!=null and size!=null">limit #{start},#{size}</if>
@@ -116,5 +121,10 @@
 
     <update id="changeOrderState" >
         update orders set OrderState=#{state} where BookId=#{BookId}
+    </update>
+
+    <update id="updateFrequent" parameterType="java.lang.Integer">
+        update bookinfo set frequency=frequency+1
+         where bookid=#{bookId}
     </update>
 </mapper>

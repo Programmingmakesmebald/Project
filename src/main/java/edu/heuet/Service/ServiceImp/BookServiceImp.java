@@ -117,4 +117,9 @@ public class BookServiceImp implements BookService {
     public void changeOrderState(Integer bookId, Integer state) {
         bookMapper.changeOrderState(bookId,state);
     }
+
+    @Override
+    public void updateFrequent(Integer bookId) {
+        bookMapper.updateFrequent(bookId);
+    }
 }

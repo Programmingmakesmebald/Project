@@ -32,4 +32,6 @@ public interface BookMapper {
     Integer selectByIdToOrders(Integer bookId);
 
     void changeOrderState(@Param("BookId") Integer bookId, @Param("state") Integer state);
+
+    void updateFrequent(Integer bookId);
 }
