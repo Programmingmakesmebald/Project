@@ -64,21 +64,25 @@ public class UserController {
         System.out.println(u);
         if(u!=null){
             //跳转到首页
-            if(userInfo.getLPassword()!=null){
-                session.setAttribute("UserName", u.getUserName());
-                session.setAttribute("UserId", u.getUserId());
-                session.setAttribute("user",u);
-                return "index/index";
+            if(u.getCredit()<=60){
+                return "index/limit_login";
             }else {
-                Integer checkCode= Integer.parseInt(CheckCode);
-                if(checkCode==codelogin) {
+                if(userInfo.getLPassword()!=null){
                     session.setAttribute("UserName", u.getUserName());
                     session.setAttribute("UserId", u.getUserId());
                     session.setAttribute("user",u);
                     return "index/index";
                 }else {
-                    System.out.println("22222222222222222");
-                    return "index/failed";
+                    Integer checkCode= Integer.parseInt(CheckCode);
+                    if(checkCode==codelogin) {
+                        session.setAttribute("UserName", u.getUserName());
+                        session.setAttribute("UserId", u.getUserId());
+                        session.setAttribute("user",u);
+                        return "index/index";
+                    }else {
+                        System.out.println("22222222222222222");
+                        return "index/failed";
+                    }
                 }
             }
 

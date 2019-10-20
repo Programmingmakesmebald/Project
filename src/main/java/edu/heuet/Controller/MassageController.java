@@ -1,5 +1,8 @@
 package edu.heuet.Controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import edu.heuet.Pojo.BookInfo;
 import edu.heuet.Pojo.Massage;
 import edu.heuet.Service.MassageService;
 import edu.heuet.Util.TimeUtil;
@@ -7,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -44,8 +48,10 @@ public class MassageController {
 
 
     @RequestMapping("/GetMassage")/*** 获取系统消息**/
-    public String GetMassage(Model model, HttpSession session){
+    public String GetMassage(Model model, HttpSession session,@RequestParam(value = "page", defaultValue = "1") Integer page,
+                             @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize){
         int userid =Integer.parseInt(session.getAttribute("UserId").toString());
+//        PageHelper.startPage(page,5);
         List<Massage> massages= massageService.getMassage(userid);
         List<Massage> massages1=new ArrayList<>();
         for (Massage m:massages) {
@@ -53,7 +59,10 @@ public class MassageController {
             m.setFormatTime(time);
             massages1.add(m);
         }
+        System.out.println("222222222222222::::"+massages1.size());
+//        PageInfo<Massage> pageInfo = new PageInfo<>(massages1);
         model.addAttribute("massages",massages1);
+//        System.out.println(pageInfo.getPages());
         return "massage/massages";
     }
 }
