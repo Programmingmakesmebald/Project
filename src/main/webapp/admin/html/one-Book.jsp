@@ -15,14 +15,14 @@ To change this template use File | Settings | File Templates.
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后台管理员</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/amazeui.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/core.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/menu.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/page/typography.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/page/form.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/amazeui.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/core.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/menu.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/index.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/admin.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/page/typography.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/page/form.css" />
 </head>
 <body>
 <!-- Begin page -->
@@ -53,7 +53,7 @@ To change this template use File | Settings | File Templates.
             <!-- User -->
             <div class="user-box am-hide-sm-only">
                 <div class="user-img">
-                    <img src="${pageContext.request.contextPath}/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                    <img src="${pageContext.request.contextPath}/admin/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                     <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
                 </div>
                 <h5><%=request.getSession().getAttribute("AdminName") %></h5>
@@ -74,7 +74,7 @@ To change this template use File | Settings | File Templates.
             <!-- End User -->
 
             <ul class="am-list admin-sidebar-list">
-                <li><a href="${pageContext.request.contextPath}/admin.jsp"><span class="am-icon-home"></span> 首页</a></li>
+                <li><a href="${pageContext.request.contextPath}/admin/admin.jsp"><span class="am-icon-home"></span> 首页</a></li>
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 用户 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
@@ -161,10 +161,10 @@ To change this template use File | Settings | File Templates.
     <!--</div>-->
 </div>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-2.1.0.js" ></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/amazeui.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/app.js" ></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/blockUI.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/admin/assets/js/jquery-2.1.0.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/admin/assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/admin/assets/js/app.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/admin/assets/js/blockUI.js" ></script>
 <script src="${pageContext.request.contextPath}/bootstrap/jquery-3.4.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
 
@@ -178,7 +178,7 @@ To change this template use File | Settings | File Templates.
 </script>
 
 <!-- navbar -->
-<a href="${pageContext.request.contextPath}/admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+<a href="${pageContext.request.contextPath}/admin/admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
 
 
 

@@ -48,8 +48,23 @@
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/index/*.jsp"/>
+            <!--  bootstrap -->
+            <mvc:exclude-mapping path="/bootstrap/*.*"/>
+            <mvc:exclude-mapping path="/bootstrap/**/*.*"/>
             <!--  登录 注册-->
             <mvc:exclude-mapping path="/user/*"/>
+            <!--  管理员-->
+            <mvc:exclude-mapping path="/admin/*"/>
+            <mvc:exclude-mapping path="/admin/loginCookie"/>
+            <mvc:exclude-mapping path="/admin/**"/>
+            <mvc:exclude-mapping path="/admin/*.*"/>
+            <mvc:exclude-mapping path="/admin/**/*.*"/>
+            <mvc:exclude-mapping path="/admin/**/**/*.*"/>
+            <mvc:exclude-mapping path="/admin/assets/**"/>
+            <mvc:exclude-mapping path="/admin/assets/**/*.*"/>
+            <mvc:exclude-mapping path="/admin/assets/**/**/*.*"/>
+            <mvc:exclude-mapping path="/admin/html/*.*"/>
+            <mvc:exclude-mapping path="/admin/html/**/*.*"/>
             <!--    主页         -->
             <mvc:exclude-mapping path="/book/main"/>
             <mvc:exclude-mapping path="/book/one_info/*"/>

@@ -12,6 +12,7 @@ import edu.heuet.Util.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,15 +28,23 @@ import java.util.List;
 public class AdminController {
     @Autowired
     UserInfo userInfo;
-
     @Autowired
     Admin admin;
     @Autowired
     AdminService adminService;
     //注册
     @RequestMapping("regist")
-    String addAdmin(){/** 注册**/
-        return "";
+    String addAdmin(HttpServletRequest request){/** 注册**/
+        String AdminName=request.getParameter("AdminName");
+        String AdminNum=request.getParameter("AdminNum");
+        String APassword=request.getParameter("APassword");
+        String School=request.getParameter("School");
+        admin.setAdminName(AdminName);
+        admin.setAdminNum(AdminNum);
+        admin.setAPassword(APassword);
+        admin.setSchool(School);
+        adminService.addAdmin(admin);
+        return "redirect:/admin/loginCookie";
     }
     //登录
     @RequestMapping("login")
@@ -52,7 +61,7 @@ public class AdminController {
         if (!AdminNum.isEmpty()&&!APassword.isEmpty()&&AdminNum!=""&&APassword!="") {//不为空
             if (admin==null) {
                 model.addAttribute("message","手机号错误!");
-                return "/html/login";
+                return "/admin/html/login";
             }else if (admin.getAPassword().equals(APassword)){
                 if (Remember==true) {//Cookie
                     System.out.println("添加");
@@ -66,14 +75,14 @@ public class AdminController {
                 session.setAttribute("AdminNum",admin.getAdminNum());
                 session.setAttribute("AdminId",admin.getAdminId());
                 session.setAttribute("APassword",admin.getAPassword());
-                return "/admin";
+                return "/admin/admin";
             }else {
                 model.addAttribute("message","密码错误!");
-                return "/html/login";
+                return "/admin/html/login";
             }
         }else {//为空
             model.addAttribute("message","手机号或密码为空!");
-            return "/html/login";
+            return "/admin/html/login";
         }
     }
     @RequestMapping("loginCookie")
@@ -92,7 +101,7 @@ public class AdminController {
             model.addAttribute("miMa",APassword);
             model.addAttribute("Remember",Remember);
         }
-        return "/html/login";
+        return "/admin/html/login";
     }
     //修改
     @RequestMapping("update")
@@ -118,7 +127,7 @@ public class AdminController {
 
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("PhoneNum",PhoneNum);
-        return "/html/selectOrders";
+        return "/admin/html/selectOrders";
     }
     //查询用户
     @RequestMapping("/selectUsers")//page当前页码;pageSize每页的记录数
@@ -136,7 +145,7 @@ public class AdminController {
         PageInfo<UserInfo> pageInfo = new PageInfo<UserInfo>(userInfos);
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("PhoneNum",PhoneNum);
-        return "/html/selectUsers";
+        return "/admin/html/selectUsers";
     }
     //查询用户根据ID
     @RequestMapping("/selectUsersByUserId")//page当前页码;pageSize每页的记录数
@@ -154,7 +163,7 @@ public class AdminController {
         PageInfo<UserInfo> pageInfo = new PageInfo<UserInfo>(userInfos);
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("UserId",UserId);
-        return "/html/selectUsers";
+        return "/admin/html/selectUsers";
     }
     //处罚用户
     @RequestMapping("/punishUser")
@@ -165,7 +174,7 @@ public class AdminController {
         userInfo.setPhoneNum(punishNum);
         userInfo.setCredit(Credit);
         adminService.punishUser(userInfo);
-        return "/admin/selectUsers";
+        return "/admin/admin/selectUsers";
     }
     //把用户添加黑名单
     @RequestMapping("/Blacklist")
@@ -182,7 +191,7 @@ public class AdminController {
     @RequestMapping("/Delete")
     String Delete(@RequestParam(value = "punishNum") String punishNum){
 
-        return "/admin/selectUsers";
+        return "/admin/admin/selectUsers";
     }
 
     //查询图书分页查询
@@ -222,14 +231,14 @@ public class AdminController {
         }
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("PhoneNum",PhoneNum);
-        return "/html/selectBooks";
+        return "/admin/html/selectBooks";
     }
     //单个图书信息
     @RequestMapping("/one-book/{i}")
     String selectOnePicture(@PathVariable("i") int BookId, Model model){
         BookInfo bookInfo=adminService.selectBookByBookId(BookId);
         model.addAttribute("bookInfo",bookInfo);
-        return "/html/one-Book";
+        return "/admin/html/one-Book";
     }
     //删除图书
     @RequestMapping("/deleteBook")

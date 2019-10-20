@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="../assets/css/core.css" />
-    <link rel="stylesheet" href="../assets/css/menu.css" />
-    <link rel="stylesheet" href="../assets/css/amazeui.css" />
-    <link rel="stylesheet" href="../assets/css/component.css" />
-    <link rel="stylesheet" href="../assets/css/page/form.css" />
+    <link rel="stylesheet" href="../admin/assets/css/core.css" />
+    <link rel="stylesheet" href="../admin/assets/css/menu.css" />
+    <link rel="stylesheet" href="../admin/assets/css/amazeui.css" />
+    <link rel="stylesheet" href="../admin/assets/css/component.css" />
+    <link rel="stylesheet" href="../admin/assets/css/page/form.css" />
 
 </head>
 <body >

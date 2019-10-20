@@ -14,16 +14,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后台管理员</title>
-    <link rel="stylesheet" href="/html/css/style.css">
+    <link rel="stylesheet" href="/admin/html/css/style.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" >
-    <link rel="stylesheet" href="../assets/css/amazeui.css" />
-    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/css/core.css" />
-    <link rel="stylesheet" href="../assets/css/menu.css" />
-    <link rel="stylesheet" href="../assets/css/index.css" />
-    <link rel="stylesheet" href="../assets/css/admin.css" />
-    <link rel="stylesheet" href="../assets/css/page/typography.css" />
-    <link rel="stylesheet" href="../assets/css/page/form.css" />
+    <link rel="stylesheet" href="../admin/assets/css/amazeui.css" />
+    <link rel="stylesheet" href="../admin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../admin/assets/css/core.css" />
+    <link rel="stylesheet" href="../admin/assets/css/menu.css" />
+    <link rel="stylesheet" href="../admin/assets/css/index.css" />
+    <link rel="stylesheet" href="../admin/assets/css/admin.css" />
+    <link rel="stylesheet" href="../admin/assets/css/page/typography.css" />
+    <link rel="stylesheet" href="../admin/assets/css/page/form.css" />
 
 </head>
 <body>
@@ -34,7 +34,7 @@
 <!-- Begin page -->
 <header class="am-topbar am-topbar-fixed-top">
     <div class="am-topbar-left am-hide-sm-only">
-        <a href="admin.jsp" class="logo"><span>管理员</span><i class="zmdi zmdi-layers"></i></a>
+        <a href="/admin/admin.jsp" class="logo"><span>管理员</span><i class="zmdi zmdi-layers"></i></a>
     </div>
 
     <div class="contain">
@@ -48,7 +48,7 @@
             <li class="hidden-xs am-hide-sm-only">
                 <form role="search" class="app-search">
                     <input type="text" placeholder="用户手机号" class="form-control"  name="PhoneNum" id="PhoneNum"  value="${PhoneNum}" />
-                    <a onclick="f()"><img src="../assets/img/search.png"></a>
+                    <a onclick="f()"><img src="../admin/assets/img/search.png"></a>
                 </form>
             </li>
         </ul>
@@ -69,7 +69,7 @@
             <!-- User -->
             <div class="user-box am-hide-sm-only">
                 <div class="user-img">
-                    <img src="../assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                    <img src="../admin/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                     <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
                 </div>
                 <h5><%=session.getAttribute("AdminName") %></h5>
@@ -90,7 +90,7 @@
             <!-- End User -->
 
             <ul class="am-list admin-sidebar-list">
-                <li><a href="/admin.jsp"><span class="am-icon-home"></span> 首页</a></li>
+                <li><a href="/admin/admin.jsp"><span class="am-icon-home"></span> 首页</a></li>
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 用户 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
@@ -251,10 +251,10 @@
 <!-- navbar -->
 <a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
 
-<script type="text/javascript" src="../assets/js/jquery-2.1.0.js" ></script>
-<script type="text/javascript" src="../assets/js/amazeui.min.js"></script>
-<script type="text/javascript" src="../assets/js/app.js" ></script>
-<script type="text/javascript" src="../assets/js/blockUI.js" ></script>
+<script type="text/javascript" src="../admin/assets/js/jquery-2.1.0.js" ></script>
+<script type="text/javascript" src="../admin/assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../admin/assets/js/app.js" ></script>
+<script type="text/javascript" src="../admin/assets/js/blockUI.js" ></script>
 <script src="/bootstrap/jquery-3.4.0.min.js"></script>
 <script src="/bootstrap/js/bootstrap.js"></script>
 

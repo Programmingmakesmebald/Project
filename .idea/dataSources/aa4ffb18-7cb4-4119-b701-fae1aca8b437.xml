@@ -2,62 +2,62 @@
 <dataSource name="booksell@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
-      <ServerVersion>5.5.40</ServerVersion>
+      <ServerVersion>5.5.62</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <DefaultCasing>lower/lower</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="book">
-      <Collation>utf8_general_ci</Collation>
-    </schema>
-    <schema id="3" parent="1" name="book_manage_db">
-      <Collation>utf8mb4_general_ci</Collation>
-    </schema>
-    <schema id="4" parent="1" name="booksell">
+    <schema id="2" parent="1" name="booksell">
       <Current>1</Current>
       <Visible>1</Visible>
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="5" parent="1" name="hrm_db">
+    <schema id="3" parent="1" name="db">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="6" parent="1" name="hrm_db3">
+    <schema id="4" parent="1" name="dblogin">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="7" parent="1" name="hztl_db">
+    <schema id="5" parent="1" name="demo">
+      <Collation>utf8_unicode_ci</Collation>
+    </schema>
+    <schema id="6" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="8" parent="1" name="information_schema">
+    <schema id="7" parent="1" name="jdbc">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="9" parent="1" name="jpw">
+    <schema id="8" parent="1" name="library">
+      <Collation>utf8_unicode_ci</Collation>
+    </schema>
+    <schema id="9" parent="1" name="mybatis">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="10" parent="1" name="jy">
+    <schema id="10" parent="1" name="mysql">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="11" parent="1" name="mybatis">
+    <schema id="11" parent="1" name="performance_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="12" parent="1" name="mysql">
+    <schema id="12" parent="1" name="project">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="13" parent="1" name="ruanxie">
+    <schema id="13" parent="1" name="ssm">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="14" parent="1" name="save_msg">
+    <schema id="14" parent="1" name="taobao">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="15" parent="1" name="ssh2_employee">
+    <schema id="15" parent="1" name="test">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="16" parent="1" name="test">
+    <schema id="16" parent="1" name="weixin">
+      <Collation>utf8_unicode_ci</Collation>
+    </schema>
+    <schema id="17" parent="1" name="xingge">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="17" parent="1" name="twz">
-      <Collation>utf8_general_ci</Collation>
-    </schema>
-    <schema id="18" parent="1" name="xinwen">
+    <schema id="18" parent="1" name="yang">
       <Collation>utf8_general_ci</Collation>
     </schema>
     <collation id="19" parent="1" name="armscii8_bin">
@@ -848,212 +848,238 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="216" parent="4" name="bookinfo"/>
-    <table id="217" parent="4" name="massage"/>
-    <table id="218" parent="4" name="orders"/>
-    <table id="219" parent="4" name="shoppingcart"/>
-    <table id="220" parent="4" name="userinfo"/>
-    <column id="221" parent="216" name="bookid">
+    <table id="216" parent="2" name="admininfo"/>
+    <table id="217" parent="2" name="bookinfo"/>
+    <table id="218" parent="2" name="massage"/>
+    <table id="219" parent="2" name="orders"/>
+    <table id="220" parent="2" name="shoppingcart"/>
+    <table id="221" parent="2" name="userinfo"/>
+    <column id="222" parent="216" name="AdminId">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="223" parent="216" name="AdminName">
+      <Position>2</Position>
+      <DataType>longtext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="224" parent="216" name="AdminNum">
+      <Position>3</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="225" parent="216" name="APassword">
+      <Position>4</Position>
+      <DataType>varchar(144)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="226" parent="216" name="School">
+      <Position>5</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="227" parent="217" name="bookid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="222" parent="216" name="seller">
+    <column id="228" parent="217" name="seller">
       <Position>2</Position>
       <DataType>int(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="223" parent="216" name="typeid">
+    <column id="229" parent="217" name="typeid">
       <Position>3</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="224" parent="216" name="price">
+    <column id="230" parent="217" name="price">
       <Position>4</Position>
       <DataType>double(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="225" parent="216" name="booktext">
+    <column id="231" parent="217" name="booktext">
       <Position>5</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="226" parent="216" name="frequency">
+    <column id="232" parent="217" name="frequency">
       <Position>6</Position>
       <DataType>int(8)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="227" parent="216" name="bookname">
+    <column id="233" parent="217" name="bookname">
       <Position>7</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="228" parent="216" name="path">
+    <column id="234" parent="217" name="path">
       <Position>8</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="216" name="bookstate">
+    <column id="235" parent="217" name="bookstate">
       <Position>9</Position>
       <DataType>int(2)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="216" name="booktime">
+    <column id="236" parent="217" name="booktime">
       <Position>10</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="231" parent="216" name="PRIMARY">
+    <key id="237" parent="217" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>bookid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="232" parent="217" name="inforid">
+    <column id="238" parent="218" name="inforid">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="217" name="sender">
+    <column id="239" parent="218" name="sender">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="217" name="receiver">
+    <column id="240" parent="218" name="receiver">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="217" name="sendtime">
+    <column id="241" parent="218" name="sendtime">
       <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="217" name="content">
+    <column id="242" parent="218" name="content">
       <Position>5</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="217" name="msgstate">
+    <column id="243" parent="218" name="msgstate">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="238" parent="217" name="PRIMARY">
+    <key id="244" parent="218" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>inforid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="239" parent="218" name="OrderId">
+    <column id="245" parent="219" name="OrderId">
       <Position>1</Position>
       <DataType>bigint(18)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="218" name="Buyer">
+    <column id="246" parent="219" name="Buyer">
       <Position>2</Position>
       <DataType>int(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="218" name="Seller">
+    <column id="247" parent="219" name="Seller">
       <Position>3</Position>
       <DataType>int(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="218" name="BookId">
+    <column id="248" parent="219" name="BookId">
       <Position>4</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="218" name="OrderState">
+    <column id="249" parent="219" name="OrderState">
       <Position>5</Position>
       <DataType>int(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="218" name="Price">
+    <column id="250" parent="219" name="Price">
       <Position>6</Position>
       <DataType>double(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="218" name="OrderTime">
+    <column id="251" parent="219" name="OrderTime">
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="246" parent="218" name="PRIMARY">
+    <key id="252" parent="219" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OrderId
 BookId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="247" parent="219" name="BookId">
+    <column id="253" parent="220" name="BookId">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="219" name="UserId">
+    <column id="254" parent="220" name="UserId">
       <Position>2</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="249" parent="219" name="PRIMARY">
+    <key id="255" parent="220" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>BookId
 UserId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="250" parent="220" name="UserId">
+    <column id="256" parent="221" name="UserId">
       <Position>1</Position>
       <DataType>int(8)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="220" name="UserName">
+    <column id="257" parent="221" name="UserName">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="220" name="PhoneNum">
+    <column id="258" parent="221" name="PhoneNum">
       <Position>3</Position>
       <DataType>varchar(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="220" name="LPassword">
+    <column id="259" parent="221" name="LPassword">
       <Position>4</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="220" name="School">
+    <column id="260" parent="221" name="School">
       <Position>5</Position>
       <DataType>int(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="220" name="Credit">
+    <column id="261" parent="221" name="Credit">
       <Position>6</Position>
       <DataType>int(3)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="256" parent="220" name="PRIMARY">
+    <key id="262" parent="221" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UserId</ColNames>
       <Primary>1</Primary>

@@ -7,14 +7,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后台管理员</title>
-    <link rel="stylesheet" href="/assets/css/amazeui.css" />
-    <link rel="stylesheet" href="/assets/css/core.css" />
-    <link rel="stylesheet" href="/assets/css/menu.css" />
-    <link rel="stylesheet" href="/assets/css/index.css" />
-    <link rel="stylesheet" href="/assets/css/admin.css" />
-    <link rel="stylesheet" href="/assets/css/page/typography.css" />
-    <link rel="stylesheet" href="/assets/css/page/form.css" />
-    <link rel="stylesheet" href="/assets/css/component.css" />
+    <link rel="stylesheet" href="/admin/assets/css/amazeui.css" />
+    <link rel="stylesheet" href="/admin/assets/css/core.css" />
+    <link rel="stylesheet" href="/admin/assets/css/menu.css" />
+    <link rel="stylesheet" href="/admin/assets/css/index.css" />
+    <link rel="stylesheet" href="/admin/assets/css/admin.css" />
+    <link rel="stylesheet" href="/admin/assets/css/page/typography.css" />
+    <link rel="stylesheet" href="/admin/assets/css/page/form.css" />
+    <link rel="stylesheet" href="/admin/assets/css/component.css" />
 </head>
 <body>
 <%
@@ -24,7 +24,7 @@
 <!-- Begin page -->
 <header class="am-topbar am-topbar-fixed-top">
     <div class="am-topbar-left am-hide-sm-only">
-        <a href="/admin.jsp" class="logo"><span>管理员</span><i class="zmdi zmdi-layers"></i></a>
+        <a href="/admin/admin.jsp" class="logo"><span>管理员</span><i class="zmdi zmdi-layers"></i></a>
     </div>
 
     <div class="contain">
@@ -38,7 +38,7 @@
             <li class="hidden-xs am-hide-sm-only">
                 <form role="search" class="app-search">
                     <input type="text" placeholder="Search..." class="form-control">
-                    <a href=""><img src="/assets/img/search.png"></a>
+                    <a href=""><img src="/admin/assets/img/search.png"></a>
                 </form>
             </li>
         </ul>
@@ -59,7 +59,7 @@
             <!-- User -->
             <div class="user-box am-hide-sm-only">
                 <div class="user-img">
-                    <img src="/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                    <img src="/admin/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                     <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
                 </div>
                 <h5><%=session.getAttribute("AdminName") %></h5>
@@ -80,7 +80,7 @@
             <!-- End User -->
 
             <ul class="am-list admin-sidebar-list">
-                <li><a href="/admin.jsp"><span class="am-icon-home"></span> 首页</a></li>
+                <li><a href="/admin/admin.jsp"><span class="am-icon-home"></span> 首页</a></li>
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 用户 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
@@ -213,7 +213,7 @@
                 <div class="am-u-md-3">
                     <div class="card-box widget-user">
                         <div>
-                            <img src="/assets/img/avatar-3.jpg" class="img-responsive img-circle" alt="user">
+                            <img src="/admin/assets/img/avatar-3.jpg" class="img-responsive img-circle" alt="user">
                             <div class="wid-u-info">
                                 <h4 class="m-t-0 m-b-5 font-600">Chadengle</h4>
                                 <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
@@ -226,7 +226,7 @@
                 <div class="am-u-md-3">
                     <div class="card-box widget-user">
                         <div>
-                            <img src="/assets/img/avatar-2.jpg" class="img-responsive img-circle" alt="user">
+                            <img src="/admin/assets/img/avatar-2.jpg" class="img-responsive img-circle" alt="user">
                             <div class="wid-u-info">
                                 <h4 class="m-t-0 m-b-5 font-600">Chadengle</h4>
                                 <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
@@ -239,7 +239,7 @@
                 <div class="am-u-md-3">
                     <div class="card-box widget-user">
                         <div>
-                            <img src="/assets/img/avatar-4.jpg" class="img-responsive img-circle" alt="user">
+                            <img src="/admin/assets/img/avatar-4.jpg" class="img-responsive img-circle" alt="user">
                             <div class="wid-u-info">
                                 <h4 class="m-t-0 m-b-5 font-600">Chadengle</h4>
                                 <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
@@ -252,7 +252,7 @@
                 <div class="am-u-md-3">
                     <div class="card-box widget-user">
                         <div>
-                            <img src="/assets/img/avatar-10.jpg" class="img-responsive img-circle" alt="user">
+                            <img src="/admin/assets/img/avatar-10.jpg" class="img-responsive img-circle" alt="user">
                             <div class="wid-u-info">
                                 <h4 class="m-t-0 m-b-5 font-600">Chadengle</h4>
                                 <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
@@ -275,7 +275,7 @@
                         <div class="inbox-widget nicescroll" style="height: 315px; overflow: hidden; outline: none;" tabindex="5000">
                             <a href="#">
                                 <div class="inbox-item">
-                                    <div class="inbox-item-img"><img src="/assets/img/avatar-1.jpg" class="img-circle" alt=""></div>
+                                    <div class="inbox-item-img"><img src="/admin/assets/img/avatar-1.jpg" class="img-circle" alt=""></div>
                                     <p class="inbox-item-author">Chadengle</p>
                                     <p class="inbox-item-text">Hey! there I'm available...</p>
                                     <p class="inbox-item-date">13:40 PM</p>
@@ -283,7 +283,7 @@
                             </a>
                             <a href="#">
                                 <div class="inbox-item">
-                                    <div class="inbox-item-img"><img src="/assets/img/avatar-2.jpg" class="img-circle" alt=""></div>
+                                    <div class="inbox-item-img"><img src="/admin/assets/img/avatar-2.jpg" class="img-circle" alt=""></div>
                                     <p class="inbox-item-author">Shahedk</p>
                                     <p class="inbox-item-text">Hey! there I'm available...</p>
                                     <p class="inbox-item-date">10:15 AM</p>
@@ -291,7 +291,7 @@
                             </a>
                             <a href="#">
                                 <div class="inbox-item">
-                                    <div class="inbox-item-img"><img src="/assets/img/avatar-10.jpg" class="img-circle" alt=""></div>
+                                    <div class="inbox-item-img"><img src="/admin/assets/img/avatar-10.jpg" class="img-circle" alt=""></div>
                                     <p class="inbox-item-author">Tomaslau</p>
                                     <p class="inbox-item-text">I've finished it! See you so...</p>
                                     <p class="inbox-item-date">13:34 PM</p>
@@ -299,7 +299,7 @@
                             </a>
                             <a href="#">
                                 <div class="inbox-item">
-                                    <div class="inbox-item-img"><img src="/assets/img/avatar-4.jpg" class="img-circle" alt=""></div>
+                                    <div class="inbox-item-img"><img src="/admin/assets/img/avatar-4.jpg" class="img-circle" alt=""></div>
                                     <p class="inbox-item-author">Stillnotdavid</p>
                                     <p class="inbox-item-text">This theme is awesome!</p>
                                     <p class="inbox-item-date">13:17 PM</p>
@@ -307,7 +307,7 @@
                             </a>
                             <a href="#">
                                 <div class="inbox-item">
-                                    <div class="inbox-item-img"><img src="/assets/img/avatar-5.jpg" class="img-circle" alt=""></div>
+                                    <div class="inbox-item-img"><img src="/admin/assets/img/avatar-5.jpg" class="img-circle" alt=""></div>
                                     <p class="inbox-item-author">Kurafire</p>
                                     <p class="inbox-item-text">Nice to meet you</p>
                                     <p class="inbox-item-date">12:20 PM</p>
@@ -411,14 +411,14 @@
 </div>
 
 <!-- navbar -->
-<a href="/admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+<a href="/admin/admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
 
-<script type="text/javascript" src="/assets/js/jquery-2.1.0.js" ></script>
-<script type="text/javascript" src="/assets/js/amazeui.min.js"></script>
-<script type="text/javascript" src="/assets/js/app.js" ></script>
-<script type="text/javascript" src="/assets/js/blockUI.js" ></script>
-<script type="text/javascript" src="/assets/js/charts/echarts.min.js" ></script>
-<script type="text/javascript" src="/assets/js/charts/indexChart.js" ></script>
+<script type="text/javascript" src="/admin/assets/js/jquery-2.1.0.js" ></script>
+<script type="text/javascript" src="/admin/assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="/admin/assets/js/app.js" ></script>
+<script type="text/javascript" src="/admin/assets/js/blockUI.js" ></script>
+<script type="text/javascript" src="/admin/assets/js/charts/echarts.min.js" ></script>
+<script type="text/javascript" src="/admin/assets/js/charts/indexChart.js" ></script>
 
 </body>
 
