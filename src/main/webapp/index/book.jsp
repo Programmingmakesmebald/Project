@@ -127,7 +127,9 @@
     <!--CreateDate  2019-10-08 18:30:02-->
     <div style="position:relative;" class="logo_line_out">
     <div class="logo_line" dd_name="搜索框">
-        <div class="logo"><img src="/index/images/15691441038791.png" />
+        <div class="logo">
+            <a href="/index/index.jsp"><img src="/index/images/15691441038791.png" />
+            </a>
         </div>
         <div class="search">
             <form action="" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
@@ -222,7 +224,20 @@
         </div>
     </div>
 </div>
-</div>
+</div>    <%
+    BookInfo bookInfo=(BookInfo) request.getAttribute("bookInfos");
+//    List<BookPicture> bookPictures=(List<BookPicture>) request.getAttribute("bookPictures");
+
+    List<String> imageList=new ArrayList<String>();
+%>
+<%
+    String path=bookInfo.getPath();
+    String[] pathList=path.split(",");
+    for (String pathlist:pathList) {
+        imageList.add(pathlist);
+    }
+%>
+
 <script type="text/javascript">
     var newsuggesturl = "//schprompt.dangdang.com/suggest_new.php?";
     var nick_num = 1;
@@ -239,7 +254,7 @@
 
     <div class="breadcrumb" id="breadcrumb" dd_name="顶部面包屑导航" ddt-area="000">
         <a href='http://book.dangdang.com/book.jsp' name='__Breadcrumb_pub' target='_blank' class='domain'><b>图书</b></a>
-        <span class="gt">&gt;</span><span>三体：全三册&nbsp;刘慈欣代表作，亚洲首部“雨果奖”获奖作品！</span>
+        <span class="gt">&gt;</span><span><%=bookInfo.getBookName()%></span>
         <div class="outlets" style="display:none" id="bread-crumb-outlets">
             <a class="o_close hidden" style="display: none;"></a>
             <a class="o_icon" href=" http://v.dangdang.com/" title="尾品汇" target="_blank" name="go_outlets">
@@ -250,20 +265,7 @@
             </a>
         </div>
     </div>
-    <%
-        List<BookInfo> bookInfos=(List<BookInfo>) request.getAttribute("bookInfos");
-//    List<BookPicture> bookPictures=(List<BookPicture>) request.getAttribute("bookPictures");
-        int i=(int)request.getAttribute("i");
-        List<String> imageList=new ArrayList<String>();
-        BookInfo bookInfo=bookInfos.get(i);
-    %>
-    <%
-        String path=bookInfos.get(i).getPath();
-        String[] pathList=path.split(",");
-        for (String pathlist:pathList) {
-            imageList.add(pathlist);
-        }
-    %>
+
 
     <script  type="application/javascript" charset="UTF-8">
         var xhr=new XMLHttpRequest();
@@ -436,7 +438,7 @@
                     <!-- 地址区 -->
                     <div class="area_info clearfix">
                         <div class="left letter03">卖家</div>
-                        <span class="2" id="geo-name" dd_name="卖家"><%=bookInfo.getSeller()%></span>
+                        <span class="2" id="geo-name" dd_name="卖家">寻书网</span>
                         <div class="right" id="geo-info">
                             <div class="select_add clearfix">
 

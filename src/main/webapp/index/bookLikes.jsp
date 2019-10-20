@@ -144,7 +144,10 @@
     <div id="header_end"></div>
     <div style="position:relative;" class="logo_line_out">
         <div class="logo_line" dd_name="搜索框">
-            <div class="logo"><img src="/index/images/15691441038791.png" />
+            <div class="logo">
+                <a href="/index/index.jsp">
+                <img src="/index/images/15691441038791.png" />
+                </a>
             </div>
             <div class="search">
                 <form action="" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
@@ -617,11 +620,11 @@
                                     <% int k=0; %>
                             <c:forEach var="book" items="${pageInfo.list}">
                             <li ddt-pit="1" class="line1" id="1">
-                                <a title="${book.getBookName()}"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="one_info/<%=k%>"  target="_blank" >
+                                <a title="${book.getBookName()}"  ddclick="act=normalResult_picture&pos=23579654_0_1_p" class="pic" name="itemlist-picture"  dd_name="单品图片" href="one_info/${book.getBookId()}"  target="_blank" >
                                     <img src="${book.getPath().split(",")[0]}" alt='${book.getBookName()}' />
                                     <p class="cool_label"></p>
                                 </a>
-                                <p class="name" name="title" ><a  href="one_info/<%=k%>" name="itemlist-title" dd_name="单品标题" target="_blank" >${book.getBookName()} </a>
+                                <p class="name" name="title" ><a  href="one_info/${book.getBookId()}" name="itemlist-title" dd_name="单品标题" target="_blank" >${book.getBookName()} </a>
                                 </p>
                                 <p class="detail" >${book.getBookText()}</p>
                                 <p class="price" > <span class="search_now_price">&yen;${book.getPrice()}</span>

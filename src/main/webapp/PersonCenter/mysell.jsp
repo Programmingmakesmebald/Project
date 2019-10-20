@@ -65,8 +65,8 @@
 					<div class="logo">
 						<img src="../PersonCenter/img/logo.png" usemap="#logo_link">
 						<map id="logo_link" name="logo_link" dd_name="logo区">
-							<area shape="rect" coords="0,18,200,93" href="#首页链接" title="小xun" onfocus="this.blur()">
-							<area shape="rect" coords="200,18,320,93" href="#首页链接" title="" target="_blank" onfocus="this.blur();">		
+							<area shape="rect" coords="0,18,200,93" href="/index/index.jsp" title="小xun" onfocus="this.blur()">
+							<area shape="rect" coords="200,18,320,93" href="/index/index.jsp" title="" target="_blank" onfocus="this.blur();">
 						</map>
 					</div>
 					<div class="search">

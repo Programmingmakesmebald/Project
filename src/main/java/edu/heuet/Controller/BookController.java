@@ -92,12 +92,11 @@ public class BookController {
 //    }
     //单个图书信息
     @RequestMapping("one_info/{i}")
-    public String selectOnePicture(@PathVariable("i") Integer i,Map<String,Object> map){
-        List<BookInfo> bookInfos=bookService.selectBookInfo();
+    public String selectOnePicture(@PathVariable("i") Integer bookId,Map<String,Object> map){
+        BookInfo bookInfo=bookService.selectBookInfoById(bookId);
 //        List<BookPicture> bookPictures=bookPictureService.selectBookPicture();
-        map.put("bookInfos",bookInfos);
+        map.put("bookInfos",bookInfo);
 //        map.put("bookPictures",bookPictures);
-        map.put("i",i);
         return "index/book";
     }
 

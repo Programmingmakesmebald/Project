@@ -194,6 +194,12 @@ public class OrderController {
         response.sendRedirect("/order/selectOrdersByState");
     }
 
+    @RequestMapping("/delOrderAndChangeBookState")
+    public String delOrderAndChangeBookState(@RequestParam("BookId")Integer bookId){
+        orderService.deleteOrder(bookId);
+        bookService.changeState(bookId,0);
+        return "forward:/order/selectOrdersByState";
+    }
 
 
 

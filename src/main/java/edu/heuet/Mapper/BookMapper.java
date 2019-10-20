@@ -34,4 +34,6 @@ public interface BookMapper {
     void changeOrderState(@Param("BookId") Integer bookId, @Param("state") Integer state);
 
     void updateFrequent(Integer bookId);
+
+    BookInfo selectBookInfoById(Integer bookId);  /***查询单个图书信息**/
 }

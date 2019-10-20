@@ -67,8 +67,8 @@
 					<div class="logo">
 						<img src="../PersonCenter/img/logo.png" usemap="#logo_link">
 						<map id="logo_link" name="logo_link" dd_name="logo区">
-							<area shape="rect" coords="0,18,200,93" href="#首页链接" title="小xun" onfocus="this.blur(;)">
-							<area shape="rect" coords="200,18,320,93" href="#首页链接" title="" target="_blank" onfocus="this.blur();">		
+							<area shape="rect" coords="0,18,200,93" href="/index/index.jsp" title="小xun" onfocus="this.blur()">
+							<area shape="rect" coords="200,18,320,93" href="/index/index.jsp" title="" target="_blank" onfocus="this.blur();">
 						</map>
 					</div>
 					<div class="search">
@@ -287,7 +287,9 @@
 												var s=confirm('确定继续嘛？');
 												if(s){
 												window.location.href='/book/CreateOrder?BookId=${orderInfo.getBookId()}';
-												}">继续支付</a></c:if>
+												}">继续支付</a><br/><br/>
+											<a href="/order/delOrderAndChangeBookState?BookId=${orderInfo.getBookId()}" >取消订单</a>
+										</c:if>
 										<c:if test="${orderInfo.getOrderState()==2}"><a
 												onclick="
 														var s=confirm('确定收货嘛？');

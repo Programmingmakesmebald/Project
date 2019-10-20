@@ -34,9 +34,9 @@
                 <li class="ddnewhead_separate"></li>
                 <li class="help"><a name="t_6" href="" target="_blank">帮助</a></li>
             </ul>
-            <p id=""><span>欢迎光临小xun，请</span><a href="" name="" target="_blank" class="login_link">登录</a><a href="" name="zt_zhuce" target="_self" class="login_link">免费注册</a></p>
+            <p id=""><span>欢迎光临小xun，请</span><a href="" name="" target="_blank" class="login_link">登录</a><a href="/index/regist.jsp" name="zt_zhuce" target="_self" class="login_link">免费注册</a></p>
         </div>
-        <div class="ddnewhead_logo"><a href="index.jsp" title="返回首页" name="ddnav_logo"><img src="images/102.png" alt="xun书"/></a></div>
+        <div class="ddnewhead_logo"><a href="/index/index.jsp" title="返回首页" name="ddnav_logo"><img src="/index/images/102.png" alt="xun书"/></a></div>
         <div class="clear"></div>
     </div>
     <div class="ddnewcarthead_bottom"></div>

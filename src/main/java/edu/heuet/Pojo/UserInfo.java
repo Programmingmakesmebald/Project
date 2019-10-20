@@ -1,18 +1,22 @@
 package edu.heuet.Pojo;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserInfo {
     private String UserId;
     private String UserName;
     private String PhoneNum;
     private String LPassword;
     private String School;
-    private String Credit;
+    private Integer Credit;
 
-    public String getCredit() {
+    public Integer getCredit() {
         return Credit;
     }
 
-    public void setCredit(String credit) {
+    public void setCredit(Integer credit) {
         Credit = credit;
     }
 

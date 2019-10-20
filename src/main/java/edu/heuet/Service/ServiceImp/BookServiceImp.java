@@ -122,4 +122,9 @@ public class BookServiceImp implements BookService {
     public void updateFrequent(Integer bookId) {
         bookMapper.updateFrequent(bookId);
     }
+
+    @Override
+    public BookInfo selectBookInfoById(Integer bookId) {
+        return  bookMapper.selectBookInfoById(bookId);
+    }
 }

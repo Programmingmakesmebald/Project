@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.heuet.Mapper.AdminMapper">
+<!--  /** 注册**/  -->
+    <insert id="addAdmin" parameterType="edu.heuet.Pojo.Admin" >
+        insert into
+        booksell.admininfo(AdminId,AdminName,AdminNum,APassword,School)
+            values(#{AdminId},#{AdminName},#{AdminNum},#{APassword},#{School})
+    </insert>
+<!--  /** 登录查询根据手机号**/  -->
+    <select id="checkPNum" parameterType="java.lang.String" resultType="edu.heuet.Pojo.Admin">
+        select * from admininfo
+        where AdminNum=#{AdminNum}
+    </select>
+<!--  /** 修改个人信息*/  -->
+    <update id="updateInfo" parameterType="edu.heuet.Pojo.Admin" >
+        update admininfo
+        set
+            AdminName=#{AdminName},
+            AdminNum=#{AdminNum},
+            APassword=#{APassword},
+            School=#{School}
+        where AdminId=#{AdminId}
+    </update>
+<!--  查询全部用户  -->
+    <select id="selectUser" resultType="edu.heuet.Pojo.UserInfo">
+        select * from userinfo where Credit >= '60'
+    </select>
+<!--  根据手机号查询用户  -->
+    <select id="selectUserByPhoneNum" parameterType="java.lang.String" resultType="edu.heuet.Pojo.UserInfo">
+        select * from userinfo
+        where PhoneNum=#{userinfo.PhoneNum} and Credit >= '60'
+    </select>
+<!--  根据UserId查询用户  -->
+    <select id="selectUsersByUserId" parameterType="int" resultType="edu.heuet.Pojo.UserInfo">
+        select * from userinfo
+        where UserId=#{UserId} and Credit >= '60'
+    </select>
+<!--  处罚用户或加入黑名单  -->
+    <update id="punishUser" parameterType="edu.heuet.Pojo.UserInfo" >
+        update userinfo
+        set
+            Credit=#{Credit}
+        where PhoneNum=#{PhoneNum}
+    </update>
+<!--  移除用户  -->
+    <delete id="deleteUser" parameterType="edu.heuet.Pojo.UserInfo">
+    </delete>
+<!--  查询全部  -->
+    <select id="selectOrder" resultType="edu.heuet.Pojo.OrderInfo">
+        select * from orders
+    </select>
+<!--  根据买家手机号（PhoneNum）查询  -->
+    <select id="selectOrderByPhoneNum" parameterType="java.lang.String" resultType="edu.heuet.Pojo.OrderInfo">
+        select OrderId, Buyer, Seller, BookId, OrderState, Price, OrderTime
+        from orders a inner join userinfo b on a.Buyer=b.UserId
+        where b.PhoneNum=#{PhoneNum}
+    </select>
+<!--  查询全部图书  -->
+    <select id="selectBook"  resultType="edu.heuet.Pojo.BookInfo">
+        select *
+        from
+            booksell.bookinfo
+    </select>
+<!--  查询图书根据BookId  -->
+    <select id="selectBookByBookId" parameterType="int"  resultType="edu.heuet.Pojo.BookInfo">
+        SELECT
+        *
+        FROM
+            booksell.bookinfo
+        WHERE
+            bookinfo.bookid =#{BookId}
+    </select>
+<!--  查询全部图书根据手机号  -->
+    <select id="selectBookByPhoneNum" parameterType="java.lang.String"  resultType="edu.heuet.Pojo.BookInfo">
+        SELECT
+            booksell.bookinfo.*
+        FROM
+            booksell.bookinfo
+        INNER JOIN userinfo  ON booksell.bookinfo.seller = userinfo.UserId
+        WHERE
+            userinfo.PhoneNum =#{PhoneNum}
+    </select>
+<!--  查询全部图书根据图书类型  -->
+    <select id="selectBookByTypeId" parameterType="int" resultType="edu.heuet.Pojo.BookInfo">
+        select *
+        from
+            booksell.bookinfo
+        where typeid=#{TypeId}
+    </select>
+<!--  查询全部图书根据手机号和图书类型  -->
+    <select id="selectBookByPAT" parameterType="Map" resultType="edu.heuet.Pojo.BookInfo">
+        SELECT
+            booksell.bookinfo.*
+        FROM
+            booksell.bookinfo
+        INNER JOIN userinfo  ON booksell.bookinfo.seller = userinfo.UserId
+        where userinfo.PhoneNum=#{PhoneNum} and booksell.bookinfo.typeid=#{TypeId}
+    </select>
+<!--  删除图书  -->
+    <delete id="deleteBook" parameterType="int" >
+        delete
+        FROM
+            booksell.bookinfo
+        where booksell.bookinfo.bookid=#{BookId}
+    </delete>
+</mapper>

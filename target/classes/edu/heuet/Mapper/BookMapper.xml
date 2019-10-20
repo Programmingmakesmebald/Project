@@ -7,7 +7,14 @@
     <select id="selectBookInfo" parameterType="edu.heuet.Pojo.BookInfo" resultType="edu.heuet.Pojo.BookInfo">
         select * from
             booksell.bookinfo
+            where bookstate =0
     </select>
+    <select id="selectBookInfoById" parameterType="java.lang.Integer" resultType="edu.heuet.Pojo.BookInfo">
+        select *from bookinfo where bookid=#{bookId}
+    </select>
+
+
+
 <!--卖书-->
     <insert id="insertBookInfo" keyProperty="edu.heuet.Pojo.BookInfo">
         insert into

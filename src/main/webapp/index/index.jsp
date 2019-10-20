@@ -661,7 +661,7 @@
     <div id="header_end"></div>
     <!--CreateDate  2019-09-19 21:30:02--><div style="position:relative;" class="logo_line_out">
     <div class="logo_line" dd_name="搜索框">
-        <div class="logo"><img src="/index/images/15691441038791.png" />
+        <div class="logo"><a href="/index/index.jsp"><img src="/index/images/15691441038791.png" /></a>
             </div>
         <div class="search">
             <form action="/book/search" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
