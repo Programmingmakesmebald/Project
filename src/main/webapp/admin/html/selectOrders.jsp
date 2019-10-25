@@ -20,7 +20,7 @@
 <!-- Begin page -->
 <header class="am-topbar am-topbar-fixed-top">
     <div class="am-topbar-left am-hide-sm-only">
-        <a href="/admin/html/admin.jsp" class="logo"><span>管理员</span><i class="zmdi zmdi-layers"></i></a>
+        <a href="/admin/admin.jsp" class="logo"><span>管理员</span><i class="zmdi zmdi-layers"></i></a>
     </div>
 
     <div class="contain">
