@@ -41,7 +41,7 @@ public class AdminController {
         String School=request.getParameter("School");
         admin.setAdminName(AdminName);
         admin.setAdminNum(AdminNum);
-        admin.setAPassword(APassword);
+        admin.setAPassword(DigestUtils.md5DigestAsHex(APassword.getBytes()));
         admin.setSchool(School);
         adminService.addAdmin(admin);
         return "redirect:/admin/loginCookie";
@@ -52,9 +52,6 @@ public class AdminController {
                        HttpSession session, HttpServletRequest request, HttpServletResponse response){/** 登录查询**/
         String isRemember=(String) request.getParameter("isRemember");
         Boolean Remember=isRemember==null?false:true;
-        System.out.println("Remember:"+Remember+"isRemember:"+isRemember);
-        System.out.println(AdminNum);
-        System.out.println(APassword);
         admin=adminService.checkPNum(AdminNum);
         System.out.println(admin);
         System.out.println("登录完成");
@@ -62,7 +59,7 @@ public class AdminController {
             if (admin==null) {
                 model.addAttribute("message","手机号错误!");
                 return "/admin/html/login";
-            }else if (admin.getAPassword().equals(APassword)){
+            }else if (admin.getAPassword().equals(DigestUtils.md5DigestAsHex(APassword.getBytes()))){
                 if (Remember==true) {//Cookie
                     System.out.println("添加");
                     CookieUtils.setCookie(request,response,"AdminInfo",String.format("%s:%s",admin.getAdminNum(),admin.getAPassword()),7*24*60*60);
@@ -75,7 +72,7 @@ public class AdminController {
                 session.setAttribute("AdminNum",admin.getAdminNum());
                 session.setAttribute("AdminId",admin.getAdminId());
                 session.setAttribute("APassword",admin.getAPassword());
-                return "/admin/admin";
+                return "/admin/html/admin";
             }else {
                 model.addAttribute("message","密码错误!");
                 return "/admin/html/login";

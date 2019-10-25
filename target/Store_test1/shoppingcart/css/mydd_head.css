@@ -1,0 +1,86 @@
+.mdhead_mydd_head{ width:960px; padding:0 1px;margin:0 auto; background: #fff}
+.mdhead_mydd_head_body{ border:solid 1px #878787; border-bottom: solid 1ps #404040; border-top:0; background: #c7e9ad; height:64px}
+.mdhead_logo{padding-top:12px; padding-left:25px; width:90px; float:left}/*080723*/
+
+/*Í·²¿µ¼º½ begin*/
+.mdhead_top_navi{ float:left;margin: 34px 0 0 30px;  line-height: 20px; }
+.mdhead_tag { float:left}
+.mdhead_bookmusic{ float:left; width:115px}
+.mdhead_bookmusic_tag{width:93px; height:21px; border:solid 1px #bdbbb5; background-color:#fefaf0; float:left; padding-left:15px; padding-top:5px}
+.mdhead_bookmusic_tag .div1{ width:24px; float:left}
+.mdhead_bookmusic_tag .div1 a{color:#3a7b37;text-decoration:none;}
+.mdhead_bookmusic_tag .div1 a:hover{color:#3a7b37;text-decoration:underline;}
+.mdhead_bookmusic_tag .div2{ color:#666666; float:left; }
+.mdhead_bookmusic_tag div img{ padding-left:2px}
+.mdhead_rightshadow{height:27px; margin-top:1px; width:1px; background-color:#797770; float:left;}
+.mdhead_bottomshadow{width:110px; margin-left:1px; height:1px; background-color:#797770;font-size:0;overflow:hidden}
+
+.mdhead_b2c{ float:left; width:467px}
+.mdhead_b2c_tag{width:445px; height:21px; border:solid 1px #bdbbb5; background-color:#fefaf0; float:left; padding-left:15px; padding-top:5px; color:#c2502a}
+.mdhead_b2c_tag a{color:#c2502a; text-decoration:none; width: 65px!important;}
+.mdhead_b2c_tag a:hover{color:#c2502a; text-decoration:underline}
+.mdhead_b2c_tag div{ float:left}
+.mdhead_b2c_tag div img{ padding-left:2px}
+.mdhead_b2cbottomshadow{width:462px; margin-left:1px; height:1px; background-color:#797770;font-size:0;overflow:hidden}
+
+.mdhead_tj{ float:left; width:69px; margin-right:4px;_margin-right:0px}
+.mdhead_tj a{display:block; width:63px; height:23px; color:#404040; text-decoration:none; background:url(../images/tag_tj.gif) no-repeat; padding-left:11px; padding-top:6px}
+.mdhead_tj a:hover{display:block; width:63px; height:23px; color:#404040; text-decoration:underline; background:url(../images/tag_tj.gif) no-repeat; padding-left:11px; padding-top:6px}
+
+
+.mdhead_bang{ float:left; width:69px; margin-right:6px;_margin-right:2px}/*2008-07-09WWÐÞ¸Ä*/
+.mdhead_bang a{display:block; width:61px; height:23px; color:#404040; text-decoration:none; background:url(../images/tag_bang1.gif) no-repeat; padding-left:13px; padding-top:6px}
+.mdhead_bang a:hover{display:block; width:61px; height:23px; color:#404040; text-decoration:none; background:url(../images/tag_bang2.gif) no-repeat; padding-left:13px; padding-top:6px}
+
+.mdhead_cx{ float:left; width:55px; margin-right:4px;_margin-right:0px}/*2008-07-09WWÐÞ¸Ä*/
+.mdhead_cx a{display:block; width:55px; height:23px; color:#404040; text-decoration:none; background:url(../images/tag_cx.gif) no-repeat; padding-left:15px; padding-top:6px}/*2008-07-09WWÐÞ¸Ä*/
+.mdhead_cx a:hover{display:block; width:55px; height:23px; color:#404040; text-decoration:underline; background:url(../images/tag_cx.gif) no-repeat; padding-left:15px; padding-top:6px}/*2008-07-09WWÐÞ¸Ä*/
+/*Í·²¿µ¼º½ end*/
+
+
+
+/* ============Ò³¶¥²Ù×÷Çø============ */
+.mdhead_welcome_notice{line-height:20px; width:937px; margin:auto; height:25px; border:solid 1px #a7a7a7; border-top:none; background-color:#fefdf8; padding:0 7px 0 14px}
+.mdhead_welcome_p{padding-top:5px; color:#404040}
+.mdhead_little_navi{ float:right; padding-top:3px}
+.mdhead_little_navi .little_n{ float:left; padding-top:2px; margin-right:8px; display:block; }
+.mdhead_little_navi input{ width:80px; height:16px; padding:2px 0 0 2px;color:#a1a1a1; float:left;background:url(../images/topsearchbar.gif); border:none;}
+.mdhead_little_navi .butt_search{ float:left}
+.mdhead_cart{background:url(../images/CART_BG1.gif) no-repeat ; padding-left:25px; height:18px;  float:right; margin-top:5px;padding-right:3px;}
+
+.mdhead_link_black a{ color:#404040; text-decoration:none}
+.mdhead_link_black a:hover{ color:#404040; text-decoration:underline}
+.mdhead_link_white a{ color:#fff; text-decoration:none}
+.mdhead_link_white a:hover{ color:#fff; text-decoration:underline}
+.mdhead_link_blue a{ color:#080670; text-decoration:none}
+.mdhead_link_blue a:hover{ color:#080670; text-decoration:underline}
+.mdhead_link_gray a{ color:#666; text-decoration:none}
+.mdhead_link_gray a:hover{ color:#666; text-decoration:underline}
+.mdhead_link_w a{ color:#fff; text-decoration:none}
+.mdhead_link_w a:hover{ color:#fff; text-decoration:underline}
+.mdhead_link_white_t a{ color:#fff; text-decoration:none}
+.mdhead_link_white_t a:hover{ color:#080670; text-decoration:none}
+
+.mdhead_back_window{ width:157px; height:42px; background:url(../images/back_window.gif); line-height:20px; padding:5px 0 0 12px}
+
+
+
+/* ============Ðü¸¡Í¼²ã============ */
+.mdhead_li5{text-align:center; height:19px; width:100%;float:left;border-bottom:solid 1px #fff; padding-top:3px}
+.mdhead_li6{background:#a1a1a1; height:1px; font-size:0; overflow:hidden;width:100%; float:left;}
+.mdhead_li7{margin:auto; width:85%; height:25px; text-align:center; background: url(../images/xuxian_x.gif) bottom repeat-x; line-height:25px}
+
+.mdhead_ddbangxf{width:75px; padding:3px 5px;background:#fff; border: solid 1px #878787;}
+
+.mdhead_yxxf{width:43px; padding:3px 5px;background:#fff; border: solid 1px #878787;}
+
+.mdhead_flxf_left_wai{float:left; width:60px}
+.mdhead_flxf_left{width:61px; height:23px; border: solid 1px #a1a1a1; border-right:none; background-color:#fafafa; float:left; color:#000; font-weight:bold; text-align:center; line-height:23px}
+.mdhead_flxf_left_wai .shadow{background:#999; height:26px;*height:2px;_height:1px; filter:alpha(opacity=40);margin-left:2px;width:60px; font-size:0}
+.mdhead_flxf_right_wai{float:left; width:180px}
+.mdhead_flxf_right{width: 160px; border: solid 1px #a1a1a1; border-left:none; float:left; padding:0 10px 10px 3px; background:url(../images/flxf_bg.gif) left top no-repeat #fafafa}
+.mdhead_flxf_right li{border-right:solid 1px #a1a1a1; padding:0 10px; float:left; height:15px; line-height:15px; margin-top:5px;word-break:keep-all; display:inline}
+.mdhead_flxf_right_wai .shadow{background:#999; height:2px; filter:alpha(opacity=40);margin-left:2px;width:172px; font-size:0}
+
+/* ============ÏÔÊ¾divÑùÊ½============ */
+.back_window1{ width:157px; height:42px; background:url(http://img3.dangdang.com/music_channel/back_window.gif); line-height:20px; padding:5px 0 0 12px}

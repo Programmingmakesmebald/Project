@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.heuet.Mapper.OrderMapper">
+
+    <!--生成订单-->
+    <insert id="insertOrder"    keyProperty="edu.heuet.Pojo.OrderInfo">
+
+        insert into
+            booksell.orders(OrderId, Buyer, Seller, BookId, OrderState, Price, OrderTime)
+            values(#{OrderId},#{Buyer},#{Seller},#{BookId},#{OrderState},#{Price},#{OrderTime})
+    </insert>
+    <insert id="insertOrders" parameterType="java.util.List">
+        insert into
+        orders(OrderId, Buyer, Seller, BookId, OrderState, Price, OrderTime) values
+        <foreach collection="list" item="orderInfo" separator="," close=";">
+            (#{orderInfo.OrderId},#{orderInfo.Buyer},#{orderInfo.Seller},#{orderInfo.BookId},#{orderInfo.OrderState},#{orderInfo.Price},#{orderInfo.OrderTime})
+        </foreach>
+    </insert>
+
+    <!--  查询全部  -->
+    <select id="selectOrders" resultType="edu.heuet.Pojo.OrderInfo">
+        select * from orders
+    </select>
+    <!--  根据买家ID（Buyer）查询  -->
+    <select id="selectOrderByBuyer" resultType="edu.heuet.Pojo.OrderInfo" parameterType="int">
+        select * from orders where Buyer=#{orderInfo.Buyer}
+    </select>
+
+
+    <update id="ChangeOrderState" >
+        update orders set
+        OrderState=#{state}
+        where
+        OrderId=#{OrderId}
+    </update>
+    <update id="ChangeBookState">
+        update bookinfo set
+        bookstate=#{state}
+        where
+            bookid in (select orders.BookId from orders where OrderId=#{OrderId} )
+    </update>
+    <select id="selectSellers" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        select Seller from orders where OrderId=#{orderId}
+    </select>
+
+    <select id="selectOrderByState" resultType="edu.heuet.Pojo.OrderInfo" parameterType="java.lang.Integer">
+        select * from orders
+        <where>
+            <if test="state==4">
+                Buyer=#{Buyer}
+            </if>
+            <if test="state!=4">
+                And Buyer=#{Buyer}
+                AND OrderState=#{state}
+            </if>
+        </where>
+    </select>
+
+
+    <update id="ChangeOrderStateByBookId" parameterType="java.lang.Integer">
+        update orders set OrderState=#{state} where BookId=#{BookId}
+    </update>
+
+    <select id="selectOrdersByBookId" resultType="edu.heuet.Pojo.OrderInfo" parameterType="java.lang.Integer">
+        select * from orders where BookId=#{BookId}
+    </select>
+
+    <select id="selectBookInfos" parameterType="java.lang.Integer" resultType="edu.heuet.Pojo.BookInfo">
+        select * from bookinfo where bookid=#{bookId}
+    </select>
+
+    <!--    删除订单-->
+    <delete id="deleteOrder">
+        delete from orders where BookId=#{bookId}
+    </delete>
+
+</mapper>

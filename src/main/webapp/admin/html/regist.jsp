@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>注册</title>
+    <jsp:include page="/admin/includes/header.jsp"/>
 </head>
 <body>
     <form action="/admin/regist" method="post">
