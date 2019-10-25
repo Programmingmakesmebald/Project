@@ -36,12 +36,7 @@
   <component name="ChangeListManager">
     <list default="true" id="181b025d-0173-4376-b337-6a9a7947fe6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/html/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/html/OneBook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/html/OneBook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/html/selectBooks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/html/selectBooks.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/html/selectOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/html/selectOrders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/includes/nav-header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/includes/nav-header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/includes/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/includes/nav.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -97,68 +92,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/heuet/Controller/AdminController.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/html/regist.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/html/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="34" column="107" selection-start-line="34" selection-start-column="107" selection-end-line="34" selection-end-column="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/html/selectOrders.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/html/selectUsers.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/html/admin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="388">
+              <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -234,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/orderinfo/order.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/shoppingcart/shoppingcart.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/edu/heuet/Pojo/OrderInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/heuet/Service/OrderService.java" />
@@ -285,6 +221,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/admin/html/one-Book.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/html/regist.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/edu/heuet/Controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -395,6 +332,15 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bookItem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookItem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -435,8 +381,8 @@
       <recent name="edu.heuet.Controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\1sofe\bookItem\src\main\webapp\admin\html" />
       <recent name="D:\1sofe\bookItem\src\main\webapp\admin" />
+      <recent name="D:\1sofe\bookItem\src\main\webapp\admin\html" />
       <recent name="D:\idea\bookItem\src\main\resources\edu\heuet\Mapper" />
       <recent name="D:\idea\bookItem\src\main\java\edu\heuet\Util" />
       <recent name="D:\idea\bookItem\src\main\java\edu\heuet\Service\ServiceImp" />
@@ -790,7 +736,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571995722091</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="将管理员jsp页面中相同的代码提取出来放到includes中">
+      <created>1571997052091</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571997052091</updated>
+    </task>
+    <task id="LOCAL-00017" summary="将管理员jsp页面中相同的代码提取出来放到includes中">
+      <created>1571997334916</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1571997334916</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -826,7 +786,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="445864000" />
+    <option name="totallyTimeSpent" value="446616000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,9 +799,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.18230277" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.18230277" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -856,12 +815,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" visible="true" weight="0.1744312" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4989339" weight="0.2156013" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.1744312" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4989339" visible="true" weight="0.2156013" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32786885" />
       <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49848714" weight="0.17377049" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32936078" />
@@ -870,7 +829,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24946696" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32942432" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.32942432" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.15351813" />
@@ -1143,7 +1102,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/html/admin.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
@@ -1309,11 +1268,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/heuet/Controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        <state relative-caret-position="650">
+          <caret line="111" column="96" lean-forward="true" selection-start-line="111" selection-start-column="96" selection-end-line="111" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
         </state>
       </provider>
     </entry>
