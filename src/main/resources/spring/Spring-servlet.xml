@@ -52,6 +52,9 @@
             <mvc:exclude-mapping path="/bootstrap/*.*"/>
             <mvc:exclude-mapping path="/bootstrap/**/*.*"/>
             <!--  登录 注册-->
+            <mvc:exclude-mapping path="/html/**/*.*"/>
+            <mvc:exclude-mapping path="/admin/**"/>
+            <mvc:exclude-mapping path="/assets/*.*"/>
             <mvc:exclude-mapping path="/user/*"/>
             <!--  管理员-->
             <mvc:exclude-mapping path="/admin/*"/>
