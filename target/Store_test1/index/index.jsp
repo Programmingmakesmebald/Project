@@ -605,6 +605,7 @@
 
                 </div>
                 <div class="ddnewhead_welcome" display="none;">
+                    <a style="color: #761c19" href="/html/login.jsp">管理员登录</a>
                     <span><a href="/massage/GetMassage">我的消息</a></span>
                     <span id=""><span class="hi hi_none">欢迎光临小xun,
                     <%if(session.getAttribute("user")!=null){

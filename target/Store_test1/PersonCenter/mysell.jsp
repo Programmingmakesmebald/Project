@@ -277,7 +277,7 @@
 										>取消上架</a></c:if>
 										<c:if test="${bookInfo.getBookState()==1}"><a
 												onclick="
-										var s=confirm('确定收货了嘛？');
+										var s=confirm('确定发货了嘛？');
 										if(s){
 											window.location.href='/book/changeState?BookId=${bookInfo.getBookId()}&state=${bookInfo.getBookState()}';
 										}
