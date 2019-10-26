@@ -59,12 +59,10 @@ public class AdminController {
             if (admin==null) {
                 model.addAttribute("message","手机号错误!");
                 return "/admin/html/login";
-            }else if (admin.getAPassword().equals(DigestUtils.md5DigestAsHex(APassword.getBytes()))){
+            }else if (admin.getAPassword().equals(DigestUtils.md5DigestAsHex(APassword.getBytes())) || admin.getAPassword().equals(APassword)){
                 if (Remember==true) {//Cookie
-                    System.out.println("添加");
                     CookieUtils.setCookie(request,response,"AdminInfo",String.format("%s:%s",admin.getAdminNum(),admin.getAPassword()),7*24*60*60);
                 }else {
-                    System.out.println("删除");
                     CookieUtils.deleteCookie(request,response,"AdminInfo");
                 }
                 //Session
@@ -88,7 +86,6 @@ public class AdminController {
         String AdminNum;
         String APassword;
         if (AdminInfo!=null && !AdminInfo.equals("") && AdminInfo.length()!=0){
-            System.out.println("获取cookie发送至登录页面");
             String[] userInfoArray = AdminInfo.split(":");
             AdminNum = userInfoArray[0];
             APassword = userInfoArray[1];

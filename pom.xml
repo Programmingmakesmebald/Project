@@ -182,12 +182,21 @@
 
 
     <!--数据源的引入-->
-    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0
     <dependency>
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
       <version>0.9.5.3</version>
+    </dependency>-->
+
+    <!-- druid现在最好的 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.1.6</version>
     </dependency>
+
+
 
     <!--mybatis整合-->
     <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
